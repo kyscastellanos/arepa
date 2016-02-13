@@ -90,7 +90,7 @@
 <div class="container">
     <div class="row" style="margin: 60px 0; text-align: center;">
         <div class="col-xs-12">
-            <img src="/wp-content/themes/arepa/img/arepa.png" width="600px">
+            <img src="/wp-content/themes/arepa/img/arepa.png" class="img-responsive">
         </div>
     </div>
 </div>
