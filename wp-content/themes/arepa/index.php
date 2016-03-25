@@ -1,36 +1,32 @@
 <?php get_header(); ?>
 
-
-<div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="10"
-     data-image-src="/wp-content/themes/arepa/img/arepa.jpg" data-natural-width="1270" data-natural-height="848">
-
-    <div class="container">
-        <div class="row" style="margin-top: 40px;">
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <img src="/wp-content/themes/arepa/img/logo.png" class="img-responsive">
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="navbar-logo" class="col-sm-3">
+                <img src="<?php bloginfo('template_directory'); ?>/img/logo_home.png">
             </div>
 
-            <div class="col-md-4 col-md-offset-4 col-sm-6 col-xs-12">
-                <p style="text-align: right; font-family: 'Montserrat'; font-size: 26px;">
-                    <a href="tel:+61415555666" style="color: black;">+61415555666</a>
+            <div class="col-sm-6 col-sm-offset-3">
+                <div id="contact-info">
+                    <i class="fa fa-phone"></i> <span>+61 415 520 602</span>
                     <br>
-                    <a href="mailto:hello@arepa.com.au" style="color: black;">hello@arepa.com.au</a>
-                </p>
+                    <i class="fa fa-envelope"></i> <span>contact@arepa.com.au</span>
+                </div>
             </div>
+        </div>
+    </div>
+</nav>
 
-            <div class="col-xs-12" style="margin-top: 60px;">
-                <h1 style="text-align: center; font-family: 'Montserrat'; font-size: 46px;">
-                    The best thing since the taco!
-                </h1>
-            </div>
+<!-- PARALLAX 1 -->
+<div class="parallax-container" data-parallax="scroll" data-speed="0" data-image-src="<?php bloginfo('template_directory'); ?>/img/arepa.jpg">
+    <div class="container">
+        <div class="row">
+            <div id="parallax-box" class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <h1>The best thing since the taco!</h1>
 
-            <div class="col-xs-12 col-sm-6 col-sm-offset-3" style="margin-top: 30px; font-family: 'Montserrat'; text-align: center;">
-                <h2 style="font-size: 32px;">
-                    Get a FREE drink with your next purchase
-                </h2>
-
-                <br>
-                <br>
+                <h2>Get a FREE drink with your next purchase</h2>
 
                 <div class="input-group input-group-lg">
                     <input type="text" class="form-control" placeholder="E-mail address">
@@ -38,80 +34,58 @@
                         <button class="btn btn-success" type="button">Get voucher</button>
                     </span>
                 </div>
-
-                <br>
-                <br>
-                <br>
-                <br>
-
             </div>
         </div>
     </div>
 </div>
 
+<!-- TRUCK -->
 <div class="container">
-    <div class="row" style="margin: 60px 0; text-align: center;">
+    <div id="truck-graphic" class="row">
         <div class="col-xs-12">
-            <img src="/wp-content/themes/arepa/img/camion.png" class="img-responsive">
+            <img src="<?php bloginfo('template_directory'); ?>/img/camion.png" class="img-responsive">
         </div>
     </div>
 </div>
 
-<div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="10"
-     data-image-src="/wp-content/themes/arepa/img/arepa.jpg" data-natural-width="1270" data-natural-height="848">
-
+<!-- PARALLAX 2 -->
+<div class="parallax-container" data-parallax="scroll" data-speed="0" data-image-src="<?php bloginfo('template_directory'); ?>/img/arepa.jpg">
     <div class="container">
-        <div class="row" style="margin-top: 40px;">
-            <div class="col-xs-12 col-sm-6 col-sm-offset-3" style="margin-top: 60px; font-family: 'Montserrat'; text-align: center; color: white;">
-                <h2 style="font-size: 32px;">
-                    Would you like to know the next time we bring arepas to your area?
-                </h2>
-
-                <br>
-                <br>
+        <div class="row">
+            <div id="parallax-box" class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <h2 id="full-width">Would you like to know the next time we bring arepas to your area?</h2>
 
                 <div class="input-group input-group-lg">
                     <input type="text" class="form-control" placeholder="E-mail address">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" type="button">Let me know</button>
-                    </span>
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="button">Let me know</button>
+                </span>
                 </div>
-
-                <br>
-                <br>
-                <br>
-                <br>
-
             </div>
         </div>
     </div>
 </div>
 
+<!-- AREPA -->
 <div class="container">
-    <div class="row" style="margin: 60px 0; text-align: center;">
-        <div class="col-xs-12">
-            <img src="/wp-content/themes/arepa/img/arepa.png" class="img-responsive">
+    <div id="truck-graphic" class="row">
+        <div id="arepa-description" class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <img src="<?php bloginfo('template_directory'); ?>/img/arepa-description.jpg" class="img-responsive">
         </div>
     </div>
 </div>
 
-    <div class="container-fluid">
-        <div class="row" style="background-color: darkgrey;">
-            <div class="col-xs-12">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
+<!-- FOOTER -->
+<div id="footer" class="container-fluid">
+    <div class="row">
+        <div id="social-icons" class="col-xs-12">
+            <ul class="list-inline">
+                <li><a href="#" class="btn-social btn-outline"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" class="btn-social btn-outline"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" class="btn-social btn-outline"><i class="fa fa-instagram"></i></a></li>
+            </ul>
         </div>
     </div>
+</div>
 
 <?php get_footer(); ?>
