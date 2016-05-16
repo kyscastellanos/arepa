@@ -10,7 +10,7 @@
 
             <div class="col-sm-6 col-sm-offset-3">
                 <div id="contact-info">
-                    <i class="fa fa-phone"></i> <span>+61 415 520 602</span>
+                    <i class="fa fa-phone"></i> <span>+61 432 608 467</span>
                     <br>
                     <i class="fa fa-envelope"></i> <span>contact@arepa.com.au</span>
                 </div>
@@ -101,9 +101,8 @@
     <div class="row">
         <div id="social-icons" class="col-xs-12">
             <ul class="list-inline">
-                <li><a href="#" class="btn-social btn-outline"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#" class="btn-social btn-outline"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#" class="btn-social btn-outline"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.facebook.com/arepaoz/" class="btn-social btn-outline"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/arepaoz/" class="btn-social btn-outline"><i class="fa fa-instagram"></i></a></li>
             </ul>
         </div>
     </div>
