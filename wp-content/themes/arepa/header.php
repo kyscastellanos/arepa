@@ -14,8 +14,10 @@
         <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-        <meta name="p:domain_verify" content="561371a459af998ac401ad6f7b5a917d”/>
-        
+        <link rel="shortcut icon" type="image/png" href="<?php bloginfo('template_directory'); ?>/img/favicon.png"/>
+
+        <!--<meta name="p:domain_verify" content="561371a459af998ac401ad6f7b5a917d”/>-->
+
         <?php wp_head(); ?>
     </head>
 
