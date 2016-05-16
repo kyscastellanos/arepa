@@ -19,6 +19,11 @@
     </div>
 </nav>
 
+<!-- FORM -->
+<div id="ninja-form">
+    <?php if( function_exists( 'ninja_forms_display_form' ) ){ ninja_forms_display_form( 5 ); } ?>
+</div>
+
 <!-- PARALLAX 1 -->
 <div class="parallax-container" data-parallax="scroll" data-speed="0" data-image-src="<?php bloginfo('template_directory'); ?>/img/arepa.jpg">
     <div class="container">
@@ -28,10 +33,18 @@
 
                 <h2>Get a FREE drink with your next purchase</h2>
 
+                <div class="alert alert-danger" role="alert">
+                    Please enter a valid email address
+                </div>
+
+                <div class="alert alert-success" role="alert">
+                    Thanks for your submission
+                </div>
+
                 <div class="input-group input-group-lg">
                     <input type="text" class="form-control" placeholder="E-mail address">
                     <span class="input-group-btn">
-                        <button class="btn btn-success" type="button">Get voucher</button>
+                        <button class="btn btn-success submit" type="button">Get voucher</button>
                     </span>
                 </div>
             </div>
@@ -55,11 +68,19 @@
             <div id="parallax-box" class="col-xs-12 col-sm-8 col-sm-offset-2">
                 <h2 id="full-width">Would you like to know the next time we bring arepas to your area?</h2>
 
+                <div class="alert alert-danger" role="alert">
+                    Please enter a valid email address
+                </div>
+
+                <div class="alert alert-success" role="alert">
+                    Thanks for your submission
+                </div>
+
                 <div class="input-group input-group-lg">
                     <input type="text" class="form-control" placeholder="E-mail address">
-                <span class="input-group-btn">
-                    <button class="btn btn-success" type="button">Let me know</button>
-                </span>
+                    <span class="input-group-btn">
+                        <button class="btn btn-success submit" type="button">Let me know</button>
+                    </span>
                 </div>
             </div>
         </div>

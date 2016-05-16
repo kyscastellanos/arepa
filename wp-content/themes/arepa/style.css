@@ -42,6 +42,10 @@ body {
  *   PARALLAX
  */
 
+#ninja-form {
+    display: none;
+}
+
 #parallax-box {
     text-align: center;
     background: rgba(255,255,255,0.5);
@@ -62,9 +66,15 @@ body {
     margin: 0 auto 15px auto;
 }
 
-#parallax-box .input-group {
+#parallax-box .input-group,
+#parallax-box .alert {
     max-width: 500px;
     margin: 0 auto;
+}
+
+#parallax-box .alert {
+    display: none;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 768px) {
