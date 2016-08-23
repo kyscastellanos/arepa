@@ -3,3 +3,4 @@ wp-config-sample.php
 .htaccess
 .idea/
 .DS_Store
+wp-content/uploads/
