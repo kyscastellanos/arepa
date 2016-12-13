@@ -238,6 +238,7 @@ class OptimizePress_Default_Assets {
             'navigation' => __('Navigation', 'optimizepress'),
             'news_bar' => __('News Bar', 'optimizepress'),
             // 'one_time_offer' => __('One Time Offer', 'optimizepress'),
+            // 'optimizeleads' => __('OptimizeLeads', 'optimizepress'),
             'optin_box' => __('Optin Box', 'optimizepress'),
             'order_box' => __('Order Box', 'optimizepress'),
             'order_step_graphics' => __('Order Step Graphics', 'optimizepress'),
@@ -337,7 +338,7 @@ class OptimizePress_Default_Assets {
         $children = array(
             'feature_block' => array('feature'),
             'optin_box' => array('optin_box_hidden','optin_box_field','optin_box_code','optin_box_button'),
-            'pricing_table' => array('tab'),
+            'pricing_table' => array('tab', 'op_pricing_table_child'),
             'qna_elements' => array('question'),
             'step_graphics' => array('step'),
             'tabs' => array('tab'),
@@ -2781,6 +2782,65 @@ class OptimizePress_Default_Assets {
 
     }
 
+    /**
+     * Function: optimizeleads
+     * Description: Display function for this asset
+     * Parameters:
+     * $atts: Contains all the attributes for this asset
+     */
+    static function optimizeleads($atts, $content)
+    {
+        /*
+         * Cache busting
+         */
+        if (function_exists('wp_using_ext_object_cache')) {
+            $extCache = wp_using_ext_object_cache();
+            if (true === $extCache) {
+                wp_using_ext_object_cache(false);
+            }
+        }
+
+        // Decode encoded chars
+        $atts = op_urldecode($atts);
+        $content = op_urldecode($content);
+
+        $atts = shortcode_atts(array(
+            'content' => '',
+            'optimizeleads_box_title' => '',
+        ), $atts);
+
+        if (defined('OP_LIVEEDITOR')) {
+
+            $output = '!!! OPTIMIZELEADS ELEMENT ';
+            $output .= !empty($atts['optimizeleads_box_title']) ? ' - ' . $atts['optimizeleads_box_title'] . ' ' : '';
+            $output .= '!!!';
+
+        } else {
+
+            $uid = 'optimizeleads_' . md5(serialize($atts) . $content);
+            if (false === $output = get_transient('el_' . $uid)) {
+                $output = '<div class="optimizeleads-element cf">' . $content . '</div>';
+
+                if (is_string($content) && 0 === strpos($content, '##')) {
+                    $content = substr($content, 2);
+                } elseif (!empty($content)) {
+                    set_transient('el_' . $uid, $content, OP_SL_ELEMENT_CACHE_LIFETIME);
+                }
+            }
+
+        }
+
+
+        /*
+         * Cache busting
+         */
+        if (function_exists('wp_using_ext_object_cache')) {
+            wp_using_ext_object_cache($extCache);
+        }
+
+        return $output;
+    }
+
     static function optin_box($atts,$content='')
     {
         /*
@@ -3181,7 +3241,7 @@ class OptimizePress_Default_Assets {
         $content = op_clean_shortcode_content($content);
 
         //Get the tabs from the passed data
-        $mc = preg_match_all('/'.op_shortcode_regex('tab').'/s',$content,$matches);
+        $mc = preg_match_all('/'.op_shortcode_regex('tab|op_pricing_table_child').'/s',$content,$matches);
 
         //Ensure there is at least one tab
         if($mc > 0){
@@ -3576,59 +3636,66 @@ class OptimizePress_Default_Assets {
         //Process the new template and load it
         return _op_tpl('_load_file',OP_ASSETS.'tpls/step_graphics/style_'.$data['style'].'.php',$data,true);
     }
-
-    static function tabs($atts,$content=null){
-
+    
+    static function tabs($atts, $content = null)
+    {
         // Decode encoded chars
         $atts = op_urldecode($atts);
-
         $str = '';
         $original_font_str = $GLOBALS['OP_LIVEEDITOR_FONT_STR'];
-        if(!is_null($content)){
+        
+        if ( ! is_null($content)) {
             $content = preg_replace('/&#215;/', 'x', $content); //replaces muliply symbol (×) with (x)
             $content = op_clean_shortcode_content($content);
-            $mc = preg_match_all('/'.op_shortcode_regex('tab').'/s',$content,$matches);
-            if($mc > 0){
+            $mc      = preg_match_all('/' . op_shortcode_regex('tab') . '/s', $content, $matches);
+            
+            if ($mc > 0) {
                 self::$used_items['tabs'] = true;
-                for($i=0;$i<$mc;$i++){
+                for ($i = 0; $i < $mc; $i++) {
                     extract(shortcode_atts(array(
-                        'title' => '',
+                        'title'    => '',
                         'li_class' => '',
-                        'a_class' => '',
+                        'a_class'  => '',
                     ), shortcode_parse_atts($matches[3][$i])));
-
-                    $str .= '<li'.($li_class==''?'':' class="'.urldecode($li_class).'"').'><a href="#"'.($a_class==''?'':' class="'.urldecode($a_class).'"').'>'.urldecode($title).'</a></li>';
+                    
+                    $str .= '<li' . ($li_class == '' ? '' : ' class="' . urldecode($li_class) . '"') . '><a href="#"' . ($a_class == '' ? '' : ' class="' . urldecode($a_class) . '"') . '>' . urldecode($title) . '</a></li>';
                 }
-
-
+                
                 $font = op_asset_font_style($atts);
-                if($font != ''){
-                    $style_str = ' style=\''.$font.'\'';
-                    $GLOBALS['OP_LIVEEDITOR_FONT_STR'] = array('elements' => array('p','a'), 'style_str' => $font);
+                if ($font != '') {
+                    $style_str                         = ' style=\'' . $font . '\'';
+                    $GLOBALS['OP_LIVEEDITOR_FONT_STR'] = array('elements' => array('p', 'a'), 'style_str' => $font);
                 }
-
-                $str = '
-<div class="tabbed-panel">
-    <ul class="tabs cf">
-    '.$str.'
-    </ul>
-    <div class="tab-content-container">
-    '.do_shortcode($content).'
-    </div>
-</div>';
+                
+                $str = '<div class="tabbed-panel">
+                            <ul class="tabs cf">
+                            ' . $str . '
+                            </ul>
+                            <div class="tab-content-container">
+                            ' . do_shortcode($content) . '
+                            </div>
+                        </div>';
             }
         }
-        if($GLOBALS['OP_LIVEEDITOR_DEPTH'] == 1){
+        if ($GLOBALS['OP_LIVEEDITOR_DEPTH'] == 1) {
             $GLOBALS['OP_LIVEEDITOR_FONT_STR'] = $original_font_str;
         }
+        
         return $str;
     }
-
-    static function tab($atts,$content=''){
+    
+    /**
+     * @param $atts
+     * @param string $content
+     *
+     * @return string
+     */
+    static function tab($atts, $content = '')
+    {
         $content = do_shortcode(op_texturize(op_clean_shortcode_content(urldecode($content))));
         $content = op_process_asset_content($content);
-        return '
-<div class="tab-content">'.$content.'</div>';
+        
+        return '<div class="tab-content">' . $content . '</div>';
     }
 
     function _unautop($tags,$pee){
@@ -4536,7 +4603,6 @@ class OptimizePress_Default_Assets {
         return do_shortcode($output);
     }
 
-
     static function _print_front_scripts($return=false){
         $keys = array_keys(self::$used_items);
         $js = array();
@@ -4730,6 +4796,7 @@ op_cur_html.find(":"\$(")."'.tabbed-panel .tabs li:first-child a').click();";
 
             'video_lightbox_description' => __('Insert an image into your page which when clicked will load a video in a lightbox. Great for training pages or to keep feature pages more organised.', 'optimizepress'),
 
+            'optimizeleads_description' => __('Use OptimizeLeads element to inser OptimizeLeads boxes into your pages. ', 'optimizepress'),
         );
     }
 
@@ -4917,12 +4984,16 @@ if (!function_exists('op_get_image_html_attributes')) {
      *
      * @return string
      */
-    function op_get_image_html_attribute( $image_url ) {
-        if (
+    function op_get_image_html_attribute( $image_url )
+    {
+        /*if (
             defined('OP_ADD_IMAGE_ATTRIBUTES')
             && OP_ADD_IMAGE_ATTRIBUTES === true
             && function_exists('curl_init')
             && function_exists('imagecreatefromstring')
+            && function_exists('imagesx')
+            && function_exists('imagesy')
+            && !defined('WPE_API')
             ) {
             $headers = array("Range: bytes=0-32768");
 
@@ -4940,6 +5011,19 @@ if (!function_exists('op_get_image_html_attributes')) {
                 }
             }
         }
+        if (defined('OP_ADD_IMAGE_ATTRIBUTES') && OP_ADD_IMAGE_ATTRIBUTES === true) {
+            try {
+                require_once(OP_DIR . 'lib/vendor/FastImage/FastImage.php');
+
+                $image = new FastImage($image_url);
+                list($width, $height) = $image->getSize();
+                if (!empty($width) && !empty($height)) {
+                    return 'width="' . $width . ' " height="' . $height . '"';
+                }
+            } catch(Exception $e) {
+                return '';
+            }
+        }*/
 
         return '';
     }

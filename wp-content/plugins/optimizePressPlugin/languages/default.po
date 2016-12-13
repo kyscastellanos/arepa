@@ -56,7 +56,7 @@ msgid "Dashboard"
 msgstr ""
 
 #: lib/admin/dashboard.php:152 lib/admin/launch_suite.php:316
-#: lib/admin/page_builder.php:664 lib/admin/support.php:165
+#: lib/admin/page_builder.php:677 lib/admin/support.php:165
 #: lib/admin/theme_settings.php:140
 msgid "There was a problem processing the form, please review the errors below"
 msgstr ""
@@ -129,15 +129,15 @@ msgstr ""
 msgid "Upload another layout"
 msgstr ""
 
-#: lib/admin/init.php:43 lib/framework.php:281 lib/tpl/post_page/index.php:22
+#: lib/admin/init.php:42 lib/framework.php:286 lib/tpl/post_page/index.php:22
 msgid "Live Editor"
 msgstr ""
 
-#: lib/admin/init.php:46
+#: lib/admin/init.php:45
 msgid "Clone Page"
 msgstr ""
 
-#: lib/admin/init.php:67
+#: lib/admin/init.php:66
 msgid "Insert into Post"
 msgstr ""
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "API key missing or invalid"
 msgstr ""
 
-#: lib/admin/install.php:58 lib/sections/dashboard/global_settings.php:122
+#: lib/admin/install.php:58 lib/sections/dashboard/global_settings.php:127
 msgid "API key is invalid. Please re-check it."
 msgstr ""
 
@@ -334,22 +334,22 @@ msgstr ""
 msgid "You must select a preset to overwrite"
 msgstr ""
 
-#: lib/admin/live_editor.php:1456 lib/admin/page_builder.php:578
-#: lib/modules/blog/signup_form/signup_form.php:46
+#: lib/admin/live_editor.php:1456 lib/admin/page_builder.php:591
+#: lib/modules/blog/signup_form/signup_form.php:42
 msgid "Colour Scheme"
 msgstr ""
 
-#: lib/admin/live_editor.php:1457 lib/admin/page_builder.php:579
+#: lib/admin/live_editor.php:1457 lib/admin/page_builder.php:592
 msgid ""
 "Customize the colour scheme for your page. You can use the advanced section "
 "to customize individual element colours"
 msgstr ""
 
-#: lib/admin/live_editor.php:1462 lib/admin/page_builder.php:574
+#: lib/admin/live_editor.php:1462 lib/admin/page_builder.php:587
 msgid "Layout"
 msgstr ""
 
-#: lib/admin/live_editor.php:1463 lib/admin/page_builder.php:575
+#: lib/admin/live_editor.php:1463 lib/admin/page_builder.php:588
 msgid ""
 "Customize the layout of your template. Setup your headers, navigation bars, "
 "feature areas and footers."
@@ -388,7 +388,7 @@ msgstr ""
 msgid "Please provide a name for your page."
 msgstr ""
 
-#: lib/admin/page_builder.php:181 lib/admin/page_builder.php:405
+#: lib/admin/page_builder.php:181 lib/admin/page_builder.php:418
 #: lib/tpl/create_new_page/content_templates.php:63
 #: lib/tpl/create_new_page/content_templates.php:107
 #: lib/tpl/live_editor/membership.php:154
@@ -407,42 +407,42 @@ msgstr ""
 msgid "Use Current Settings"
 msgstr ""
 
-#: lib/admin/page_builder.php:335
+#: lib/admin/page_builder.php:348
 msgid "Landing Page"
 msgstr ""
 
-#: lib/admin/page_builder.php:336
+#: lib/admin/page_builder.php:349
 msgid "Marketing Site Page"
 msgstr ""
 
-#: lib/admin/page_builder.php:338
+#: lib/admin/page_builder.php:351
 msgid "Membership Page"
 msgstr ""
 
-#: lib/admin/page_builder.php:378
+#: lib/admin/page_builder.php:391
 msgid "Please provide a name for your product"
 msgstr ""
 
-#: lib/admin/page_builder.php:383 lib/admin/theme_settings.php:149
+#: lib/admin/page_builder.php:396 lib/admin/theme_settings.php:149
 #: lib/admin/wizard.php:106
 msgid ""
 "No themes were found. Please check the themes directory is present and "
 "contains themes."
 msgstr ""
 
-#: lib/admin/page_builder.php:406 lib/tpl/live_editor/membership.php:155
+#: lib/admin/page_builder.php:419 lib/tpl/live_editor/membership.php:155
 msgid "Page with sidebar"
 msgstr ""
 
-#: lib/admin/page_builder.php:407 lib/tpl/live_editor/membership.php:156
+#: lib/admin/page_builder.php:420 lib/tpl/live_editor/membership.php:156
 msgid "Module listings"
 msgstr ""
 
-#: lib/admin/page_builder.php:582
+#: lib/admin/page_builder.php:595
 msgid "On-Page Functionality"
 msgstr ""
 
-#: lib/admin/page_builder.php:583
+#: lib/admin/page_builder.php:596
 msgid ""
 "Control the additional functionality and options for your page below. You "
 "can also use the options below to add any custom script code to your page"
@@ -457,7 +457,7 @@ msgid "Select the template style for your page/post"
 msgstr ""
 
 #: lib/admin/stats.php:29 lib/admin/stats.php:120 lib/tpl/stats/index.php:1
-msgid "Stats"
+msgid "Experiments"
 msgstr ""
 
 #: lib/admin/support.php:28 lib/tpl/support/index.php:1
@@ -541,11 +541,11 @@ msgstr ""
 msgid "Buttons"
 msgstr ""
 
-#: lib/assets/default.php:41 lib/assets/default.php:241
+#: lib/assets/default.php:41 lib/assets/default.php:242
 msgid "Optin Box"
 msgstr ""
 
-#: lib/assets/default.php:42 lib/assets/default.php:243
+#: lib/assets/default.php:42 lib/assets/default.php:244
 msgid "Order Step Graphics"
 msgstr ""
 
@@ -609,8 +609,8 @@ msgstr ""
 msgid "Guarantee Box"
 msgstr ""
 
-#: lib/assets/default.php:231 lib/js/assets/lang.php:47
-#: lib/js/assets/lang.php:266
+#: lib/assets/default.php:231 lib/js/assets/lang.php:48
+#: lib/js/assets/lang.php:267
 msgid "Headline"
 msgstr ""
 
@@ -646,459 +646,463 @@ msgstr ""
 msgid "News Bar"
 msgstr ""
 
-#: lib/assets/default.php:242
+#: lib/assets/default.php:243
 msgid "Order Box"
 msgstr ""
 
-#: lib/assets/default.php:244
+#: lib/assets/default.php:245
 msgid "Pricing Graphics"
 msgstr ""
 
-#: lib/assets/default.php:245
+#: lib/assets/default.php:246
 msgid "Pricing Table"
 msgstr ""
 
-#: lib/assets/default.php:247
+#: lib/assets/default.php:248
 msgid "Progress Bar"
 msgstr ""
 
-#: lib/assets/default.php:248
+#: lib/assets/default.php:249
 msgid "Q&A Elements"
 msgstr ""
 
-#: lib/assets/default.php:249
+#: lib/assets/default.php:250
 msgid "Recent Posts"
 msgstr ""
 
-#: lib/assets/default.php:250
+#: lib/assets/default.php:251
 msgid "Social Sharing"
 msgstr ""
 
-#: lib/assets/default.php:251
+#: lib/assets/default.php:252
 msgid "Step Graphics"
 msgstr ""
 
-#: lib/assets/default.php:252 lib/js/assets/lang.php:245
+#: lib/assets/default.php:253 lib/js/assets/lang.php:246
 msgid "Tabs"
 msgstr ""
 
-#: lib/assets/default.php:253
+#: lib/assets/default.php:254
 msgid "Terms & Conditions Box"
 msgstr ""
 
-#: lib/assets/default.php:254
+#: lib/assets/default.php:255
 msgid "Testimonials"
 msgstr ""
 
-#: lib/assets/default.php:255
+#: lib/assets/default.php:256
 msgid "Tour Elements"
 msgstr ""
 
-#: lib/assets/default.php:256
+#: lib/assets/default.php:257
 msgid "2 Column Text"
 msgstr ""
 
-#: lib/assets/default.php:257
+#: lib/assets/default.php:258
 msgid "Vertical Spacing"
 msgstr ""
 
-#: lib/assets/default.php:258
+#: lib/assets/default.php:259
 msgid "Video Thumbnail & Lightbox"
 msgstr ""
 
-#: lib/assets/default.php:259
+#: lib/assets/default.php:260
 msgid "Video Player"
 msgstr ""
 
-#: lib/assets/default.php:263
+#: lib/assets/default.php:264
 msgid "Membership Order Button"
 msgstr ""
 
-#: lib/assets/default.php:264
+#: lib/assets/default.php:265
 msgid "Membership Files Download"
 msgstr ""
 
-#: lib/assets/default.php:265
+#: lib/assets/default.php:266
 msgid "Membership Login Form"
 msgstr ""
 
-#: lib/assets/default.php:1520
+#: lib/assets/default.php:1521
 msgid "Year"
 msgstr ""
 
-#: lib/assets/default.php:1521
+#: lib/assets/default.php:1522
 msgid "Years"
 msgstr ""
 
-#: lib/assets/default.php:1522 lib/js/assets/lang.php:185
+#: lib/assets/default.php:1523 lib/js/assets/lang.php:186
 msgid "Month"
 msgstr ""
 
-#: lib/assets/default.php:1523
+#: lib/assets/default.php:1524
 msgid "Months"
 msgstr ""
 
-#: lib/assets/default.php:1524
+#: lib/assets/default.php:1525
 msgid "Week"
 msgstr ""
 
-#: lib/assets/default.php:1525
+#: lib/assets/default.php:1526
 msgid "Weeks"
 msgstr ""
 
-#: lib/assets/default.php:1526 lib/js/assets/lang.php:183
+#: lib/assets/default.php:1527 lib/js/assets/lang.php:184
 msgid "Day"
 msgstr ""
 
-#: lib/assets/default.php:1527
+#: lib/assets/default.php:1528
 #: lib/modules/page/one_time_offer/tpl/settings.php:8
 msgid "Days"
 msgstr ""
 
-#: lib/assets/default.php:1528
+#: lib/assets/default.php:1529
 msgid "Hour"
 msgstr ""
 
-#: lib/assets/default.php:1529
+#: lib/assets/default.php:1530
 #: lib/modules/page/one_time_offer/tpl/settings.php:9
 msgid "Hours"
 msgstr ""
 
-#: lib/assets/default.php:1530
+#: lib/assets/default.php:1531
 msgid "Minute"
 msgstr ""
 
-#: lib/assets/default.php:1531
+#: lib/assets/default.php:1532
 #: lib/modules/page/one_time_offer/tpl/settings.php:10
 msgid "Minutes"
 msgstr ""
 
-#: lib/assets/default.php:1532
+#: lib/assets/default.php:1533
 msgid "Second"
 msgstr ""
 
-#: lib/assets/default.php:1533
+#: lib/assets/default.php:1534
 #: lib/modules/page/one_time_offer/tpl/settings.php:11
 msgid "Seconds"
 msgstr ""
 
-#: lib/assets/default.php:1565
+#: lib/assets/default.php:1566
 msgid "hours"
 msgstr ""
 
-#: lib/assets/default.php:2667
+#: lib/assets/default.php:2668 lib/functions/scripts.php:263
 msgid "Search..."
 msgstr ""
 
-#: lib/assets/default.php:3307
+#: lib/assets/default.php:3367
 msgid "Q."
 msgstr ""
 
-#: lib/assets/default.php:3308
+#: lib/assets/default.php:3368
 msgid "A."
 msgstr ""
 
-#: lib/assets/default.php:3447 lib/assets/tpls/social_sharing/style-3.php:6
+#: lib/assets/default.php:3507 lib/assets/tpls/social_sharing/style-3.php:6
 #: lib/assets/tpls/social_sharing/style-4.php:5
 #: lib/assets/tpls/social_sharing/style-6.php:6
 #: lib/assets/tpls/social_sharing/style-7.php:6
 msgid "Tweet"
 msgstr ""
 
-#: lib/assets/default.php:3479
+#: lib/assets/default.php:3539
 msgid "Pin It"
 msgstr ""
 
-#: lib/assets/default.php:4120 lib/assets/default.php:4169
+#: lib/assets/default.php:4187 lib/assets/default.php:4236
 msgid "Downloads"
 msgstr ""
 
-#: lib/assets/default.php:4635
+#: lib/assets/default.php:4701
 msgid ""
 "Provide code for banners or other elements that you want your affiliates to "
 "use for promoting your products or services."
 msgstr ""
 
-#: lib/assets/default.php:4637
+#: lib/assets/default.php:4703
 msgid ""
 "Use arrows on your site to highlight areas of important information, or to "
 "help funnel your visitors eye to a particular area or element of the page"
 msgstr ""
 
-#: lib/assets/default.php:4639
+#: lib/assets/default.php:4705
 msgid ""
 "Use the audio player to Include audio on your page. We recommend using MP3 "
 "format for your audio files."
 msgstr ""
 
-#: lib/assets/default.php:4641
+#: lib/assets/default.php:4707
 msgid ""
 "Use bullet blocks or lists to break down bulky information into readable "
 "chunks.  Using bullets can help conversions as visitors can quickly scan "
 "your bullets for information"
 msgstr ""
 
-#: lib/assets/default.php:4643
+#: lib/assets/default.php:4709
 msgid ""
 "Use buttons on your page for calls to action or to aid navigation through "
 "your site. Select from our wide range of buttons to suit your page style "
 "and purpose"
 msgstr ""
 
-#: lib/assets/default.php:4645
+#: lib/assets/default.php:4711
 msgid ""
 "Use the Calendar Date and Time element to show the time and date of a "
 "webinar or other online event"
 msgstr ""
 
-#: lib/assets/default.php:4647
+#: lib/assets/default.php:4713
 msgid ""
 "Use this element to keep lengthly content organised on the page.  Great for "
 "FAQ's or similar information where the visitor can view the title and "
 "expand for more information."
 msgstr ""
 
-#: lib/assets/default.php:4649
+#: lib/assets/default.php:4715
 msgid ""
 "Insert a countdown timer on your pages. Great for creating urgency for "
 "conversions"
 msgstr ""
 
-#: lib/assets/default.php:4651
+#: lib/assets/default.php:4717
 msgid "Countdown Timer with Cookie"
 msgstr ""
 
-#: lib/assets/default.php:4653
+#: lib/assets/default.php:4719
 msgid ""
 "Insert a box showing the title and description of your membership course or "
 "product and include an icon"
 msgstr ""
 
-#: lib/assets/default.php:4655
+#: lib/assets/default.php:4721
 msgid ""
 "Use this to delay an element on your page so it appears after a set time.  "
 "You can delay text or use the \"Add Element\" feature to add more items to "
 "delay."
 msgstr ""
 
-#: lib/assets/default.php:4657
+#: lib/assets/default.php:4723
 msgid "Choose from a range of dividing lines and graphics to insert into your page."
 msgstr ""
 
-#: lib/assets/default.php:4659
+#: lib/assets/default.php:4725
 msgid ""
 "Insert the date of the users visit into your page.  This date will always "
 "show the date the visitor accessed your page, so gives the impression of "
 "updated content"
 msgstr ""
 
-#: lib/assets/default.php:4661
+#: lib/assets/default.php:4727
 msgid ""
 "Use this element to highlight particular features of your product or "
 "service and include an icon or image to accompany the feature."
 msgstr ""
 
-#: lib/assets/default.php:4663
+#: lib/assets/default.php:4729
 msgid ""
 "Insert a styled content box onto your page.  Choose from a range of styles "
 "to suit your page and content and insert text or other elements into the "
 "box."
 msgstr ""
 
-#: lib/assets/default.php:4665
+#: lib/assets/default.php:4731
 msgid ""
 "Create your own box style for your content.  Use the Advanced Options "
 "section to customize the look and feel of your box before inserting into "
 "the page"
 msgstr ""
 
-#: lib/assets/default.php:4667
+#: lib/assets/default.php:4733
 msgid "Files download element can be used to upload files and build file lists."
 msgstr ""
 
-#: lib/assets/default.php:4669
+#: lib/assets/default.php:4735
 msgid "Highlight your guarantee policy and terms with these boxes and graphics."
 msgstr ""
 
-#: lib/assets/default.php:4671
+#: lib/assets/default.php:4737
 msgid ""
 "Choose from a range of different headline styles to highlight features or "
 "sections of your page."
 msgstr ""
 
-#: lib/assets/default.php:4673
+#: lib/assets/default.php:4739
 msgid ""
 "If you want to include a customized text hyperlink you can use this element "
 "to insert one into your page. Customize the styling to fit your site."
 msgstr ""
 
-#: lib/assets/default.php:4675
+#: lib/assets/default.php:4741
 msgid ""
 "Insert an image into your page with this element.  Choose from a range of "
 "border styles and include a caption and larger image if you want to provide "
 "a larger lightbox preview."
 msgstr ""
 
-#: lib/assets/default.php:4677
+#: lib/assets/default.php:4743
 msgid ""
 "Image with javascript alert can be used for a video fakeout or to push "
 "people to your optin form"
 msgstr ""
 
-#: lib/assets/default.php:4679
+#: lib/assets/default.php:4745
 msgid ""
 "An easy way to add an image and vertically align text content next to it. "
 "Great for inserting features illustrated with graphics onto your pages"
 msgstr ""
 
-#: lib/assets/default.php:4681
+#: lib/assets/default.php:4747
 msgid "Add your custom JavaScript on page"
 msgstr ""
 
-#: lib/assets/default.php:4683
+#: lib/assets/default.php:4749
 msgid ""
 "Insert a Live Search box which can be used to search your pages or "
 "membership content"
 msgstr ""
 
-#: lib/assets/default.php:4685
+#: lib/assets/default.php:4751
 msgid "Insert a button which will allow users to order a membership."
 msgstr ""
 
-#: lib/assets/default.php:4687
+#: lib/assets/default.php:4753
 msgid "Insert a login form for your members to login to your membership area"
 msgstr ""
 
-#: lib/assets/default.php:4689
+#: lib/assets/default.php:4755
 msgid ""
 "Membership files download can be used to upload and protect files using "
 "OptimizePress Member plugin."
 msgstr ""
 
-#: lib/assets/default.php:4691
+#: lib/assets/default.php:4757
 msgid ""
 "Help visitors navigate around your site with these navigation blocks. "
 "Create a custom menu within the Wordpress interface and choose the menu to "
 "assign to your element"
 msgstr ""
 
-#: lib/assets/default.php:4693
+#: lib/assets/default.php:4759
 msgid ""
 "Insert a bar which you can use to highlight latest news from your company "
 "or product"
 msgstr ""
 
-#: lib/assets/default.php:4695
+#: lib/assets/default.php:4761
 msgid ""
 "If you are creating a one-time offer page you can use these graphics to "
 "help emphasise this and improve conversions"
 msgstr ""
 
-#: lib/assets/default.php:4697
+#: lib/assets/default.php:4763
 msgid ""
 "Insert an optin box into your page with this element.  Choose from a range "
 "of styles and integrate your autoresponder to build your email list."
 msgstr ""
 
-#: lib/assets/default.php:4699
+#: lib/assets/default.php:4765
 msgid "Use order boxes to highlight your call to action and order buttons."
 msgstr ""
 
-#: lib/assets/default.php:4701
+#: lib/assets/default.php:4767
 msgid ""
 "Use order step graphics to highlight the step of the checkout process your "
 "visitor is on. This can help them how close to completing the transaction "
 "they are."
 msgstr ""
 
-#: lib/assets/default.php:4703
+#: lib/assets/default.php:4769
 msgid ""
 "If you want to include a high visibility product price on your page you can "
 "use this element.  Customize the text and a white border and shadow will be "
 "added."
 msgstr ""
 
-#: lib/assets/default.php:4705
+#: lib/assets/default.php:4771
 msgid ""
 "Use Pricing Tables to elegantly display the different features or benefits "
 "of your product packages in comparison to each other"
 msgstr ""
 
-#: lib/assets/default.php:4707
+#: lib/assets/default.php:4773
 msgid ""
 "Insert a progress bar on your page - great for showing progress through a "
 "membership course or free training series"
 msgstr ""
 
-#: lib/assets/default.php:4709
+#: lib/assets/default.php:4775
 msgid ""
 "If you want to include a Q&amp;A section on your page you can use this "
 "element to display your questions and answers in an organised style"
 msgstr ""
 
-#: lib/assets/default.php:4711
+#: lib/assets/default.php:4777
 msgid ""
 "Insert a list of the most recent posts from your blog. Perfect for creating "
 "a custom home page."
 msgstr ""
 
-#: lib/assets/default.php:4713
+#: lib/assets/default.php:4779
 msgid ""
 "Insert a block of social sharing icons into your page to help spread your "
 "content virally through networks like Facebook, Twitter and Google Plus"
 msgstr ""
 
-#: lib/assets/default.php:4715
+#: lib/assets/default.php:4781
 msgid ""
 "Use Step Graphics as a great way to illustrate numbered steps for a process "
 "on your pages"
 msgstr ""
 
-#: lib/assets/default.php:4717
+#: lib/assets/default.php:4783
 msgid ""
 "Use tabs to separate content but make it easily navigable without the user "
 "scrolling down the page."
 msgstr ""
 
-#: lib/assets/default.php:4719
+#: lib/assets/default.php:4785
 msgid ""
 "If you would like to require your visitors to agree to a set of terms & "
 "conditions before purchasing you can use this element."
 msgstr ""
 
-#: lib/assets/default.php:4721
+#: lib/assets/default.php:4787
 msgid ""
 "Use testimonials as a great way to provide social proof about your product "
 "or service.  Choose from a range of styles to fit your page"
 msgstr ""
 
-#: lib/assets/default.php:4723
+#: lib/assets/default.php:4789
 msgid ""
 "These elements are a great way to provide a call to action for your "
 "visitors to purchase or get more information about your product or service"
 msgstr ""
 
-#: lib/assets/default.php:4725
+#: lib/assets/default.php:4791
 msgid ""
 "Add two columns of text (each 50% width) to an existing column of your page "
 "layout."
 msgstr ""
 
-#: lib/assets/default.php:4727
+#: lib/assets/default.php:4793
 msgid "Add vertical spacing to a column of your layout."
 msgstr ""
 
-#: lib/assets/default.php:4729
+#: lib/assets/default.php:4795
 msgid ""
 "Include a video on your page.  Use your own embed code from sites like "
 "YouTube, or select URL to use a video you have hosted with Amazon S3 or a "
 "similar service."
 msgstr ""
 
-#: lib/assets/default.php:4731
+#: lib/assets/default.php:4797
 msgid ""
 "Insert an image into your page which when clicked will load a video in a "
 "lightbox. Great for training pages or to keep feature pages more organised."
+msgstr ""
+
+#: lib/assets/default.php:4799
+msgid "Use OptimizeLeads element to inser OptimizeLeads boxes into your pages. "
 msgstr ""
 
 #: lib/assets/live_editor.php:33 lib/assets/live_editor.php:736
@@ -1163,7 +1167,7 @@ msgid "Advanced Element Options"
 msgstr ""
 
 #: lib/assets/live_editor.php:130 lib/assets/live_editor.php:194
-#: lib/functions/page_options.php:357 lib/js/assets/lang.php:77
+#: lib/functions/page_options.php:357 lib/js/assets/lang.php:78
 msgid "Move"
 msgstr ""
 
@@ -1278,13 +1282,91 @@ msgid ""
 "inside of it."
 msgstr ""
 
-#: lib/assets/tpls/optin_box/style_9.php:6 lib/js/assets/lang.php:279
+#: lib/assets/oppp.php:100
+msgid "Advanced Headline"
+msgstr ""
+
+#: lib/assets/oppp.php:101
+msgid "Draw the attention to your headlines with this powerful headline element"
+msgstr ""
+
+#: lib/assets/oppp.php:108
+msgid "Pricing Comparison Table"
+msgstr ""
+
+#: lib/assets/oppp.php:109
+msgid ""
+"Educate visitors and increase conversions with the pricing comparisons "
+"table element."
+msgstr ""
+
+#: lib/assets/oppp.php:116
+msgid "Evergreen Countdown timer"
+msgstr ""
+
+#: lib/assets/oppp.php:117
+msgid ""
+"Insert an evergreen countdown timer on your pages that restarts for every "
+"new user. Great for creating urgency for conversions"
+msgstr ""
+
+#: lib/assets/oppp.php:124
+msgid "Product Showcase"
+msgstr ""
+
+#: lib/assets/oppp.php:125
+msgid ""
+"Showcase your products like industry leaders such as Apple and Amazon with "
+"the product showcase element."
+msgstr ""
+
+#: lib/assets/oppp.php:132
+msgid "Scroll Enhancer"
+msgstr ""
+
+#: lib/assets/oppp.php:133
+msgid ""
+"Use the scroll enhancer element to help guide your visitors to scroll down "
+"your page content, which leads to lower bounce rates and better conversions."
+msgstr ""
+
+#: lib/assets/oppp.php:140
+msgid "Slider"
+msgstr ""
+
+#: lib/assets/oppp.php:141
+msgid "Effectively showcase your content with this engaging slider element"
+msgstr ""
+
+#: lib/assets/oppp.php:149
+msgid "Testimonial Slider"
+msgstr ""
+
+#: lib/assets/oppp.php:150
+msgid ""
+"Share testimonials in a compact and engaging way using this slider. "
+"Testimonials are a great way to provide social proof for your product or "
+"service."
+msgstr ""
+
+#: lib/assets/oppp.php:158
+msgid "WordPress Comments Duplicator"
+msgstr ""
+
+#: lib/assets/oppp.php:159
+msgid ""
+"Add a WordPress comments block to your page and show the comments from any "
+"page on your site. Perfect for launch pages where you want to show the same "
+"comments stream on multiple pages."
+msgstr ""
+
+#: lib/assets/tpls/optin_box/style_9.php:6 lib/js/assets/lang.php:280
 #: lib/modules/blog/signup_form/tpl/form_html.php:112
 #: lib/tpl/sections/blog/info_bar.php:7 pages/global/templates/comments.php:61
 msgid "Email"
 msgstr ""
 
-#: lib/assets/tpls/pricing_table/style_3.php:5 lib/js/assets/lang.php:75
+#: lib/assets/tpls/pricing_table/style_3.php:5 lib/js/assets/lang.php:76
 msgid "Most Popular"
 msgstr ""
 
@@ -1298,72 +1380,72 @@ msgstr ""
 msgid "OptimizePress"
 msgstr ""
 
-#: lib/framework.php:638
+#: lib/framework.php:645
 msgid "op_preview (%s)"
 msgid_plural "op_preview (%s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/framework.php:691
+#: lib/framework.php:698
 msgid ""
 "GoToWebinar access token is going to expire in %1$d day(s). Please <a "
 "href=\"%2$s\">re-authorize</a>."
 msgstr ""
 
-#: lib/framework.php:693
+#: lib/framework.php:700
 msgid ""
 "GoToWebinar access token is expired. Please <a "
 "href=\"%1$s\">re-authorize</a> or <a href=\"%2$s\">disable this "
 "notification</a>."
 msgstr ""
 
-#: lib/framework.php:736
+#: lib/framework.php:743
 msgid ""
 "There seems to be a problem with your OptimizePress API Key.  Please "
 "recheck it is entered correctly and if you still have problems <a "
 "href=\"%s\" target=\"_blank\">contact support</a>."
 msgstr ""
 
-#: lib/framework.php:791
+#: lib/framework.php:798
 msgid ""
 "You are not eligible for new updates. You can <a href=\"%s\" "
 "target=\"_blank\">prolong your subscription</a> or <a href=\"%s\">disable "
 "this notification</a>."
 msgstr ""
 
-#: lib/framework.php:842
+#: lib/framework.php:849
 msgid ""
 "Both OptimizePress plugin and theme are running. You should deactivate one "
 "of them."
 msgstr ""
 
-#: lib/framework.php:875
+#: lib/framework.php:882
 msgid ""
 "<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" "
 "class=\"thickbox\" title=\"%4s\">Check out what's new</a> or <a "
 "href=\"%5$s\"%6$s>update now</a>."
 msgstr ""
 
-#: lib/framework.php:942 lib/framework.php:1032
+#: lib/framework.php:949 lib/framework.php:1039
 msgid "OptimizePress Plugin"
 msgstr ""
 
-#: lib/framework.php:1069
+#: lib/framework.php:1076
 msgid "No page ID to duplicate has been provided!"
 msgstr ""
 
-#: lib/framework.php:1172
+#: lib/framework.php:1179
 msgid ""
 "Your PHP version (%s) is lower than recommended (%s) by OptimizePress and "
 "therefore some features might not work. <a href=\"%s\">Check "
 "compatibility</a>."
 msgstr ""
 
-#: lib/framework.php:1319
+#: lib/framework.php:1326
 msgid "Copy OptimizePress content"
 msgstr ""
 
-#: lib/framework.php:1326
+#: lib/framework.php:1333
 msgid ""
 "After you publish the page, content from original LiveEditor page will be "
 "copied to your translation page."
@@ -1371,19 +1453,19 @@ msgstr ""
 
 #: lib/functions/admin.php:79 lib/functions/admin.php:89
 #: lib/functions/admin.php:126 lib/functions/admin.php:166
-#: lib/js/assets/lang.php:104
+#: lib/js/assets/lang.php:105
 msgid "Remove Image"
 msgstr ""
 
 #: lib/functions/admin.php:81 lib/functions/admin.php:93
 #: lib/functions/admin.php:128 lib/functions/admin.php:168
-#: lib/js/assets/lang.php:121
+#: lib/js/assets/lang.php:122
 msgid "View File"
 msgstr ""
 
 #: lib/functions/admin.php:81 lib/functions/admin.php:93
 #: lib/functions/admin.php:128 lib/functions/admin.php:168
-#: lib/js/assets/lang.php:103
+#: lib/js/assets/lang.php:104
 msgid "Remove File"
 msgstr ""
 
@@ -1413,11 +1495,11 @@ msgstr ""
 msgid "The file you tried to upload is not a valid image."
 msgstr ""
 
-#: lib/functions/assets.php:146
+#: lib/functions/assets.php:159
 msgid "There seems to be an error with the integration data."
 msgstr ""
 
-#: lib/functions/assets.php:364
+#: lib/functions/assets.php:377
 msgid "No results"
 msgstr ""
 
@@ -1434,7 +1516,7 @@ msgstr ""
 msgid "Thin"
 msgstr ""
 
-#: lib/functions/fonts.php:366 lib/js/assets/lang.php:78
+#: lib/functions/fonts.php:366 lib/js/assets/lang.php:79
 #: lib/modules/blog/signup_form/tpl/submit_button.php:53
 msgid "Normal"
 msgstr ""
@@ -1460,7 +1542,7 @@ msgstr ""
 msgid "Underline"
 msgstr ""
 
-#: lib/functions/fonts.php:406 lib/js/assets/lang.php:81
+#: lib/functions/fonts.php:406 lib/js/assets/lang.php:82
 #: lib/modules/blog/video/tpl/video_panel.php:68
 #: lib/tpl/sections/global_settings/site_footer.php:19
 #: lib/tpl/sections/page/layout/footer_area.php:9
@@ -1476,7 +1558,7 @@ msgstr ""
 msgid "Dark"
 msgstr ""
 
-#: lib/functions/fonts.php:408 lib/js/assets/lang.php:61
+#: lib/functions/fonts.php:408 lib/js/assets/lang.php:62
 #: lib/modules/blog/signup_form/tpl/submit_button.php:94
 msgid "Light"
 msgstr ""
@@ -1485,7 +1567,7 @@ msgstr ""
 msgid "Optin Form Submission - %s"
 msgstr ""
 
-#: lib/functions/general.php:564
+#: lib/functions/general.php:569
 #: lib/modules/blog/related_posts/related_posts.php:43
 #: pages/global/templates/comments.php:15
 msgid "1 Comment"
@@ -1493,41 +1575,41 @@ msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/functions/general.php:565
+#: lib/functions/general.php:570
 msgid ""
 "<p class=\"post-meta\"><a href=\"%1$s\" title=\"%2$s\" "
 "rel=\"author\">%3$s</a><a href=\"%4$s\">%5$s</a></p>"
 msgstr ""
 
-#: lib/functions/general.php:567 lib/modules/blog/comments/comments.php:213
+#: lib/functions/general.php:572 lib/modules/blog/comments/comments.php:213
 msgid "View all posts by %s"
 msgstr ""
 
-#: lib/functions/general.php:788
+#: lib/functions/general.php:793
 msgid "First"
 msgstr ""
 
-#: lib/functions/general.php:791
+#: lib/functions/general.php:796
 msgid "Previous"
 msgstr ""
 
-#: lib/functions/general.php:800
+#: lib/functions/general.php:805
 msgid "Next"
 msgstr ""
 
-#: lib/functions/general.php:803
+#: lib/functions/general.php:808
 msgid "Last"
 msgstr ""
 
-#: lib/functions/general.php:813
+#: lib/functions/general.php:818
 msgid "Page %1$s of %2$s"
 msgstr ""
 
-#: lib/functions/general.php:1125
+#: lib/functions/general.php:1130
 msgid "LiveEditor Pages"
 msgstr ""
 
-#: lib/functions/optin_stats.php:261 lib/sections/stats/stats.php:20
+#: lib/functions/optin_stats.php:261 lib/sections/stats/stats.php:46
 msgid "Optin Stats"
 msgstr ""
 
@@ -1535,56 +1617,56 @@ msgstr ""
 msgid "Total Optins from OptimizePress <small>(since %s)</small>"
 msgstr ""
 
-#: lib/functions/optin_stats.php:290 lib/sections/stats/stats.php:47
+#: lib/functions/optin_stats.php:290 lib/sections/stats/stats.php:73
 msgid "Optins per month"
 msgstr ""
 
-#: lib/functions/page.php:853 lib/sections/page/color_schemes.php:330
+#: lib/functions/page.php:858 lib/sections/page/color_schemes.php:330
 #: lib/tpl/sections/global_settings/typography.php:7
 msgid "Footer Link Text Colour"
 msgstr ""
 
-#: lib/functions/page.php:854 lib/sections/page/color_schemes.php:331
+#: lib/functions/page.php:859 lib/sections/page/color_schemes.php:331
 #: lib/tpl/sections/global_settings/typography.php:8
 msgid "Choose the hyperlink text colour for your page footer area"
 msgstr ""
 
-#: lib/functions/page.php:858 lib/sections/page/color_schemes.php:335
+#: lib/functions/page.php:863 lib/sections/page/color_schemes.php:335
 #: lib/tpl/sections/global_settings/typography.php:12
 msgid "Footer Link Hover Text Colour"
 msgstr ""
 
-#: lib/functions/page.php:859 lib/sections/page/color_schemes.php:336
+#: lib/functions/page.php:864 lib/sections/page/color_schemes.php:336
 #: lib/tpl/sections/global_settings/typography.php:13
 msgid "Choose the hyperlink hover text colour for your page footer area"
 msgstr ""
 
-#: lib/functions/page.php:863 lib/sections/page/color_schemes.php:259
+#: lib/functions/page.php:868 lib/sections/page/color_schemes.php:259
 #: lib/tpl/sections/global_settings/typography.php:17
 msgid "Feature Area Text Colour"
 msgstr ""
 
-#: lib/functions/page.php:864 lib/sections/page/color_schemes.php:260
+#: lib/functions/page.php:869 lib/sections/page/color_schemes.php:260
 #: lib/tpl/sections/global_settings/typography.php:18
 msgid "Choose the text colour for the feature area content"
 msgstr ""
 
-#: lib/functions/page.php:867 lib/sections/page/color_schemes.php:263
+#: lib/functions/page.php:872 lib/sections/page/color_schemes.php:263
 #: lib/tpl/sections/global_settings/typography.php:21
 msgid "Feature Area Link Colour"
 msgstr ""
 
-#: lib/functions/page.php:868 lib/sections/page/color_schemes.php:264
+#: lib/functions/page.php:873 lib/sections/page/color_schemes.php:264
 #: lib/tpl/sections/global_settings/typography.php:22
 msgid "Choose the hyperlink colour for the feature area content"
 msgstr ""
 
-#: lib/functions/page.php:872 lib/sections/page/color_schemes.php:268
+#: lib/functions/page.php:877 lib/sections/page/color_schemes.php:268
 #: lib/tpl/sections/global_settings/typography.php:26
 msgid "Feature Area Link Hover Colour"
 msgstr ""
 
-#: lib/functions/page.php:873 lib/sections/page/color_schemes.php:269
+#: lib/functions/page.php:878 lib/sections/page/color_schemes.php:269
 #: lib/tpl/sections/global_settings/typography.php:27
 msgid "Choose the hyperlink hover colour for the feature area content"
 msgstr ""
@@ -1626,115 +1708,115 @@ msgstr ""
 msgid "Please fill all fields"
 msgstr ""
 
-#: lib/functions/scripts.php:226
+#: lib/functions/scripts.php:261
 msgid ""
 "This page is asking you to confirm that you want to leave - data you have "
 "entered may not be saved."
 msgstr ""
 
-#: lib/functions/scripts.php:227
+#: lib/functions/scripts.php:262
 msgid ""
 "Please make sure you are happy with all of your options as some options "
 "will not be able to be changed for this page later."
 msgstr ""
 
-#: lib/functions/scripts.php:436
+#: lib/functions/scripts.php:460
 msgid "Site Title"
 msgstr ""
 
-#: lib/functions/scripts.php:437
+#: lib/functions/scripts.php:461
 msgid ""
 "Set the styling for your site title (if activated in the blog header "
 "options)"
 msgstr ""
 
-#: lib/functions/scripts.php:440
+#: lib/functions/scripts.php:464
 msgid "Site Tagline"
 msgstr ""
 
-#: lib/functions/scripts.php:441
+#: lib/functions/scripts.php:465
 msgid "Set the styling for your site tagline (shows below site title)"
 msgstr ""
 
-#: lib/functions/scripts.php:444
+#: lib/functions/scripts.php:468
 msgid "Theme Text/Paragraph Styles"
 msgstr ""
 
-#: lib/functions/scripts.php:445
+#: lib/functions/scripts.php:469
 msgid "Set the styling for the blog paragraph styling and general text styles"
 msgstr ""
 
-#: lib/functions/scripts.php:448
+#: lib/functions/scripts.php:472
 msgid "H1 Heading Styles"
 msgstr ""
 
-#: lib/functions/scripts.php:449
+#: lib/functions/scripts.php:473
 msgid "Set the font, styling, size and colour for the H1 Headings"
 msgstr ""
 
-#: lib/functions/scripts.php:452
+#: lib/functions/scripts.php:476
 msgid "H2 Heading Styles"
 msgstr ""
 
-#: lib/functions/scripts.php:453
+#: lib/functions/scripts.php:477
 msgid "Set the font, styling, size and colour for the H2 Headings"
 msgstr ""
 
-#: lib/functions/scripts.php:456
+#: lib/functions/scripts.php:480
 msgid "H3 Heading Styles"
 msgstr ""
 
-#: lib/functions/scripts.php:457
+#: lib/functions/scripts.php:481
 msgid "Set the font, styling, size and colour for the H3 Headings"
 msgstr ""
 
-#: lib/functions/scripts.php:460
+#: lib/functions/scripts.php:484
 msgid "H4 Heading Styles"
 msgstr ""
 
-#: lib/functions/scripts.php:461
+#: lib/functions/scripts.php:485
 msgid "Set the font, styling, size and colour for the H4 Headings"
 msgstr ""
 
-#: lib/functions/scripts.php:464
+#: lib/functions/scripts.php:488
 msgid "H5 Heading Styles"
 msgstr ""
 
-#: lib/functions/scripts.php:465
+#: lib/functions/scripts.php:489
 msgid "Set the font, styling, size and colour for the H5 Headings"
 msgstr ""
 
-#: lib/functions/scripts.php:468
+#: lib/functions/scripts.php:492
 msgid "H6 Heading Styles"
 msgstr ""
 
-#: lib/functions/scripts.php:469
+#: lib/functions/scripts.php:493
 msgid "Set the font, styling, size and colour for the H6 Headings"
 msgstr ""
 
-#: lib/functions/scripts.php:474 lib/sections/blog/brand.php:110
+#: lib/functions/scripts.php:498 lib/sections/blog/brand.php:110
 #: lib/sections/blog/layout.php:111
-#: lib/sections/dashboard/social_integration.php:75
+#: lib/sections/dashboard/social_integration.php:100
 msgid "Link Colour"
 msgstr ""
 
-#: lib/functions/scripts.php:475
+#: lib/functions/scripts.php:499
 msgid "Set the link colour for your blog"
 msgstr ""
 
-#: lib/functions/scripts.php:479
+#: lib/functions/scripts.php:503
 msgid "Link Hover Colour"
 msgstr ""
 
-#: lib/functions/scripts.php:480
+#: lib/functions/scripts.php:504
 msgid "Set the link hover colour for your blog"
 msgstr ""
 
-#: lib/functions/scripts.php:485 lib/sections/page/color_schemes.php:326
+#: lib/functions/scripts.php:509 lib/sections/page/color_schemes.php:326
 msgid "Footer Text Colour"
 msgstr ""
 
-#: lib/functions/scripts.php:486
+#: lib/functions/scripts.php:510
 msgid "Set the colour of the text/copyright message in the footer"
 msgstr ""
 
@@ -1967,9 +2049,9 @@ msgid "Robots"
 msgstr ""
 
 #: lib/functions/tinymce.php:892 lib/functions/tinymce.php:1143
-#: lib/js/assets/lang.php:118 lib/modules/blog/comments/comments.php:137
-#: lib/modules/blog/signup_form/signup_form.php:19
-#: lib/modules/blog/signup_form/signup_form.php:813
+#: lib/js/assets/lang.php:119 lib/modules/blog/comments/comments.php:137
+#: lib/modules/blog/signup_form/signup_form.php:16
+#: lib/modules/blog/signup_form/signup_form.php:809
 #: lib/modules/email/provider/ArpReach.php:178
 #: pages/global/feature_areas/landing.php:50
 #: pages/global/feature_areas/landing.php:175
@@ -1993,7 +2075,7 @@ msgstr ""
 msgid "Encoding"
 msgstr ""
 
-#: lib/functions/tinymce.php:895 lib/js/assets/lang.php:401
+#: lib/functions/tinymce.php:895 lib/js/assets/lang.php:403
 msgid "Description"
 msgstr ""
 
@@ -2033,7 +2115,7 @@ msgstr ""
 msgid "Image description"
 msgstr ""
 
-#: lib/functions/tinymce.php:907 lib/js/assets/lang.php:114
+#: lib/functions/tinymce.php:907 lib/js/assets/lang.php:115
 msgid "Style"
 msgstr ""
 
@@ -2239,7 +2321,7 @@ msgstr ""
 msgid "Alignment"
 msgstr ""
 
-#: lib/functions/tinymce.php:987 lib/js/assets/lang.php:59
+#: lib/functions/tinymce.php:987 lib/js/assets/lang.php:60
 msgid "Left"
 msgstr ""
 
@@ -2247,7 +2329,7 @@ msgstr ""
 msgid "Center"
 msgstr ""
 
-#: lib/functions/tinymce.php:989 lib/js/assets/lang.php:107
+#: lib/functions/tinymce.php:989 lib/js/assets/lang.php:108
 msgid "Right"
 msgstr ""
 
@@ -2345,7 +2427,7 @@ msgstr ""
 msgid "Enter the destination URL"
 msgstr ""
 
-#: lib/functions/tinymce.php:1140 lib/js/assets/lang.php:250
+#: lib/functions/tinymce.php:1140 lib/js/assets/lang.php:251
 #: lib/modules/blog/advertising/tpl/multi_row.php:5
 #: lib/modules/blog/video/tpl/video_panel.php:4
 msgid "URL"
@@ -2400,7 +2482,7 @@ msgstr ""
 msgid "Add New"
 msgstr ""
 
-#: lib/js/assets/lang.php:13 lib/modules/blog/signup_form/signup_form.php:19
+#: lib/js/assets/lang.php:13 lib/modules/blog/signup_form/signup_form.php:16
 #: lib/modules/blog/signup_form/tpl/form_html.php:145
 msgid "Add New Field"
 msgstr ""
@@ -2455,7 +2537,7 @@ msgstr ""
 msgid "Border Style"
 msgstr ""
 
-#: lib/js/assets/lang.php:27 lib/js/assets/lang.php:379
+#: lib/js/assets/lang.php:27 lib/js/assets/lang.php:380
 msgid "Button Text"
 msgstr ""
 
@@ -2477,7 +2559,7 @@ msgstr ""
 msgid "Company"
 msgstr ""
 
-#: lib/js/assets/lang.php:34 lib/modules/blog/signup_form/signup_form.php:47
+#: lib/js/assets/lang.php:34 lib/modules/blog/signup_form/signup_form.php:43
 #: pages/global/feature_areas/landing.php:180
 #: pages/global/feature_areas/launch.php:57
 #: pages/global/feature_areas/launch.php:95
@@ -2499,233 +2581,237 @@ msgid "Feature Title"
 msgstr ""
 
 #: lib/js/assets/lang.php:42
-msgid "Custom Font Settings"
+msgid "Feature Description"
 msgstr ""
 
 #: lib/js/assets/lang.php:43
-msgid "Form HTML"
+msgid "Custom Font Settings"
 msgstr ""
 
 #: lib/js/assets/lang.php:44
-msgid "Full Width"
+msgid "Form HTML"
 msgstr ""
 
 #: lib/js/assets/lang.php:45
+msgid "Full Width"
+msgstr ""
+
+#: lib/js/assets/lang.php:46
 msgid "GET"
 msgstr ""
 
-#: lib/js/assets/lang.php:46 lib/modules/blog/scripts/scripts.php:43
+#: lib/js/assets/lang.php:47 lib/modules/blog/scripts/scripts.php:43
 #: lib/modules/blog/scripts/scripts.php:107
 msgid "Header"
 msgstr ""
 
-#: lib/js/assets/lang.php:48
+#: lib/js/assets/lang.php:49
 msgid "Headline Tag"
 msgstr ""
 
-#: lib/js/assets/lang.php:49
+#: lib/js/assets/lang.php:50
 msgid "Height (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:50
+#: lib/js/assets/lang.php:51
 msgid "Highlight"
 msgstr ""
 
-#: lib/js/assets/lang.php:51
+#: lib/js/assets/lang.php:52
 msgid "Icon (click on image to see all available icons)"
 msgstr ""
 
-#: lib/js/assets/lang.php:52 pages/global/feature_areas/marketing.php:57
+#: lib/js/assets/lang.php:53 pages/global/feature_areas/marketing.php:57
 #: pages/global/feature_areas/marketing.php:222
 #: pages/global/feature_areas/membership.php:57
 #: pages/global/feature_areas/membership.php:222
 msgid "Image"
 msgstr ""
 
-#: lib/js/assets/lang.php:53
+#: lib/js/assets/lang.php:54
 msgid "Information"
 msgstr ""
 
-#: lib/js/assets/lang.php:54
+#: lib/js/assets/lang.php:55
 msgid "Insert"
 msgstr ""
 
-#: lib/js/assets/lang.php:55 lib/modules/blog/comments/comments.php:149
+#: lib/js/assets/lang.php:56 lib/modules/blog/comments/comments.php:149
 msgid "Language"
 msgstr ""
 
-#: lib/js/assets/lang.php:56
+#: lib/js/assets/lang.php:57
 #: lib/modules/blog/signup_form/tpl/submit_button.php:63
 msgid "Large"
 msgstr ""
 
-#: lib/js/assets/lang.php:57
+#: lib/js/assets/lang.php:58
 msgid "Large Icon"
 msgstr ""
 
-#: lib/js/assets/lang.php:58
+#: lib/js/assets/lang.php:59
 msgid "Large Image"
 msgstr ""
 
-#: lib/js/assets/lang.php:60 lib/js/assets/lang.php:449
+#: lib/js/assets/lang.php:61 lib/js/assets/lang.php:451
 #: lib/modules/blog/submit_button/tpl/index.php:64
 msgid "Letter Spacing"
 msgstr ""
 
-#: lib/js/assets/lang.php:62
+#: lib/js/assets/lang.php:63
 msgid "Like"
 msgstr ""
 
-#: lib/js/assets/lang.php:63
+#: lib/js/assets/lang.php:64
 msgid "Line Height"
 msgstr ""
 
-#: lib/js/assets/lang.php:64
+#: lib/js/assets/lang.php:65
 msgid "Link Title"
 msgstr ""
 
-#: lib/js/assets/lang.php:65
+#: lib/js/assets/lang.php:66
 msgid "Click here for popup"
 msgstr ""
 
-#: lib/js/assets/lang.php:66
+#: lib/js/assets/lang.php:67
 msgid "Link URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:67
+#: lib/js/assets/lang.php:68
 msgid "LinkedIn Language"
 msgstr ""
 
-#: lib/js/assets/lang.php:68
+#: lib/js/assets/lang.php:69
 msgid "LinkedIn URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:69
+#: lib/js/assets/lang.php:70
 msgid "List Items"
 msgstr ""
 
-#: lib/js/assets/lang.php:70 lib/js/assets/lang.php:133
+#: lib/js/assets/lang.php:71 lib/js/assets/lang.php:134
 msgid "Top Margin (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:71 lib/js/assets/lang.php:134
+#: lib/js/assets/lang.php:72 lib/js/assets/lang.php:135
 msgid "Bottom Margin (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:72 lib/js/assets/lang.php:135
+#: lib/js/assets/lang.php:73 lib/js/assets/lang.php:136
 msgid "Left Margin (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:73 lib/js/assets/lang.php:136
+#: lib/js/assets/lang.php:74 lib/js/assets/lang.php:137
 msgid "Right Margin (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:74
+#: lib/js/assets/lang.php:75
 #: lib/modules/blog/signup_form/tpl/submit_button.php:63
 msgid "Medium"
 msgstr ""
 
-#: lib/js/assets/lang.php:76
+#: lib/js/assets/lang.php:77
 msgid "Most Popular Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:79
+#: lib/js/assets/lang.php:80
 msgid "Slow"
 msgstr ""
 
-#: lib/js/assets/lang.php:80
+#: lib/js/assets/lang.php:81
 msgid "Fast"
 msgstr ""
 
-#: lib/js/assets/lang.php:82
+#: lib/js/assets/lang.php:83
 msgid "Fade"
 msgstr ""
 
-#: lib/js/assets/lang.php:83
+#: lib/js/assets/lang.php:84
 msgid "Elastic"
 msgstr ""
 
-#: lib/js/assets/lang.php:84
+#: lib/js/assets/lang.php:85
 msgid "Zoom In"
 msgstr ""
 
-#: lib/js/assets/lang.php:85
+#: lib/js/assets/lang.php:86
 msgid "Zoom Out"
 msgstr ""
 
-#: lib/js/assets/lang.php:86
+#: lib/js/assets/lang.php:87
 msgid "Order Button Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:87
+#: lib/js/assets/lang.php:88
 msgid "Order Button URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:88
+#: lib/js/assets/lang.php:89
 msgid "Package Description"
 msgstr ""
 
-#: lib/js/assets/lang.php:89
+#: lib/js/assets/lang.php:90
 msgid "Package Features"
 msgstr ""
 
-#: lib/js/assets/lang.php:90
+#: lib/js/assets/lang.php:91
 msgid "Percentage"
 msgstr ""
 
-#: lib/js/assets/lang.php:91
+#: lib/js/assets/lang.php:92
 msgid "Placeholder"
 msgstr ""
 
-#: lib/js/assets/lang.php:92
+#: lib/js/assets/lang.php:93
 msgid "Placeholder Image"
 msgstr ""
 
-#: lib/js/assets/lang.php:93
+#: lib/js/assets/lang.php:94
 msgid "Placeholder Width"
 msgstr ""
 
-#: lib/js/assets/lang.php:94
+#: lib/js/assets/lang.php:95
 msgid "Placeholder Height"
 msgstr ""
 
-#: lib/js/assets/lang.php:95
+#: lib/js/assets/lang.php:96
 msgid "POST"
 msgstr ""
 
-#: lib/js/assets/lang.php:96
+#: lib/js/assets/lang.php:97
 msgid "Number Of Posts"
 msgstr ""
 
-#: lib/js/assets/lang.php:97
+#: lib/js/assets/lang.php:98
 msgid "Text Shown Next to Progress Percentage"
 msgstr ""
 
-#: lib/js/assets/lang.php:98
+#: lib/js/assets/lang.php:99
 msgid "Price"
 msgstr ""
 
-#: lib/js/assets/lang.php:99
+#: lib/js/assets/lang.php:100
 msgid "Pricing Unit"
 msgstr ""
 
-#: lib/js/assets/lang.php:100
+#: lib/js/assets/lang.php:101
 msgid "Pricing Variable"
 msgstr ""
 
-#: lib/js/assets/lang.php:101
+#: lib/js/assets/lang.php:102
 msgid "Privacy Notice"
 msgstr ""
 
-#: lib/js/assets/lang.php:102
+#: lib/js/assets/lang.php:103
 msgid "Recommend"
 msgstr ""
 
-#: lib/js/assets/lang.php:105
+#: lib/js/assets/lang.php:106
 msgid "Remove Row"
 msgstr ""
 
-#: lib/js/assets/lang.php:106 lib/tpl/live_editor/typography.php:43
+#: lib/js/assets/lang.php:107 lib/tpl/live_editor/typography.php:43
 #: lib/tpl/live_editor/typography.php:94
 #: lib/tpl/sections/blog/typography.php:32
 #: lib/tpl/sections/blog/typography.php:59
@@ -2734,40 +2820,40 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
-#: lib/js/assets/lang.php:108
+#: lib/js/assets/lang.php:109
 #: lib/modules/blog/signup_form/tpl/submit_button.php:53
 msgid "Rounded"
 msgstr ""
 
-#: lib/js/assets/lang.php:109
+#: lib/js/assets/lang.php:110
 #: lib/modules/blog/signup_form/tpl/submit_button.php:60
 msgid "Size"
 msgstr ""
 
-#: lib/js/assets/lang.php:110
+#: lib/js/assets/lang.php:111
 #: lib/modules/blog/signup_form/tpl/submit_button.php:63
 msgid "Small"
 msgstr ""
 
-#: lib/js/assets/lang.php:111
+#: lib/js/assets/lang.php:112
 msgid "Small Icon"
 msgstr ""
 
-#: lib/js/assets/lang.php:112
+#: lib/js/assets/lang.php:113
 msgid "Step"
 msgstr ""
 
-#: lib/js/assets/lang.php:113
+#: lib/js/assets/lang.php:114
 msgid "Steps"
 msgstr ""
 
-#: lib/js/assets/lang.php:115 lib/modules/blog/signup_form/signup_form.php:48
+#: lib/js/assets/lang.php:116 lib/modules/blog/signup_form/signup_form.php:44
 #: pages/global/feature_areas/marketing.php:45
 #: pages/global/feature_areas/membership.php:45
 msgid "Submit Button"
 msgstr ""
 
-#: lib/js/assets/lang.php:116 lib/modules/blog/signup_form/signup_form.php:19
+#: lib/js/assets/lang.php:117 lib/modules/blog/signup_form/signup_form.php:16
 #: lib/modules/blog/signup_form/tpl/form_html.php:164
 #: lib/modules/blog/signup_form/tpl/form_html.php:197
 #: lib/modules/blog/signup_form/tpl/submit_button.php:82
@@ -2781,648 +2867,648 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:117
+#: lib/js/assets/lang.php:118
 msgid "Timer (milliseconds)"
 msgstr ""
 
-#: lib/js/assets/lang.php:119
+#: lib/js/assets/lang.php:120
 msgid "Top"
 msgstr ""
 
-#: lib/js/assets/lang.php:120
+#: lib/js/assets/lang.php:121
 msgid "Type"
 msgstr ""
 
-#: lib/js/assets/lang.php:122
+#: lib/js/assets/lang.php:123
 msgid "Video Type"
 msgstr ""
 
-#: lib/js/assets/lang.php:123
+#: lib/js/assets/lang.php:124
 msgid "Width (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:124
+#: lib/js/assets/lang.php:125
 msgid "There are no title options for the choosen style"
 msgstr ""
 
-#: lib/js/assets/lang.php:125 lib/modules/blog/signup_form/signup_form.php:19
+#: lib/js/assets/lang.php:126 lib/modules/blog/signup_form/signup_form.php:16
 #: lib/modules/blog/signup_form/tpl/form_html.php:172
 #: lib/modules/blog/signup_form/tpl/form_html.php:201
 msgid "Order"
 msgstr ""
 
-#: lib/js/assets/lang.php:126 lib/modules/blog/signup_form/signup_form.php:19
+#: lib/js/assets/lang.php:127 lib/modules/blog/signup_form/signup_form.php:16
 #: lib/modules/blog/signup_form/tpl/form_html.php:176
 #: lib/modules/blog/signup_form/tpl/form_html.php:205
 msgid "Required"
 msgstr ""
 
-#: lib/js/assets/lang.php:127
+#: lib/js/assets/lang.php:128
 #: lib/modules/blog/signup_form/tpl/form_html.php:180
 msgid "Hidden"
 msgstr ""
 
-#: lib/js/assets/lang.php:128
+#: lib/js/assets/lang.php:129
 #: lib/modules/blog/signup_form/tpl/form_html.php:117
 msgid "Email field order"
 msgstr ""
 
-#: lib/js/assets/lang.php:129
+#: lib/js/assets/lang.php:130
 #: lib/modules/blog/signup_form/tpl/form_html.php:103
 msgid "Name field order"
 msgstr ""
 
-#: lib/js/assets/lang.php:130
+#: lib/js/assets/lang.php:131
 #: lib/modules/blog/signup_form/tpl/form_html.php:107
 msgid "Name required"
 msgstr ""
 
-#: lib/js/assets/lang.php:131
+#: lib/js/assets/lang.php:132
 msgid "Your page will be overwritten. Are you sure you want to continue?"
 msgstr ""
 
-#: lib/js/assets/lang.php:138
+#: lib/js/assets/lang.php:139
 msgid "Top Padding (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:139
+#: lib/js/assets/lang.php:140
 msgid "Bottom Padding (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:140
+#: lib/js/assets/lang.php:141
 msgid "Left Padding (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:141
+#: lib/js/assets/lang.php:142
 msgid "Right Padding (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:143
+#: lib/js/assets/lang.php:144
 msgid "Saved"
 msgstr ""
 
-#: lib/js/assets/lang.php:146
+#: lib/js/assets/lang.php:147
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Black"
 msgstr ""
 
-#: lib/js/assets/lang.php:147
+#: lib/js/assets/lang.php:148
 #: lib/modules/blog/signup_form/tpl/submit_button.php:9
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Blue"
 msgstr ""
 
-#: lib/js/assets/lang.php:148
+#: lib/js/assets/lang.php:149
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Bright Green"
 msgstr ""
 
-#: lib/js/assets/lang.php:149
+#: lib/js/assets/lang.php:150
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Dark Blue"
 msgstr ""
 
-#: lib/js/assets/lang.php:150
+#: lib/js/assets/lang.php:151
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Dark Grey"
 msgstr ""
 
-#: lib/js/assets/lang.php:151
+#: lib/js/assets/lang.php:152
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Dark Orange"
 msgstr ""
 
-#: lib/js/assets/lang.php:152
+#: lib/js/assets/lang.php:153
 #: lib/modules/blog/signup_form/tpl/submit_button.php:9
 #: lib/modules/blog/signup_form/tpl/submit_button.php:33
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Green"
 msgstr ""
 
-#: lib/js/assets/lang.php:153
+#: lib/js/assets/lang.php:154
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Light Blue"
 msgstr ""
 
-#: lib/js/assets/lang.php:154
+#: lib/js/assets/lang.php:155
 #: lib/modules/blog/signup_form/tpl/submit_button.php:9
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Light Green"
 msgstr ""
 
-#: lib/js/assets/lang.php:155
+#: lib/js/assets/lang.php:156
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Light Orange"
 msgstr ""
 
-#: lib/js/assets/lang.php:156
+#: lib/js/assets/lang.php:157
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Light Red"
 msgstr ""
 
-#: lib/js/assets/lang.php:157
+#: lib/js/assets/lang.php:158
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Light Violet"
 msgstr ""
 
-#: lib/js/assets/lang.php:158
+#: lib/js/assets/lang.php:159
 #: lib/modules/blog/signup_form/tpl/submit_button.php:9
 #: lib/modules/blog/signup_form/tpl/submit_button.php:33
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Orange"
 msgstr ""
 
-#: lib/js/assets/lang.php:159
+#: lib/js/assets/lang.php:160
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Pink"
 msgstr ""
 
-#: lib/js/assets/lang.php:160
+#: lib/js/assets/lang.php:161
 #: lib/modules/blog/signup_form/tpl/submit_button.php:9
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Red"
 msgstr ""
 
-#: lib/js/assets/lang.php:161
+#: lib/js/assets/lang.php:162
 #: lib/modules/blog/signup_form/tpl/submit_button.php:9
 #: lib/modules/blog/signup_form/tpl/submit_button.php:21
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Silver"
 msgstr ""
 
-#: lib/js/assets/lang.php:162
+#: lib/js/assets/lang.php:163
 #: lib/modules/blog/signup_form/tpl/submit_button.php:9
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Teal"
 msgstr ""
 
-#: lib/js/assets/lang.php:163
+#: lib/js/assets/lang.php:164
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Violet"
 msgstr ""
 
-#: lib/js/assets/lang.php:164
+#: lib/js/assets/lang.php:165
 #: lib/modules/blog/signup_form/tpl/submit_button.php:21
 #: lib/modules/blog/signup_form/tpl/submit_button.php:73
 msgid "Yellow"
 msgstr ""
 
-#: lib/js/assets/lang.php:168
+#: lib/js/assets/lang.php:169
 msgid "Affiliate Link"
 msgstr ""
 
-#: lib/js/assets/lang.php:171
+#: lib/js/assets/lang.php:172
 msgid "Customize specific styling options for your bullets."
 msgstr ""
 
-#: lib/js/assets/lang.php:172
+#: lib/js/assets/lang.php:173
 msgid "Bullet Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:173
+#: lib/js/assets/lang.php:174
 msgid ""
 "Upload bullet block icon (if custom icon is uploaded, the above icon will "
 "be ignored.)"
 msgstr ""
 
-#: lib/js/assets/lang.php:176
+#: lib/js/assets/lang.php:177
 msgid "Show Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:177
+#: lib/js/assets/lang.php:178
 msgid "Hide Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:178
+#: lib/js/assets/lang.php:179
 msgid "Customize specific styling options for your content toggle text"
 msgstr ""
 
-#: lib/js/assets/lang.php:179
+#: lib/js/assets/lang.php:180
 msgid "Main Content Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:182
+#: lib/js/assets/lang.php:183
 msgid "Month Background Color"
 msgstr ""
 
-#: lib/js/assets/lang.php:184
+#: lib/js/assets/lang.php:185
 msgid "Full Date"
 msgstr ""
 
-#: lib/js/assets/lang.php:186
+#: lib/js/assets/lang.php:187
 msgid "Time 1"
 msgstr ""
 
-#: lib/js/assets/lang.php:187
+#: lib/js/assets/lang.php:188
 msgid "Time 2"
 msgstr ""
 
-#: lib/js/assets/lang.php:188
+#: lib/js/assets/lang.php:189
 msgid "Time 3"
 msgstr ""
 
-#: lib/js/assets/lang.php:189
+#: lib/js/assets/lang.php:190
 msgid "Timezone 1"
 msgstr ""
 
-#: lib/js/assets/lang.php:190
+#: lib/js/assets/lang.php:191
 msgid "Timezone 2"
 msgstr ""
 
-#: lib/js/assets/lang.php:191
+#: lib/js/assets/lang.php:192
 msgid "Timezone 3"
 msgstr ""
 
-#: lib/js/assets/lang.php:194
+#: lib/js/assets/lang.php:195
 msgid "Choose a length of time to count down to"
 msgstr ""
 
-#: lib/js/assets/lang.php:195
+#: lib/js/assets/lang.php:196
 msgid "Length of Time"
 msgstr ""
 
-#: lib/js/assets/lang.php:196
+#: lib/js/assets/lang.php:197
 msgid "Length of Time Suffix"
 msgstr ""
 
-#: lib/js/assets/lang.php:199
+#: lib/js/assets/lang.php:200
 msgid ""
 "Please enter the date in GMT time format. You can learn more about "
 "converting the time at http://www.greenwichmeantime.com."
 msgstr ""
 
-#: lib/js/assets/lang.php:200
+#: lib/js/assets/lang.php:201
 msgid ""
 "Use the below form to change the text that is associated with the years, "
 "months, days, hours, minutes and seconds on your countdown timer."
 msgstr ""
 
-#: lib/js/assets/lang.php:201
+#: lib/js/assets/lang.php:202
 msgid "Years Text (Plural)"
 msgstr ""
 
-#: lib/js/assets/lang.php:202
+#: lib/js/assets/lang.php:203
 msgid "Years Text (Singular)"
 msgstr ""
 
-#: lib/js/assets/lang.php:203
+#: lib/js/assets/lang.php:204
 msgid "Months Text {Plural)"
 msgstr ""
 
-#: lib/js/assets/lang.php:204
+#: lib/js/assets/lang.php:205
 msgid "Months Text {Singular)"
 msgstr ""
 
-#: lib/js/assets/lang.php:205
+#: lib/js/assets/lang.php:206
 msgid "Days Text (Plural)"
 msgstr ""
 
-#: lib/js/assets/lang.php:206
+#: lib/js/assets/lang.php:207
 msgid "Days Text (Singular)"
 msgstr ""
 
-#: lib/js/assets/lang.php:207
+#: lib/js/assets/lang.php:208
 msgid "Hours Text (Plural)"
 msgstr ""
 
-#: lib/js/assets/lang.php:208
+#: lib/js/assets/lang.php:209
 msgid "Hours Text (Singular)"
 msgstr ""
 
-#: lib/js/assets/lang.php:209
+#: lib/js/assets/lang.php:210
 msgid "Minutes Text (Plural)"
 msgstr ""
 
-#: lib/js/assets/lang.php:210
+#: lib/js/assets/lang.php:211
 msgid "Minutes Text (Singular)"
 msgstr ""
 
-#: lib/js/assets/lang.php:211
+#: lib/js/assets/lang.php:212
 msgid "Seconds Text (Plural)"
 msgstr ""
 
-#: lib/js/assets/lang.php:212
+#: lib/js/assets/lang.php:213
 msgid "Seconds Text (Singular)"
 msgstr ""
 
-#: lib/js/assets/lang.php:215
+#: lib/js/assets/lang.php:216
 msgid "You may choose either an icon from the list below or upload one of your own"
 msgstr ""
 
-#: lib/js/assets/lang.php:216
+#: lib/js/assets/lang.php:217
 msgid "Training/Course Title"
 msgstr ""
 
-#: lib/js/assets/lang.php:217
+#: lib/js/assets/lang.php:218
 msgid "Training/Course Description"
 msgstr ""
 
-#: lib/js/assets/lang.php:218
+#: lib/js/assets/lang.php:219
 msgid "Customize specific styling options for your course description text"
 msgstr ""
 
-#: lib/js/assets/lang.php:219
+#: lib/js/assets/lang.php:220
 msgid "Course Description Title Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:220
+#: lib/js/assets/lang.php:221
 msgid "Course Description Content Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:223
+#: lib/js/assets/lang.php:224
 msgid "Customize specific styling options for your feature block text"
 msgstr ""
 
-#: lib/js/assets/lang.php:224
+#: lib/js/assets/lang.php:225
 msgid "Feature Block Title Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:225
+#: lib/js/assets/lang.php:226
 msgid "Feature Block Content Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:226
+#: lib/js/assets/lang.php:227
 msgid ""
 "Link (if you use this option links from content area above will not be "
 "displayed)"
 msgstr ""
 
-#: lib/js/assets/lang.php:227
+#: lib/js/assets/lang.php:228
 msgid ""
 "Upload featue block icon (if custom icon is uploaded, the above icon will "
 "be ignored."
 msgstr ""
 
-#: lib/js/assets/lang.php:230
+#: lib/js/assets/lang.php:231
 msgid "Customize specific styling options for your feature box text"
 msgstr ""
 
-#: lib/js/assets/lang.php:231
+#: lib/js/assets/lang.php:232
 msgid "Feature Box Title Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:232
+#: lib/js/assets/lang.php:233
 msgid "Feature Box Content Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:233
+#: lib/js/assets/lang.php:234
 msgid "Feature Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:236
+#: lib/js/assets/lang.php:237
 msgid "Customize specific styling options for your guarantee box"
 msgstr ""
 
-#: lib/js/assets/lang.php:237
+#: lib/js/assets/lang.php:238
 msgid "Guarantee Box Title Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:238
+#: lib/js/assets/lang.php:239
 msgid "Guarantee Box Content Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:240
+#: lib/js/assets/lang.php:241
 msgid "Credit Card Icons"
 msgstr ""
 
-#: lib/js/assets/lang.php:242
+#: lib/js/assets/lang.php:243
 msgid "Top Link Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:244
+#: lib/js/assets/lang.php:245
 msgid "Number of tabs"
 msgstr ""
 
-#: lib/js/assets/lang.php:246
+#: lib/js/assets/lang.php:247
 msgid "Tab"
 msgstr ""
 
-#: lib/js/assets/lang.php:248
+#: lib/js/assets/lang.php:249
 msgid "Embed Code"
 msgstr ""
 
-#: lib/js/assets/lang.php:249
+#: lib/js/assets/lang.php:250
 msgid ""
 "If you need to embed Wistia or EVS code, please use Custom HTML/Shortcode "
 "element and paste embed code there. Unfortunately EVS embed code is not "
 "compatible with our OverlayOptimizer element."
 msgstr ""
 
-#: lib/js/assets/lang.php:251
+#: lib/js/assets/lang.php:252
 msgid "Hide Controls"
 msgstr ""
 
-#: lib/js/assets/lang.php:252
+#: lib/js/assets/lang.php:253
 msgid "Auto Play"
 msgstr ""
 
-#: lib/js/assets/lang.php:253
+#: lib/js/assets/lang.php:254
 msgid "Auto Buffering"
 msgstr ""
 
-#: lib/js/assets/lang.php:254 lib/modules/blog/video/tpl/video_panel.php:36
+#: lib/js/assets/lang.php:255 lib/modules/blog/video/tpl/video_panel.php:36
 msgid ""
 "Enabling auto buffering will allow the video to be loaded before the user "
 "clicks play"
 msgstr ""
 
-#: lib/js/assets/lang.php:255 lib/modules/blog/video/tpl/video_panel.php:59
+#: lib/js/assets/lang.php:256 lib/modules/blog/video/tpl/video_panel.php:59
 msgid ""
 "Hide YouTube logo in control bar (will still show in corner of video on "
 "hover)"
 msgstr ""
 
-#: lib/js/assets/lang.php:256
+#: lib/js/assets/lang.php:257
 msgid "Show title bar"
 msgstr ""
 
-#: lib/js/assets/lang.php:257
+#: lib/js/assets/lang.php:258
 msgid "Force HD mode"
 msgstr ""
 
-#: lib/js/assets/lang.php:259
+#: lib/js/assets/lang.php:260
 msgid "Title Alt Attribute"
 msgstr ""
 
-#: lib/js/assets/lang.php:260
+#: lib/js/assets/lang.php:261
 msgid "Header Alt Attribute"
 msgstr ""
 
-#: lib/js/assets/lang.php:262
+#: lib/js/assets/lang.php:263
 msgid "Get Started URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:263
+#: lib/js/assets/lang.php:264
 msgid "Get Started Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:264
+#: lib/js/assets/lang.php:265
 msgid "Tour Link URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:265
+#: lib/js/assets/lang.php:266
 msgid "Tour Link Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:267
+#: lib/js/assets/lang.php:268
 msgid "Sub Headline"
 msgstr ""
 
-#: lib/js/assets/lang.php:269
+#: lib/js/assets/lang.php:270
 msgid "Questions"
 msgstr ""
 
-#: lib/js/assets/lang.php:270
+#: lib/js/assets/lang.php:271
 msgid "Question"
 msgstr ""
 
-#: lib/js/assets/lang.php:271
+#: lib/js/assets/lang.php:272
 msgid "Answer"
 msgstr ""
 
-#: lib/js/assets/lang.php:272
+#: lib/js/assets/lang.php:273
 msgid "Q &amp; A Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:273
+#: lib/js/assets/lang.php:274
 msgid "Large Q"
 msgstr ""
 
-#: lib/js/assets/lang.php:276 lib/modules/blog/signup_form/signup_form.php:833
+#: lib/js/assets/lang.php:277 lib/modules/blog/signup_form/signup_form.php:829
 #: pages/landing/1/feature_area.php:259
 msgid "Email Default Value"
 msgstr ""
 
-#: lib/js/assets/lang.php:277 lib/modules/blog/signup_form/signup_form.php:828
+#: lib/js/assets/lang.php:278 lib/modules/blog/signup_form/signup_form.php:824
 #: pages/landing/1/feature_area.php:254
 msgid "Name Default Value"
 msgstr ""
 
-#: lib/js/assets/lang.php:278 lib/modules/blog/signup_form/tpl/form_html.php:98
+#: lib/js/assets/lang.php:279 lib/modules/blog/signup_form/tpl/form_html.php:98
 #: lib/modules/email/provider/ConvertKit.php:198
 #: lib/modules/email/provider/GetResponse.php:203
 #: pages/global/templates/comments.php:60
 msgid "Name"
 msgstr ""
 
-#: lib/js/assets/lang.php:280 lib/modules/blog/signup_form/tpl/form_html.php:24
+#: lib/js/assets/lang.php:281 lib/modules/blog/signup_form/tpl/form_html.php:24
 msgid "Email Data"
 msgstr ""
 
-#: lib/js/assets/lang.php:281
+#: lib/js/assets/lang.php:282
 msgid "Open In New Window"
 msgstr ""
 
-#: lib/js/assets/lang.php:282
+#: lib/js/assets/lang.php:283
 msgid "Disable Name"
 msgstr ""
 
-#: lib/js/assets/lang.php:283
+#: lib/js/assets/lang.php:284
 #: lib/modules/blog/signup_form/tpl/form_html.php:124
 msgid "Method"
 msgstr ""
 
-#: lib/js/assets/lang.php:284
+#: lib/js/assets/lang.php:285
 #: lib/modules/blog/signup_form/tpl/form_html.php:131
 msgid "Form URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:285 lib/modules/blog/signup_form/tpl/form_html.php:84
+#: lib/js/assets/lang.php:286 lib/modules/blog/signup_form/tpl/form_html.php:84
 msgid "Redirect URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:286
+#: lib/js/assets/lang.php:287
 msgid ""
 "Enter a URL in the Redirect URL field below if you wish to redirect your "
 "visitors when your timer reaches 0. Leave this field empty if you do not "
 "wish to redirect."
 msgstr ""
 
-#: lib/js/assets/lang.php:287 lib/modules/blog/signup_form/signup_form.php:19
+#: lib/js/assets/lang.php:288 lib/modules/blog/signup_form/signup_form.php:16
 #: lib/modules/blog/signup_form/tpl/form_html.php:143
 msgid "Field Name"
 msgstr ""
 
-#: lib/js/assets/lang.php:288
+#: lib/js/assets/lang.php:289
 #: lib/modules/blog/signup_form/tpl/form_html.php:135
 #: lib/modules/blog/signup_form/tpl/form_html.php:192
 msgid "Extra Fields"
 msgstr ""
 
-#: lib/js/assets/lang.php:289 lib/modules/blog/signup_form/signup_form.php:19
+#: lib/js/assets/lang.php:290 lib/modules/blog/signup_form/signup_form.php:16
 msgid "Value"
 msgstr ""
 
-#: lib/js/assets/lang.php:292
+#: lib/js/assets/lang.php:293
 msgid "Selected Step"
 msgstr ""
 
-#: lib/js/assets/lang.php:293
+#: lib/js/assets/lang.php:294
 msgid "Step 1 Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:294
+#: lib/js/assets/lang.php:295
 msgid "Step 1 Link URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:295
+#: lib/js/assets/lang.php:296
 msgid "Step 2 Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:296
+#: lib/js/assets/lang.php:297
 msgid "Step 2 Link URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:297
+#: lib/js/assets/lang.php:298
 msgid "Step 3 Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:299
+#: lib/js/assets/lang.php:300
 msgid "Testimonial"
 msgstr ""
 
-#: lib/js/assets/lang.php:301
+#: lib/js/assets/lang.php:302
 msgid "Please enter your width including your measurement unit e.g. 'px' or '%'"
 msgstr ""
 
-#: lib/js/assets/lang.php:303 lib/modules/blog/comments/comments.php:145
+#: lib/js/assets/lang.php:304 lib/modules/blog/comments/comments.php:145
 msgid "Hide Like button"
 msgstr ""
 
-#: lib/js/assets/lang.php:304 lib/modules/blog/comments/comments.php:146
+#: lib/js/assets/lang.php:305 lib/modules/blog/comments/comments.php:146
 msgid "Hide the Facebook Like button above the comments"
 msgstr ""
 
-#: lib/js/assets/lang.php:305 lib/modules/blog/comments/comments.php:150
+#: lib/js/assets/lang.php:306 lib/modules/blog/comments/comments.php:150
 msgid "Set the language for your Facebook comments system here"
 msgstr ""
 
-#: lib/js/assets/lang.php:306 lib/modules/blog/comments/comments.php:165
+#: lib/js/assets/lang.php:307 lib/modules/blog/comments/comments.php:165
 msgid "Number of posts to show"
 msgstr ""
 
-#: lib/js/assets/lang.php:307 lib/modules/blog/comments/comments.php:166
+#: lib/js/assets/lang.php:308 lib/modules/blog/comments/comments.php:166
 msgid ""
 "Enter the number of Facebook comments to show by default_attr(we recommend "
 "10)"
 msgstr ""
 
-#: lib/js/assets/lang.php:308 lib/modules/blog/comments/comments.php:169
+#: lib/js/assets/lang.php:309 lib/modules/blog/comments/comments.php:169
 msgid "Facebook Comments Source URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:309 lib/modules/blog/comments/comments.php:170
+#: lib/js/assets/lang.php:310 lib/modules/blog/comments/comments.php:170
 msgid ""
 "If you would like to associate all your comments with a particular page on "
 "your site, or show the same comments on multiple pages (perhaps for a "
 "launch) enter the URL here. We recommend using your root domain URL."
 msgstr ""
 
-#: lib/js/assets/lang.php:310
+#: lib/js/assets/lang.php:311
 msgid "The order to use when displaying comments"
 msgstr ""
 
-#: lib/js/assets/lang.php:311
+#: lib/js/assets/lang.php:312
 msgid ""
 "<strong>Social Relevance</strong>: The Comments plugin uses social signals "
 "to surface the highest quality comments. Comments are ordered to display "
@@ -3437,46 +3523,46 @@ msgid ""
 "        "
 msgstr ""
 
-#: lib/js/assets/lang.php:316
+#: lib/js/assets/lang.php:317
 msgid ""
 "Warning: These options are for advanced users only.  Customizing these "
 "options can result in your elements looking distorted or your design "
 "breaking.  If in doubt, leave these options on their default settings."
 msgstr ""
 
-#: lib/js/assets/lang.php:318
+#: lib/js/assets/lang.php:319
 msgid "Image Alignment"
 msgstr ""
 
-#: lib/js/assets/lang.php:320
+#: lib/js/assets/lang.php:321
 msgid "Main Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:322
+#: lib/js/assets/lang.php:323
 msgid "Navigation Content Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:323
+#: lib/js/assets/lang.php:324
 msgid "Customize specific styling options for your navigation menu."
 msgstr ""
 
-#: lib/js/assets/lang.php:325
+#: lib/js/assets/lang.php:326
 msgid "Customize specific styling options for your order box"
 msgstr ""
 
-#: lib/js/assets/lang.php:326
+#: lib/js/assets/lang.php:327
 msgid "For alignment to work you need to define width"
 msgstr ""
 
-#: lib/js/assets/lang.php:328 lib/modules/blog/signup_form/tpl/form_html.php:50
+#: lib/js/assets/lang.php:329 lib/modules/blog/signup_form/tpl/form_html.php:50
 msgid "Autoresponder Name"
 msgstr ""
 
-#: lib/js/assets/lang.php:330
+#: lib/js/assets/lang.php:331
 msgid "OptimizeMember Integration"
 msgstr ""
 
-#: lib/js/assets/lang.php:331
+#: lib/js/assets/lang.php:332
 #: lib/modules/blog/signup_form/tpl/form_html.php:242
 msgid ""
 "If you want to add a subscriber as a user inside your OptimizeMember "
@@ -3485,104 +3571,104 @@ msgid ""
 "level/packages you specify."
 msgstr ""
 
-#: lib/js/assets/lang.php:332
+#: lib/js/assets/lang.php:333
 #: lib/modules/blog/signup_form/tpl/form_html.php:243
 msgid ""
 "We recommend collecting name and email on your form when using this option "
 "to ensure your user is created with the correct details."
 msgstr ""
 
-#: lib/js/assets/lang.php:334
+#: lib/js/assets/lang.php:335
 msgid "Customize specific styling options for your optin box text"
 msgstr ""
 
-#: lib/js/assets/lang.php:335
+#: lib/js/assets/lang.php:336
 msgid "Optin Box Font Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:337
+#: lib/js/assets/lang.php:338
 msgid "Tab Content Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:338
+#: lib/js/assets/lang.php:339
 msgid "Customize specific styling options for your tab content"
 msgstr ""
 
-#: lib/js/assets/lang.php:340
+#: lib/js/assets/lang.php:341
 msgid "Customize specific styling options for your testimonial."
 msgstr ""
 
-#: lib/js/assets/lang.php:341
+#: lib/js/assets/lang.php:342
 msgid "Testimonials Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:343
+#: lib/js/assets/lang.php:344
 msgid "Text Alignment"
 msgstr ""
 
-#: lib/js/assets/lang.php:346
+#: lib/js/assets/lang.php:347
 msgid "Use the WYSIWYG editor below to add content to your text block."
 msgstr ""
 
-#: lib/js/assets/lang.php:347
+#: lib/js/assets/lang.php:348
 msgid ""
 "Select the font size for your main body copy inside the text box. Please "
 "note this will not affect headline styles - use the overall"
 msgstr ""
 
-#: lib/js/assets/lang.php:348
+#: lib/js/assets/lang.php:349
 msgid "Text Block Top Padding (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:349
+#: lib/js/assets/lang.php:350
 msgid "Text Block Bottom Padding (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:350
+#: lib/js/assets/lang.php:351
 msgid "Text Block Left Padding (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:351
+#: lib/js/assets/lang.php:352
 msgid "Text Block Right Padding"
 msgstr ""
 
-#: lib/js/assets/lang.php:352
+#: lib/js/assets/lang.php:353
 msgid "Adjust the padding of the inside of your text box (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:353
+#: lib/js/assets/lang.php:354
 msgid "Text Block Top Margin (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:354
+#: lib/js/assets/lang.php:355
 msgid "Adjust the margin above your text box (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:355
+#: lib/js/assets/lang.php:356
 msgid "Text Block Bottom Margin (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:356
+#: lib/js/assets/lang.php:357
 msgid "Adjust the margin below your text box (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:357
+#: lib/js/assets/lang.php:358
 msgid "Text Block Width (px)"
 msgstr ""
 
-#: lib/js/assets/lang.php:359
+#: lib/js/assets/lang.php:360
 msgid "Top Color"
 msgstr ""
 
-#: lib/js/assets/lang.php:361
+#: lib/js/assets/lang.php:362
 msgid "Date"
 msgstr ""
 
-#: lib/js/assets/lang.php:362
+#: lib/js/assets/lang.php:363
 msgid "Date Format"
 msgstr ""
 
-#: lib/js/assets/lang.php:363
+#: lib/js/assets/lang.php:364
 msgid ""
 "Full list of available options can be found in the <a "
 "href=\"http://php.net/manual/en/function.date.php#refsect1-function.date-"
@@ -3590,317 +3676,321 @@ msgid ""
 "to escape special characters"
 msgstr ""
 
-#: lib/js/assets/lang.php:365
+#: lib/js/assets/lang.php:366
 msgid "Enter the time when to show your content (in milliseconds)"
 msgstr ""
 
-#: lib/js/assets/lang.php:367
+#: lib/js/assets/lang.php:368
 msgid "Terms &amp; Conditions Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:368
+#: lib/js/assets/lang.php:369
 msgid "Accept checkbox label"
 msgstr ""
 
-#: lib/js/assets/lang.php:369
+#: lib/js/assets/lang.php:370
 msgid ""
 "I understand and agree to all other Terms and Conditions detailed on this "
 "page."
 msgstr ""
 
-#: lib/js/assets/lang.php:371
+#: lib/js/assets/lang.php:372
 msgid "Column Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:373
+#: lib/js/assets/lang.php:374
 msgid "Light or Dark"
 msgstr ""
 
-#: lib/js/assets/lang.php:376
+#: lib/js/assets/lang.php:377
 msgid "Default Tweet Text"
 msgstr ""
 
-#: lib/js/assets/lang.php:377
+#: lib/js/assets/lang.php:378
 msgid "Facebook Settings"
 msgstr ""
 
-#: lib/js/assets/lang.php:378
+#: lib/js/assets/lang.php:379
 msgid "URL to Like"
 msgstr ""
 
-#: lib/js/assets/lang.php:380
+#: lib/js/assets/lang.php:381
 msgid "URL of the page to share"
 msgstr ""
 
-#: lib/js/assets/lang.php:381
+#: lib/js/assets/lang.php:382
 msgid ""
 "Twitter screen name (enter without \"@\" sign, if entered, will be added to "
 "Tweet as via @screen_name)"
 msgstr ""
 
-#: lib/js/assets/lang.php:382
+#: lib/js/assets/lang.php:383
 msgid "Twitter Settings"
 msgstr ""
 
-#: lib/js/assets/lang.php:383
+#: lib/js/assets/lang.php:384
 msgid "Google +1 Settings"
 msgstr ""
 
-#: lib/js/assets/lang.php:384
+#: lib/js/assets/lang.php:385
 msgid "URL to +1"
 msgstr ""
 
-#: lib/js/assets/lang.php:385
+#: lib/js/assets/lang.php:386
 msgid "Pinterest Settings"
 msgstr ""
 
-#: lib/js/assets/lang.php:386
+#: lib/js/assets/lang.php:387
 msgid "URL of the page to pin"
 msgstr ""
 
-#: lib/js/assets/lang.php:387
+#: lib/js/assets/lang.php:388
 msgid "URL of the image to pin"
 msgstr ""
 
-#: lib/js/assets/lang.php:388
+#: lib/js/assets/lang.php:389
 msgid "Description of the page to be pinned"
 msgstr ""
 
-#: lib/js/assets/lang.php:389
+#: lib/js/assets/lang.php:390
 msgid "Share"
 msgstr ""
 
-#: lib/js/assets/lang.php:390
+#: lib/js/assets/lang.php:391
 msgid "StumbleUpon"
 msgstr ""
 
-#: lib/js/assets/lang.php:391
+#: lib/js/assets/lang.php:392
 msgid "Page URL (Optional)"
 msgstr ""
 
-#: lib/js/assets/lang.php:392
+#: lib/js/assets/lang.php:393
 msgid "LinkedIn Settings"
 msgstr ""
 
 #: lib/js/assets/lang.php:394
+msgid "Social Sharing Background Color"
+msgstr ""
+
+#: lib/js/assets/lang.php:396
 msgid "Navigation Menu"
 msgstr ""
 
-#: lib/js/assets/lang.php:395
+#: lib/js/assets/lang.php:397
 msgid ""
 "Customize your navigation menu using the options below. If you have not yet "
 "created a navigation menu, go to <a href=\"nav-menus.php\" "
 "target=\"_blank\">Appearance &gt; Menus</a> to create your first menu"
 msgstr ""
 
-#: lib/js/assets/lang.php:397
+#: lib/js/assets/lang.php:399
 msgid "Payment Gateway"
 msgstr ""
 
-#: lib/js/assets/lang.php:398
+#: lib/js/assets/lang.php:400
 msgid "Membership Level"
 msgstr ""
 
-#: lib/js/assets/lang.php:399
+#: lib/js/assets/lang.php:401
 msgid "I want to charge"
 msgstr ""
 
-#: lib/js/assets/lang.php:400
+#: lib/js/assets/lang.php:402
 msgid "Pick one option"
 msgstr ""
 
-#: lib/js/assets/lang.php:402
+#: lib/js/assets/lang.php:404
 msgid "Packages"
 msgstr ""
 
-#: lib/js/assets/lang.php:403
+#: lib/js/assets/lang.php:405
 msgid "I'll offer the first"
 msgstr ""
 
-#: lib/js/assets/lang.php:404
+#: lib/js/assets/lang.php:406
 msgid "Select:"
 msgstr ""
 
-#: lib/js/assets/lang.php:405
+#: lib/js/assets/lang.php:407
 msgid "@"
 msgstr ""
 
-#: lib/js/assets/lang.php:406 lib/js/assets/lang.php:407
-#: lib/js/assets/lang.php:408
+#: lib/js/assets/lang.php:408 lib/js/assets/lang.php:409
+#: lib/js/assets/lang.php:410
 msgid "/"
 msgstr ""
 
-#: lib/js/assets/lang.php:409 lib/js/assets/lang.php:410
-#: lib/js/assets/lang.php:563
+#: lib/js/assets/lang.php:411 lib/js/assets/lang.php:412
+#: lib/js/assets/lang.php:565
 msgid "Currency"
 msgstr ""
 
-#: lib/js/assets/lang.php:411
+#: lib/js/assets/lang.php:413
 msgid "Paypal Page Style"
 msgstr ""
 
-#: lib/js/assets/lang.php:412
+#: lib/js/assets/lang.php:414
 msgid "ClickBank product type"
 msgstr ""
 
-#: lib/js/assets/lang.php:413
+#: lib/js/assets/lang.php:415
 msgid "ClickBank product item #"
 msgstr ""
 
-#: lib/js/assets/lang.php:414
+#: lib/js/assets/lang.php:416
 msgid "ClickBank custom form skin"
 msgstr ""
 
-#: lib/js/assets/lang.php:415
+#: lib/js/assets/lang.php:417
 msgid "Note: Enter custom form skin code to brand your shopping cart"
 msgstr ""
 
-#: lib/js/assets/lang.php:416
+#: lib/js/assets/lang.php:418
 msgid "PitchPlus Upsell Flow ID"
 msgstr ""
 
-#: lib/js/assets/lang.php:417
+#: lib/js/assets/lang.php:419
 msgid "Reccuring Product Type"
 msgstr ""
 
-#: lib/js/assets/lang.php:418
+#: lib/js/assets/lang.php:420
 msgid ""
 "Note: Optional ClickBank PitchPlus Upsell Flow ID, which MUST correlate "
 "with a PitchPlus Upsell Flow you've configured at ClickBank.com."
 msgstr ""
 
-#: lib/js/assets/lang.php:419
+#: lib/js/assets/lang.php:421
 msgid "PitchPlus Upsell Flow action"
 msgstr ""
 
-#: lib/js/assets/lang.php:420
+#: lib/js/assets/lang.php:422
 msgid ""
 "Note: Optional ClickBank PitchPlus Upsell Flow action (a accept or d "
 "decline), which MUST correlate with instructions provided by ClickBank.com "
 "for PitchPlus Upsell Flows."
 msgstr ""
 
-#: lib/js/assets/lang.php:421
+#: lib/js/assets/lang.php:423
 msgid "PitchPlus Upsell Flow session ID"
 msgstr ""
 
-#: lib/js/assets/lang.php:422
+#: lib/js/assets/lang.php:424
 msgid ""
 "Note: Optional ClickBank PitchPlus Upsell Flow session ID, which MUST "
 "correlate with instructions provided by ClickBank.com for PitchPlus Upsell "
 "Flows."
 msgstr ""
 
-#: lib/js/assets/lang.php:423
+#: lib/js/assets/lang.php:425
 msgid "Fixed term access"
 msgstr ""
 
-#: lib/js/assets/lang.php:424
+#: lib/js/assets/lang.php:426
 msgid "ClickBank trial period"
 msgstr ""
 
-#: lib/js/assets/lang.php:425
+#: lib/js/assets/lang.php:427
 msgid ", then ReBill"
 msgstr ""
 
-#: lib/js/assets/lang.php:428
+#: lib/js/assets/lang.php:430
 msgid "Subtext"
 msgstr ""
 
-#: lib/js/assets/lang.php:429
+#: lib/js/assets/lang.php:431
 msgid "Font properties"
 msgstr ""
 
-#: lib/js/assets/lang.php:430 lib/modules/blog/submit_button/tpl/index.php:73
+#: lib/js/assets/lang.php:432 lib/modules/blog/submit_button/tpl/index.php:73
 msgid "Text Shadow"
 msgstr ""
 
-#: lib/js/assets/lang.php:431 lib/modules/blog/submit_button/tpl/index.php:81
+#: lib/js/assets/lang.php:433 lib/modules/blog/submit_button/tpl/index.php:81
 #: lib/modules/blog/submit_button/tpl/index.php:161
 #: lib/modules/blog/submit_button/tpl/index.php:206
 msgid "Vertical Axis"
 msgstr ""
 
-#: lib/js/assets/lang.php:432 lib/modules/blog/submit_button/tpl/index.php:87
+#: lib/js/assets/lang.php:434 lib/modules/blog/submit_button/tpl/index.php:87
 #: lib/modules/blog/submit_button/tpl/index.php:167
 #: lib/modules/blog/submit_button/tpl/index.php:212
 msgid "Horizontal Axis"
 msgstr ""
 
-#: lib/js/assets/lang.php:433 lib/modules/blog/submit_button/tpl/index.php:106
+#: lib/js/assets/lang.php:435 lib/modules/blog/submit_button/tpl/index.php:106
 msgid "Styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:434 lib/modules/blog/submit_button/tpl/index.php:113
+#: lib/js/assets/lang.php:436 lib/modules/blog/submit_button/tpl/index.php:113
 msgid "Border Size"
 msgstr ""
 
-#: lib/js/assets/lang.php:435 lib/modules/blog/submit_button/tpl/index.php:119
+#: lib/js/assets/lang.php:437 lib/modules/blog/submit_button/tpl/index.php:119
 msgid "Border Radius"
 msgstr ""
 
-#: lib/js/assets/lang.php:436 lib/modules/blog/submit_button/tpl/index.php:125
+#: lib/js/assets/lang.php:438 lib/modules/blog/submit_button/tpl/index.php:125
 msgid "Border Color"
 msgstr ""
 
-#: lib/js/assets/lang.php:437 lib/modules/blog/submit_button/tpl/index.php:129
+#: lib/js/assets/lang.php:439 lib/modules/blog/submit_button/tpl/index.php:129
 msgid "Border Opacity"
 msgstr ""
 
-#: lib/js/assets/lang.php:438
+#: lib/js/assets/lang.php:440
 msgid "Border Thickness/Weight"
 msgstr ""
 
-#: lib/js/assets/lang.php:439 lib/modules/blog/submit_button/tpl/index.php:138
+#: lib/js/assets/lang.php:441 lib/modules/blog/submit_button/tpl/index.php:138
 msgid "Gradient"
 msgstr ""
 
-#: lib/js/assets/lang.php:440 lib/modules/blog/submit_button/tpl/index.php:142
+#: lib/js/assets/lang.php:442 lib/modules/blog/submit_button/tpl/index.php:142
 msgid "Shine"
 msgstr ""
 
-#: lib/js/assets/lang.php:441 lib/modules/blog/submit_button/tpl/index.php:153
+#: lib/js/assets/lang.php:443 lib/modules/blog/submit_button/tpl/index.php:153
 msgid "Drop Shadow"
 msgstr ""
 
-#: lib/js/assets/lang.php:442 lib/modules/blog/submit_button/tpl/index.php:179
+#: lib/js/assets/lang.php:444 lib/modules/blog/submit_button/tpl/index.php:179
 #: lib/modules/blog/submit_button/tpl/index.php:224
 msgid "Spread Radius"
 msgstr ""
 
-#: lib/js/assets/lang.php:443 lib/modules/blog/submit_button/tpl/index.php:93
+#: lib/js/assets/lang.php:445 lib/modules/blog/submit_button/tpl/index.php:93
 #: lib/modules/blog/submit_button/tpl/index.php:185
 #: lib/modules/blog/submit_button/tpl/index.php:230
 msgid "Shadow Color"
 msgstr ""
 
-#: lib/js/assets/lang.php:444
+#: lib/js/assets/lang.php:446
 msgid "Opacity"
 msgstr ""
 
-#: lib/js/assets/lang.php:445 lib/modules/blog/submit_button/tpl/index.php:198
+#: lib/js/assets/lang.php:447 lib/modules/blog/submit_button/tpl/index.php:198
 msgid "Inner Shadow"
 msgstr ""
 
-#: lib/js/assets/lang.php:446 lib/modules/blog/submit_button/tpl/index.php:97
+#: lib/js/assets/lang.php:448 lib/modules/blog/submit_button/tpl/index.php:97
 #: lib/modules/blog/submit_button/tpl/index.php:173
 #: lib/modules/blog/submit_button/tpl/index.php:218
 msgid "Blur Radius"
 msgstr ""
 
-#: lib/js/assets/lang.php:447
+#: lib/js/assets/lang.php:449
 msgid "Save Preset"
 msgstr ""
 
-#: lib/js/assets/lang.php:448
+#: lib/js/assets/lang.php:450
 msgid "Delete Preset"
 msgstr ""
 
-#: lib/js/assets/lang.php:452
+#: lib/js/assets/lang.php:454
 msgid "Default Payment Gateway button will be used. No options for customization"
 msgstr ""
 
-#: lib/js/assets/lang.php:455 lib/js/assets/lang.php:545
+#: lib/js/assets/lang.php:457 lib/js/assets/lang.php:547
 #: lib/tpl/live_editor/membership.php:210
 #: lib/tpl/live_editor/membership.php:242
 #: lib/tpl/live_editor/membership.php:329
@@ -3908,239 +3998,239 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: lib/js/assets/lang.php:456 lib/js/assets/lang.php:546
+#: lib/js/assets/lang.php:458 lib/js/assets/lang.php:548
 #: lib/tpl/live_editor/membership.php:330
 #: lib/tpl/live_editor/membership.php:360
 msgid "Category"
 msgstr ""
 
-#: lib/js/assets/lang.php:457 lib/js/assets/lang.php:547
+#: lib/js/assets/lang.php:459 lib/js/assets/lang.php:549
 #: lib/tpl/live_editor/membership.php:331
 #: lib/tpl/live_editor/membership.php:361
 msgid "Subcategory"
 msgstr ""
 
-#: lib/js/assets/lang.php:458
+#: lib/js/assets/lang.php:460
 msgid "List pages from page parent product"
 msgstr ""
 
-#: lib/js/assets/lang.php:459
+#: lib/js/assets/lang.php:461
 msgid "Show pages from this page level only"
 msgstr ""
 
-#: lib/js/assets/lang.php:460
+#: lib/js/assets/lang.php:462
 msgid "Title styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:461
+#: lib/js/assets/lang.php:463
 msgid "Content styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:464
+#: lib/js/assets/lang.php:466
 msgid ""
 "Enter custom JavaScript (Please ensure you do not include any calls to "
 "external jQuery libraries as this may break your page!)"
 msgstr ""
 
-#: lib/js/assets/lang.php:465
+#: lib/js/assets/lang.php:467
 msgid ""
 "WARNING: Be careful when entering JavaScript to your page. It should be "
 "valid, or it will break your page."
 msgstr ""
 
-#: lib/js/assets/lang.php:469
+#: lib/js/assets/lang.php:471
 msgid "Number of columns"
 msgstr ""
 
-#: lib/js/assets/lang.php:470
+#: lib/js/assets/lang.php:472
 msgid "Show comments"
 msgstr ""
 
-#: lib/js/assets/lang.php:471
+#: lib/js/assets/lang.php:473
 msgid ""
 "Show drip delay timer (Content will only show for this option if you do not "
 "have hide protected content activated)"
 msgstr ""
 
-#: lib/js/assets/lang.php:472
+#: lib/js/assets/lang.php:474
 msgid "Page listings content styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:473
+#: lib/js/assets/lang.php:475
 msgid "Page listings title styling"
 msgstr ""
 
-#: lib/js/assets/lang.php:474
+#: lib/js/assets/lang.php:476
 msgid ""
 "Resize thumbnail height? (Use this option if you are using icons for your "
 "thumbnails - ensure all icons are the same height)"
 msgstr ""
 
-#: lib/js/assets/lang.php:475
+#: lib/js/assets/lang.php:477
 msgid ""
 "Show Page Children only - this will list any pages directly under this page "
 "in your page heirarchy."
 msgstr ""
 
-#: lib/js/assets/lang.php:476
+#: lib/js/assets/lang.php:478
 msgid "Order pages"
 msgstr ""
 
-#: lib/js/assets/lang.php:477
+#: lib/js/assets/lang.php:479
 msgid "Hide description"
 msgstr ""
 
-#: lib/js/assets/lang.php:480
+#: lib/js/assets/lang.php:482
 msgid "Public title"
 msgstr ""
 
-#: lib/js/assets/lang.php:481
+#: lib/js/assets/lang.php:483
 msgid "(when not logged in)"
 msgstr ""
 
-#: lib/js/assets/lang.php:482
+#: lib/js/assets/lang.php:484
 msgid "Redirection after login"
 msgstr ""
 
-#: lib/js/assets/lang.php:483
+#: lib/js/assets/lang.php:485
 msgid "Signup now"
 msgstr ""
 
-#: lib/js/assets/lang.php:484
+#: lib/js/assets/lang.php:486
 msgid ""
 "(enter URL, or just use <code>%%automatic%%</code>, leave blank to exclude "
 "this link)"
 msgstr ""
 
-#: lib/js/assets/lang.php:485
+#: lib/js/assets/lang.php:487
 msgid "Additional XHTML/PHP code?"
 msgstr ""
 
-#: lib/js/assets/lang.php:486
+#: lib/js/assets/lang.php:488
 msgid "Profile title"
 msgstr ""
 
-#: lib/js/assets/lang.php:487
+#: lib/js/assets/lang.php:489
 msgid "(when logged in)"
 msgstr ""
 
-#: lib/js/assets/lang.php:488
+#: lib/js/assets/lang.php:490
 msgid "Display gravatar image?"
 msgstr ""
 
-#: lib/js/assets/lang.php:489
+#: lib/js/assets/lang.php:491
 msgid "Link to gravatar.com?"
 msgstr ""
 
-#: lib/js/assets/lang.php:490
+#: lib/js/assets/lang.php:492
 msgid "Display user's name?"
 msgstr ""
 
-#: lib/js/assets/lang.php:491
+#: lib/js/assets/lang.php:493
 msgid "My account"
 msgstr ""
 
-#: lib/js/assets/lang.php:492
+#: lib/js/assets/lang.php:494
 msgid "Edit profile"
 msgstr ""
 
-#: lib/js/assets/lang.php:493
+#: lib/js/assets/lang.php:495
 msgid "Redirection after logout"
 msgstr ""
 
-#: lib/js/assets/lang.php:494
+#: lib/js/assets/lang.php:496
 msgid "Login welcome page"
 msgstr ""
 
-#: lib/js/assets/lang.php:495
+#: lib/js/assets/lang.php:497
 msgid "Login screen"
 msgstr ""
 
-#: lib/js/assets/lang.php:496
+#: lib/js/assets/lang.php:498
 msgid "Previous page"
 msgstr ""
 
-#: lib/js/assets/lang.php:497
+#: lib/js/assets/lang.php:499
 msgid "Home page"
 msgstr ""
 
-#: lib/js/assets/lang.php:498
+#: lib/js/assets/lang.php:500
 msgid "Yes, display Gravatar"
 msgstr ""
 
-#: lib/js/assets/lang.php:499
+#: lib/js/assets/lang.php:501
 msgid "No, do NOT display"
 msgstr ""
 
-#: lib/js/assets/lang.php:500
+#: lib/js/assets/lang.php:502
 msgid "No, do NOT apply"
 msgstr ""
 
-#: lib/js/assets/lang.php:501
+#: lib/js/assets/lang.php:503
 msgid "Yes, apply link"
 msgstr ""
 
-#: lib/js/assets/lang.php:502
+#: lib/js/assets/lang.php:504
 msgid "Yes, display User's name"
 msgstr ""
 
-#: lib/js/assets/lang.php:505 lib/modules/blog/signup_form/tpl/form_html.php:22
+#: lib/js/assets/lang.php:507 lib/modules/blog/signup_form/tpl/form_html.php:22
 msgid "Integration Type"
 msgstr ""
 
-#: lib/js/assets/lang.php:506 lib/modules/blog/signup_form/tpl/form_html.php:34
+#: lib/js/assets/lang.php:508 lib/modules/blog/signup_form/tpl/form_html.php:34
 msgid "Provider List"
 msgstr ""
 
-#: lib/js/assets/lang.php:507 lib/modules/blog/signup_form/tpl/form_html.php:69
+#: lib/js/assets/lang.php:509 lib/modules/blog/signup_form/tpl/form_html.php:69
 msgid "Thank You Page URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:508 lib/modules/blog/signup_form/tpl/form_html.php:73
+#: lib/js/assets/lang.php:510 lib/modules/blog/signup_form/tpl/form_html.php:73
 msgid "User Already Subscribed Page URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:509
+#: lib/js/assets/lang.php:511
 msgid "Textual Link Below Button"
 msgstr ""
 
-#: lib/js/assets/lang.php:510
+#: lib/js/assets/lang.php:512
 #: lib/sections/dashboard/email_marketing_services.php:58
 msgid "GoToWebinar"
 msgstr ""
 
-#: lib/js/assets/lang.php:511
+#: lib/js/assets/lang.php:513
 msgid "GoToWebinar Webinar"
 msgstr ""
 
-#: lib/js/assets/lang.php:512 lib/modules/blog/signup_form/tpl/form_html.php:47
+#: lib/js/assets/lang.php:514 lib/modules/blog/signup_form/tpl/form_html.php:47
 msgid "Note: Lists can take up to 1 minute to be retrieved from your provider"
 msgstr ""
 
-#: lib/js/assets/lang.php:513
+#: lib/js/assets/lang.php:515
 msgid ""
 "Enter the form ID from ActiveCampaign if you wish to use the Opt-in "
 "confirmation email settings you have created inside the settings for this "
 "form."
 msgstr ""
 
-#: lib/js/assets/lang.php:514 lib/modules/blog/signup_form/tpl/form_html.php:55
+#: lib/js/assets/lang.php:516 lib/modules/blog/signup_form/tpl/form_html.php:55
 msgid "Double Optin"
 msgstr ""
 
-#: lib/js/assets/lang.php:515
+#: lib/js/assets/lang.php:517
 msgid "Send Welcome Email"
 msgstr ""
 
-#: lib/js/assets/lang.php:516
+#: lib/js/assets/lang.php:518
 msgid "Subscription Form ID"
 msgstr ""
 
-#: lib/js/assets/lang.php:517
+#: lib/js/assets/lang.php:519
 msgid "This Optin Box design does not support additional fields"
 msgstr ""
 
-#: lib/js/assets/lang.php:518
+#: lib/js/assets/lang.php:520
 #: lib/modules/blog/signup_form/tpl/form_html.php:121
 msgid ""
 "We automatically integrate with the email field from your Email Marketing "
@@ -4148,160 +4238,160 @@ msgid ""
 "includes an email field."
 msgstr ""
 
-#: lib/js/assets/lang.php:521
+#: lib/js/assets/lang.php:523
 msgid "Custom Image Width?"
 msgstr ""
 
-#: lib/js/assets/lang.php:524
+#: lib/js/assets/lang.php:526
 msgid "English"
 msgstr ""
 
-#: lib/js/assets/lang.php:525
+#: lib/js/assets/lang.php:527
 msgid "French"
 msgstr ""
 
-#: lib/js/assets/lang.php:526
+#: lib/js/assets/lang.php:528
 msgid "Spanish"
 msgstr ""
 
-#: lib/js/assets/lang.php:527
+#: lib/js/assets/lang.php:529
 msgid "Russian"
 msgstr ""
 
-#: lib/js/assets/lang.php:528
+#: lib/js/assets/lang.php:530
 msgid "German"
 msgstr ""
 
-#: lib/js/assets/lang.php:529
+#: lib/js/assets/lang.php:531
 msgid "Italian"
 msgstr ""
 
-#: lib/js/assets/lang.php:530
+#: lib/js/assets/lang.php:532
 msgid "Portugese"
 msgstr ""
 
-#: lib/js/assets/lang.php:531
+#: lib/js/assets/lang.php:533
 msgid "Romanian"
 msgstr ""
 
-#: lib/js/assets/lang.php:532
+#: lib/js/assets/lang.php:534
 msgid "Turkish"
 msgstr ""
 
-#: lib/js/assets/lang.php:533
+#: lib/js/assets/lang.php:535
 msgid "Japanese"
 msgstr ""
 
-#: lib/js/assets/lang.php:534
+#: lib/js/assets/lang.php:536
 msgid "Indonesian"
 msgstr ""
 
-#: lib/js/assets/lang.php:535
+#: lib/js/assets/lang.php:537
 msgid "Malay"
 msgstr ""
 
-#: lib/js/assets/lang.php:536
+#: lib/js/assets/lang.php:538
 msgid "Korean"
 msgstr ""
 
-#: lib/js/assets/lang.php:537
+#: lib/js/assets/lang.php:539
 msgid "Swedish"
 msgstr ""
 
-#: lib/js/assets/lang.php:538
+#: lib/js/assets/lang.php:540
 msgid "Czech"
 msgstr ""
 
-#: lib/js/assets/lang.php:539
+#: lib/js/assets/lang.php:541
 msgid "Dutch"
 msgstr ""
 
-#: lib/js/assets/lang.php:540
+#: lib/js/assets/lang.php:542
 msgid "Polish"
 msgstr ""
 
-#: lib/js/assets/lang.php:541
+#: lib/js/assets/lang.php:543
 msgid "Norwegian"
 msgstr ""
 
-#: lib/js/assets/lang.php:542
+#: lib/js/assets/lang.php:544
 msgid "Danish"
 msgstr ""
 
-#: lib/js/assets/lang.php:548
+#: lib/js/assets/lang.php:550
 msgid "Search within all pages"
 msgstr ""
 
-#: lib/js/assets/lang.php:549
+#: lib/js/assets/lang.php:551
 msgid "Search box text"
 msgstr ""
 
-#: lib/js/assets/lang.php:552
+#: lib/js/assets/lang.php:554
 msgid "Membership level"
 msgstr ""
 
-#: lib/js/assets/lang.php:553
+#: lib/js/assets/lang.php:555
 msgid "Membership packages"
 msgstr ""
 
-#: lib/js/assets/lang.php:554
+#: lib/js/assets/lang.php:556
 msgid "File name"
 msgstr ""
 
-#: lib/js/assets/lang.php:555
+#: lib/js/assets/lang.php:557
 msgid "File description"
 msgstr ""
 
-#: lib/js/assets/lang.php:556 lib/modules/blog/advertising/tpl/multi_row.php:4
+#: lib/js/assets/lang.php:558 lib/modules/blog/advertising/tpl/multi_row.php:4
 msgid "File"
 msgstr ""
 
-#: lib/js/assets/lang.php:560
+#: lib/js/assets/lang.php:562
 msgid ""
 "WARNING: Be careful when adding custom HTML. It should be valid HTML or it "
 "could break your page. EVS embed code is not compatible with our "
 "OverlayOptimizer element."
 msgstr ""
 
-#: lib/js/assets/lang.php:564
+#: lib/js/assets/lang.php:566
 msgid "Success URL"
 msgstr ""
 
-#: lib/js/assets/lang.php:567
+#: lib/js/assets/lang.php:569
 msgid ""
 "Window width (px). <br />If you enter 0 or leave this field empty, "
 "OverlayOptimizer window will be sized according to it's content size."
 msgstr ""
 
-#: lib/js/assets/lang.php:568
+#: lib/js/assets/lang.php:570
 msgid "OverlayOptimizer Button"
 msgstr ""
 
-#: lib/js/assets/lang.php:569
+#: lib/js/assets/lang.php:571
 msgid "OverlayOptimizer Window"
 msgstr ""
 
-#: lib/js/assets/lang.php:570
+#: lib/js/assets/lang.php:572
 msgid "Open effect"
 msgstr ""
 
-#: lib/js/assets/lang.php:571
+#: lib/js/assets/lang.php:573
 msgid "Close effect"
 msgstr ""
 
-#: lib/js/assets/lang.php:572
+#: lib/js/assets/lang.php:574
 msgid "Open speed"
 msgstr ""
 
-#: lib/js/assets/lang.php:573
+#: lib/js/assets/lang.php:575
 msgid "Close speed"
 msgstr ""
 
-#: lib/js/assets/lang.php:574
+#: lib/js/assets/lang.php:576
 msgid "Overlay Pop"
 msgstr ""
 
-#: lib/js/assets/lang.php:575
+#: lib/js/assets/lang.php:577
 msgid ""
 "If you wish to use your OverlayOptimizer as an exit popup or delayed popup, "
 "use the options below. Please note the popup functionality has a built in "
@@ -4310,36 +4400,86 @@ msgid ""
 "visitors."
 msgstr ""
 
-#: lib/js/assets/lang.php:576
+#: lib/js/assets/lang.php:578
 msgid ""
 "<strong>Exit Intent</strong> <br /> Open the OverlayOptimizer element when "
 "user moves their cursor outside the main browser window"
 msgstr ""
 
-#: lib/js/assets/lang.php:577
+#: lib/js/assets/lang.php:579
 msgid ""
 "<strong>Open the OverlayOptimizer element after certain number of seconds "
 "(seconds)</strong><br />0 = Don't trigger the popup (will still trigger for "
 "Exit Intent if switched on above)<br />"
 msgstr ""
 
-#: lib/js/assets/lang.php:578
+#: lib/js/assets/lang.php:580
 msgid ""
 "<strong>Don't open the OverlayOptimizer for a certain number of days after "
 "first open (days)</strong><br />0 = Open the OverlayOptimizer every time "
 "(This will be reset if user clears cookies or changes browser)"
 msgstr ""
 
-#: lib/js/assets/lang.php:579
+#: lib/js/assets/lang.php:581
 msgid ""
 "<strong>Hide on Mobile</strong><br />Don't open OverlayOptimizer on mobile "
 "devices (screens smaller than 767px wide)."
 msgstr ""
 
-#: lib/js/assets/lang.php:580
+#: lib/js/assets/lang.php:582
 msgid ""
 "<strong>Hide on Tablet</strong><br />Don't open OverlayOptimizer on tablet "
 "devices (screens smaller than 959px wide)."
+msgstr ""
+
+#: lib/js/assets/lang.php:585
+msgid ""
+"<strong>OptimizeLeads</strong> Boxes are retrieved directly from "
+"OptimizeLeads. If you want to change anything on one of the boxes, please "
+"login into OptimizeLeads, and change it there; the changes will be "
+"reflected here."
+msgstr ""
+
+#: lib/js/assets/lang.php:586
+msgid "OptimizeLeads Embed Code"
+msgstr ""
+
+#: lib/js/assets/lang.php:587
+msgid "Loading Embed Code..."
+msgstr ""
+
+#: lib/js/assets/lang.php:588
+msgid ""
+"Embed code will be automatically retrieved from OptimizeLeads and inserted "
+"into your page. You don't have to copy it or do anything with it manually."
+msgstr ""
+
+#: lib/js/assets/lang.php:589
+msgid ""
+"You haven't inserted an API key for OptimizeLeads. Please open "
+"OptimizePress Dashboard, and under section OptimizeLeads enter your API key "
+"to use this element.<br /><br /> You can find or create an OptimizeLeads "
+"API Key on OptimizeLeads Integrations page, under <a "
+"href='https://www.optimizeleads.com/api-keys' target='blank'>API Keys</a> "
+"section."
+msgstr ""
+
+#: lib/js/assets/lang.php:590
+msgid ""
+"Your OptimizeLeads API key appears to be invalid. Please open OptimizePress "
+"Dashboard, and under section OptimizeLeads enter your correct API key to "
+"use this element.<br /><br /> You can find or create an OptimizeLeads API "
+"Key on OptimizeLeads Integrations page, under <a "
+"href='https://www.optimizeleads.com/api-keys' target='blank'>API Keys</a> "
+"section."
+msgstr ""
+
+#: lib/js/assets/lang.php:591
+msgid ""
+"You don't have any boxes ready for publishing in OptimizeLeads. Please log "
+"into your <a href='http://optimizeleads.com/' "
+"target='blank'>OptimizeLeads</a> account, create a box, connect it to an "
+"integration, and it will appear here."
 msgstr ""
 
 #: lib/modules/blog/advertising/tpl/advert_entry.php:10
@@ -4370,7 +4510,7 @@ msgstr ""
 #: lib/modules/blog/advertising/tpl/multi_row.php:20
 #: lib/modules/blog/scripts/scripts.php:50
 #: lib/modules/blog/scripts/scripts.php:114
-#: lib/modules/blog/signup_form/signup_form.php:19
+#: lib/modules/blog/signup_form/signup_form.php:16
 #: lib/modules/blog/signup_form/tpl/form_html.php:184
 #: lib/modules/blog/signup_form/tpl/form_html.php:209
 msgid "Remove"
@@ -4579,11 +4719,11 @@ msgstr ""
 msgid "Image must be minimum of 200x200px"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:45
+#: lib/modules/blog/signup_form/signup_form.php:41
 msgid "Opt-In HTML"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:160
+#: lib/modules/blog/signup_form/signup_form.php:156
 msgid ""
 "To display the sidebar optin on your blog, please complete the settings "
 "below and then go to <a href=\"/wp-admin/widgets.php\">Appearance > "
@@ -4591,131 +4731,131 @@ msgid ""
 "Opt-in\" widget into the Sidebar to position it where you wish."
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:283
+#: lib/modules/blog/signup_form/signup_form.php:279
 msgid "Style 1"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:287
+#: lib/modules/blog/signup_form/signup_form.php:283
 msgid "Style 2"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:291
+#: lib/modules/blog/signup_form/signup_form.php:287
 msgid "Style 3"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:295
+#: lib/modules/blog/signup_form/signup_form.php:291
 msgid "Style 4"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:299
+#: lib/modules/blog/signup_form/signup_form.php:295
 msgid "Style 5"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:303
+#: lib/modules/blog/signup_form/signup_form.php:299
 msgid "Style 6"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:307
+#: lib/modules/blog/signup_form/signup_form.php:303
 msgid "Style 7"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:311
+#: lib/modules/blog/signup_form/signup_form.php:307
 msgid "Style 8"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:315
+#: lib/modules/blog/signup_form/signup_form.php:311
 msgid "Style 9"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:319
+#: lib/modules/blog/signup_form/signup_form.php:315
 msgid "Style 10"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:323
+#: lib/modules/blog/signup_form/signup_form.php:319
 msgid "Style 11"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:327
+#: lib/modules/blog/signup_form/signup_form.php:323
 msgid "Style 12"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:331
+#: lib/modules/blog/signup_form/signup_form.php:327
 msgid "Style 13"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:335
+#: lib/modules/blog/signup_form/signup_form.php:331
 msgid "Style 14"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:339
+#: lib/modules/blog/signup_form/signup_form.php:335
 msgid "Style 15"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:343
+#: lib/modules/blog/signup_form/signup_form.php:339
 msgid "Style 16"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:814
+#: lib/modules/blog/signup_form/signup_form.php:810
 #: pages/landing/1/feature_area.php:235
 msgid "Enter a title to be displayed above your optin form"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:815
+#: lib/modules/blog/signup_form/signup_form.php:811
 #: pages/global/feature_areas/landing.php:176
 #: pages/landing/1/feature_area.php:236
 msgid "Sell Anything With OptimizePress"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:818
+#: lib/modules/blog/signup_form/signup_form.php:814
 #: pages/landing/1/feature_area.php:244
 msgid "Form Header"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:819
+#: lib/modules/blog/signup_form/signup_form.php:815
 #: pages/landing/1/feature_area.php:245
 msgid ""
 "Enter a call to action for your form - tell the visitor what to do (e.g. "
 "Complete the form below&hellip;)"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:820
+#: lib/modules/blog/signup_form/signup_form.php:816
 msgid ""
 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
 "nibh euismod."
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:823
+#: lib/modules/blog/signup_form/signup_form.php:819
 #: pages/landing/1/feature_area.php:249
 msgid "Footer Security Note"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:824
+#: lib/modules/blog/signup_form/signup_form.php:820
 #: pages/landing/1/feature_area.php:250
 msgid ""
 "Enter your security or spam notice here to reassure your visitors their "
 "details will be safe with you"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:825
+#: lib/modules/blog/signup_form/signup_form.php:821
 #: pages/landing/1/feature_area.php:251
 msgid "Your information is 100% secure with us and will never be shared"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:829
+#: lib/modules/blog/signup_form/signup_form.php:825
 #: pages/landing/1/feature_area.php:255
 msgid "Enter the default text for the Name input field"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:830
+#: lib/modules/blog/signup_form/signup_form.php:826
 msgid "Enter your First Name..."
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:834
+#: lib/modules/blog/signup_form/signup_form.php:830
 #: pages/landing/1/feature_area.php:261
 msgid "Enter the default text for the Email input field"
 msgstr ""
 
-#: lib/modules/blog/signup_form/signup_form.php:835
+#: lib/modules/blog/signup_form/signup_form.php:831
 msgid "Enter your Email Address..."
 msgstr ""
 
@@ -5309,12 +5449,12 @@ msgid "Typography"
 msgstr ""
 
 #: lib/sections/blog/brand.php:108 lib/sections/blog/layout.php:109
-#: lib/sections/dashboard/social_integration.php:73
+#: lib/sections/dashboard/social_integration.php:98
 msgid "Footer background colour"
 msgstr ""
 
 #: lib/sections/blog/brand.php:109 lib/sections/blog/layout.php:110
-#: lib/sections/dashboard/social_integration.php:74
+#: lib/sections/dashboard/social_integration.php:99
 msgid "Topbar BG Colour"
 msgstr ""
 
@@ -5465,118 +5605,134 @@ msgstr ""
 msgid "API Key"
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:54
+#: lib/sections/dashboard/global_settings.php:59
 msgid "Advanced WP Filter Settings"
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:59
+#: lib/sections/dashboard/global_settings.php:64
 msgid "External Plugin Compatibility"
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:64
+#: lib/sections/dashboard/global_settings.php:69
 #: lib/tpl/live_editor/index.php:33 lib/tpl/live_editor/layouts.php:3
 msgid "Content Templates"
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:69
+#: lib/sections/dashboard/global_settings.php:74
 msgid "Flowplayer License"
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:74
+#: lib/sections/dashboard/global_settings.php:79
 msgid "Fancybox for Images"
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:79
+#: lib/sections/dashboard/global_settings.php:84
 msgid "Compatibility Check"
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:263
+#: lib/sections/dashboard/global_settings.php:173
+msgid ""
+"There was an error with your OptimizeLeads API key. Please re-check it and "
+"try again."
+msgstr ""
+
+#: lib/sections/dashboard/global_settings.php:175
+msgid "Your OptimizeLeads API key is invalid. Please re-check it."
+msgstr ""
+
+#: lib/sections/dashboard/global_settings.php:354
 msgid ""
 "To remove Flowplayer watermark and/or to use custom logo, license key, "
 "HTML5 and Flash commercial version files needs to be present."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:280
+#: lib/sections/dashboard/global_settings.php:371
 #: lib/sections/support/system_status.php:148
 msgid "Your PHP version (%s) is lower than recommended (%s)."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:285
+#: lib/sections/dashboard/global_settings.php:376
 msgid "Your PHP version (%s) meets requirements (%s)."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:293
+#: lib/sections/dashboard/global_settings.php:384
 #: lib/sections/support/system_status.php:161
 msgid "Your MySQL version (%s) is lower than required (%s)."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:298
+#: lib/sections/dashboard/global_settings.php:389
 msgid "Your MySQL version (%s) meets requirements (%s)."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:306
+#: lib/sections/dashboard/global_settings.php:397
 #: lib/sections/support/system_status.php:123
 msgid "Your WordPress version (%s) is lower than recommended (%s)."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:311
+#: lib/sections/dashboard/global_settings.php:402
 msgid "Your WordPress version (%s) meets requirements (%s)."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:320
+#: lib/sections/dashboard/global_settings.php:411
 msgid ""
 "There are no transport protocols (curl, streams) that are capable of "
 "handling the requests."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:325
+#: lib/sections/dashboard/global_settings.php:416
 msgid "Transfer protocols (curl, streams) are in order."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:333
+#: lib/sections/dashboard/global_settings.php:424
 #: lib/sections/support/system_status.php:332
 msgid "Unable to connect to OptimizePress Security & Licensing service."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:338
+#: lib/sections/dashboard/global_settings.php:429
 msgid "Connection with OptimizePress Security & Licensing service is in order."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:346
+#: lib/sections/dashboard/global_settings.php:437
 #: lib/sections/support/system_status.php:346
 msgid ""
 "You are not eligible for new updates. You can prolong your subscription <a "
 "href=\"%s\" target=\"_blank\">here</a>."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:354
+#: lib/sections/dashboard/global_settings.php:442
+msgid ""
+"You are eligible for new updates. You can prolong your subscription <a "
+"href=\"%s\" target=\"_blank\">here</a>."
+msgstr ""
+
+#: lib/sections/dashboard/global_settings.php:450
 #: lib/sections/support/system_status.php:298
 msgid ""
 "Permalink structure must not be set to \"default\" for OptimizePress to "
 "work correctly. Please change the <a href=\"%s\">setting</a>."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:359
+#: lib/sections/dashboard/global_settings.php:455
 msgid "Permalink structure is in order (%s)."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:368
+#: lib/sections/dashboard/global_settings.php:464
 msgid "Your memory limit (%sMB) is lower than recommended (%sMB)"
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:373
+#: lib/sections/dashboard/global_settings.php:469
 msgid "Your memory limit (%sMB) meets recommendation (%sMB)"
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:382
+#: lib/sections/dashboard/global_settings.php:478
 msgid "Your upload limit (%sMB) is lower than recommended (%sMB)."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:387
+#: lib/sections/dashboard/global_settings.php:483
 msgid "Your upload limit (%sMB) meets recommendation (%sMB)."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:396
+#: lib/sections/dashboard/global_settings.php:492
 #: lib/sections/support/system_status.php:181
 msgid ""
 "Your \"max_input_vars\" setting is set to %s. If you plan to have pages "
@@ -5584,23 +5740,25 @@ msgid ""
 "least %s."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:401
+#: lib/sections/dashboard/global_settings.php:497
 msgid "Your \"max_input_vars\" (%s) meets recommendation (%s)."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:410
+#: lib/sections/dashboard/global_settings.php:506
 #: lib/sections/support/system_status.php:196
 msgid "Your \"max_execution_time\" setting (%s) is lower than recommended (%s)."
 msgstr ""
 
-#: lib/sections/dashboard/global_settings.php:415
+#: lib/sections/dashboard/global_settings.php:511
 msgid "Your \"max_execution_time\" (%s) meets recommendation (%s)."
 msgstr ""
 
 #: lib/sections/dashboard/social_integration.php:8
-#: lib/tpl/sections/blog/general/social_integration.php:6
-#: lib/tpl/sections/social_integration/facebook_app_id.php:6
-msgid "Facebook App ID"
+msgid "Facebook App"
+msgstr ""
+
+#: lib/sections/dashboard/social_integration.php:13
+msgid "Twitter App"
 msgstr ""
 
 #: lib/sections/page/color_schemes.php:10
@@ -6016,12 +6174,60 @@ msgstr ""
 msgid "Size &amp; Colour"
 msgstr ""
 
-#: lib/sections/stats/stats.php:40
+#: lib/sections/stats/stats.php:42
+msgid "Clubhouse"
+msgstr ""
+
+#: lib/sections/stats/stats.php:66
 msgid "Total Optins from OptimizePress"
 msgstr ""
 
-#: lib/sections/stats/stats.php:42
+#: lib/sections/stats/stats.php:68
 msgid "<small>(since %s)</small>"
+msgstr ""
+
+#: lib/sections/stats/stats.php:85
+msgid "OptimizePress Experiments"
+msgstr ""
+
+#: lib/sections/stats/stats.php:86
+msgid "Why should you be A/B testing?"
+msgstr ""
+
+#: lib/sections/stats/stats.php:89
+msgid "Grow Your List"
+msgstr ""
+
+#: lib/sections/stats/stats.php:90
+msgid "Test elements of your landing pages to improve opt-in rates & list growth."
+msgstr ""
+
+#: lib/sections/stats/stats.php:93
+msgid "Boost Sales"
+msgstr ""
+
+#: lib/sections/stats/stats.php:94
+msgid "Increase engagement on your sales and funnel pages to boost profits."
+msgstr ""
+
+#: lib/sections/stats/stats.php:97
+msgid "Increase Conversions"
+msgstr ""
+
+#: lib/sections/stats/stats.php:98
+msgid "Test your copy, images, page layouts & colours to increase conversions."
+msgstr ""
+
+#: lib/sections/stats/stats.php:101
+msgid "Optimize Your Site"
+msgstr ""
+
+#: lib/sections/stats/stats.php:102
+msgid "Let the data do the work, optimize your pages towards your goal."
+msgstr ""
+
+#: lib/sections/stats/stats.php:105
+msgid "Find out more"
 msgstr ""
 
 #: lib/sections/support/cache.php:16
@@ -6214,55 +6420,55 @@ msgstr ""
 msgid "Hide"
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:17
+#: lib/tpl/assets/dialog.php:23
 msgid "Insert an Element"
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:18
+#: lib/tpl/assets/dialog.php:26
 msgid "Search for an Element"
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:18
+#: lib/tpl/assets/dialog.php:30
 msgid "There are no assets matching your search, please try again."
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:28
+#: lib/tpl/assets/dialog.php:45
 msgid "Core Elements"
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:31
-msgid "Plus Pack Elements"
+#: lib/tpl/assets/dialog.php:48
+msgid "PlusPack Elements"
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:34
+#: lib/tpl/assets/dialog.php:52
 msgid "Theme Elements"
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:72
+#: lib/tpl/assets/dialog.php:92
 msgid "Choose a Different Element"
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:72
+#: lib/tpl/assets/dialog.php:94
 msgid "Choose the Element Style"
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:73
+#: lib/tpl/assets/dialog.php:98
 msgid "&larr; Back to Choose an Element"
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:78
+#: lib/tpl/assets/dialog.php:105
 msgid "Choose a Different Element Style"
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:78
+#: lib/tpl/assets/dialog.php:106
 msgid "Step 3"
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:83
+#: lib/tpl/assets/dialog.php:116
 msgid "Choose a Different Element Setting"
 msgstr ""
 
-#: lib/tpl/assets/dialog.php:83
+#: lib/tpl/assets/dialog.php:117
 msgid "Step 4"
 msgstr ""
 
@@ -7657,6 +7863,11 @@ msgid ""
 "activated."
 msgstr ""
 
+#: lib/tpl/sections/blog/general/social_integration.php:6
+#: lib/tpl/sections/social_integration/facebook_app_id.php:6
+msgid "Facebook App ID"
+msgstr ""
+
 #: lib/tpl/sections/blog/general/social_integration.php:7
 #: lib/tpl/sections/social_integration/facebook_app_id.php:7
 msgid ""
@@ -7666,8 +7877,20 @@ msgid ""
 msgstr ""
 
 #: lib/tpl/sections/blog/general/social_integration.php:7
+#: lib/tpl/sections/blog/general/social_integration.php:12
 #: lib/tpl/sections/social_integration/facebook_app_id.php:7
 msgid "here"
+msgstr ""
+
+#: lib/tpl/sections/blog/general/social_integration.php:11
+#: lib/tpl/sections/social_integration/facebook_app_id.php:11
+msgid "Facebook App Secret"
+msgstr ""
+
+#: lib/tpl/sections/blog/general/social_integration.php:12
+msgid ""
+"If you would like to enable Facebook share count you need to enter your app "
+"secret"
 msgstr ""
 
 #: lib/tpl/sections/blog/header_prefs.php:6
@@ -7742,6 +7965,56 @@ msgstr ""
 msgid ""
 "Enter the address of your RSS feed for the Info Bar link. Click Default if "
 "you're not sure."
+msgstr ""
+
+#: lib/tpl/sections/blog/optimizeleads_api_key.php:2
+msgid "Enter OptimizeLeads API Key"
+msgstr ""
+
+#: lib/tpl/sections/blog/optimizeleads_api_key.php:3
+msgid ""
+"Login to the OptimizeLeads, open <a "
+"href=\"https://www.optimizeleads.com/api-keys\" target=\"blank\">API "
+"Keys</a> screen from the submenu on Integrations page, create new API key, "
+"and paste it here."
+msgstr ""
+
+#: lib/tpl/sections/blog/optimizeleads_sitewide.php:6
+msgid "OptimizeLeads Site-Wide Configuration"
+msgstr ""
+
+#: lib/tpl/sections/blog/optimizeleads_sitewide.php:12
+msgid "Please select a box you want to use throught your pages."
+msgstr ""
+
+#: lib/tpl/sections/blog/optimizeleads_sitewide.php:18
+msgid ""
+"This list shows only boxes that are automatically triggered. Boxes "
+"triggered on link click won't be shown here."
+msgstr ""
+
+#: lib/tpl/sections/blog/optimizeleads_sitewide.php:21
+msgid "Show selected box on:"
+msgstr ""
+
+#: lib/tpl/sections/blog/optimizeleads_sitewide.php:27
+msgid "All Pages"
+msgstr ""
+
+#: lib/tpl/sections/blog/optimizeleads_sitewide.php:34
+msgid "All Blog Posts"
+msgstr ""
+
+#: lib/tpl/sections/blog/optimizeleads_sitewide.php:40
+msgid "All LiveEditor Pages"
+msgstr ""
+
+#: lib/tpl/sections/blog/optimizeleads_sitewide.php:47
+msgid "Home Page"
+msgstr ""
+
+#: lib/tpl/sections/blog/optimizeleads_sitewide.php:52
+msgid "Show selected box on posts with following categories:"
 msgstr ""
 
 #: lib/tpl/sections/blog/templates_reset.php:2
@@ -8369,6 +8642,34 @@ msgstr ""
 
 #: lib/tpl/sections/page/layout/size_color.php:22
 msgid "Enter box width in pixels."
+msgstr ""
+
+#: lib/tpl/sections/social_integration/facebook_app_id.php:12
+msgid ""
+"If you would like to get number of shares for URL you need to enter "
+"Facebook APP secret "
+msgstr ""
+
+#: lib/tpl/sections/social_integration/twitter_app.php:6
+msgid ""
+"If you would like to get Twitter share count you need enter Twitter "
+"Application access"
+msgstr ""
+
+#: lib/tpl/sections/social_integration/twitter_app.php:8
+msgid "Twitter Consumer Key"
+msgstr ""
+
+#: lib/tpl/sections/social_integration/twitter_app.php:12
+msgid "Twitter Consumer Secret"
+msgstr ""
+
+#: lib/tpl/sections/social_integration/twitter_app.php:16
+msgid "Twitter oAuth Access Token"
+msgstr ""
+
+#: lib/tpl/sections/social_integration/twitter_app.php:20
+msgid "Twitter oAuth Access Token Secret"
 msgstr ""
 
 #: lib/tpl/sections/system_status/items.php:27
@@ -9008,7 +9309,7 @@ msgid ""
 "sales letters and much more with ease."
 msgstr ""
 
-#: lib/framework.php:637
+#: lib/framework.php:644
 msgctxt "OptimizePress Preview Status"
 msgid "op_preview"
 msgstr ""

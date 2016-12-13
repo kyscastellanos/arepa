@@ -5,10 +5,15 @@ class OptimizePress_Sections_Social_Integration {
 		if(!isset($sections)){
 			$sections = array(
 				'facebook_app_id' => array(
-					'title' => __('Facebook App ID', 'optimizepress'),
+					'title' => __('Facebook App', 'optimizepress'),
 					'action' => array($this,'facebook_app_id'), 
 					'save_action' => array($this,'save_facebook_app_id')
-				)
+				),
+                'twitter_app' => array(
+                    'title' => __('Twitter App', 'optimizepress'),
+                    'action' => array($this,'twitter_app'),
+                    'save_action' => array($this,'save_twitter_app')
+                )
 			);
 			$sections = apply_filters('op_edit_sections_social_integration',$sections);
 		}
@@ -27,9 +32,29 @@ class OptimizePress_Sections_Social_Integration {
 			$comments = array();
 		}
 		$comments['facebook']['id'] = $op['facebook_app_id'];
-		op_update_option('comments', $comments);
+        $comments['facebook']['secret'] = $op['facebook_app_secret'];
+
+        op_update_option('comments', $comments);
 		//}
 	}
+
+    /* Facebook App ID Section */
+    function twitter_app(){
+        echo op_load_section('twitter_app', array(), 'social_integration');
+    }
+
+    function save_twitter_app($op){
+        $comments = op_default_option('comments');
+        if (!is_array($comments)) {
+            $comments = array();
+        }
+        $comments['twitter']['consumer_key'] = $op['twitter_consumer_key'];
+        $comments['twitter']['consumer_secret'] = $op['twitter_consumer_secret'];
+        $comments['twitter']['oauth_access_token'] = $op['twitter_oauth_access_token'];
+        $comments['twitter']['oauth_access_token_secret'] = $op['twitter_oauth_access_token_secret'];
+
+        op_update_option('comments', $comments);
+    }
 	
 	
 	

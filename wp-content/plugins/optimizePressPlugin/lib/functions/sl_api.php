@@ -463,3 +463,13 @@ function op_sl_pack()
 {
     return OptimizePress_Sl_Api::getInstance()->customer('pack');
 }
+
+/**
+ * Wrapper for fetching customer data.
+ * @param  string $key
+ * @return mixed      if $key is provided then the string will be returned (or null) and if $key isn't provided whole customer data will be returned as arary
+ */
+function op_sl_customer($key = null)
+{
+    return OptimizePress_Sl_Api::getInstance()->customer($key);
+}

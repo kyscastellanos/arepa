@@ -2863,7 +2863,7 @@ class OP_MCAPI {
             ob_end_clean();
             return false;
         }
-
+        $this->logger->debug('Payload: ' . print_r($payload, true));
         $response = "";
         fwrite($sock, $payload);
         stream_set_timeout($sock, $this->timeout);

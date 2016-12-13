@@ -294,12 +294,17 @@ function processGoToWebinar($webinar, $email)
     require_once(OP_MOD . 'email/ProviderFactory.php');
     $provider = OptimizePress_Modules_Email_ProviderFactory::getFactory('gotowebinar');
     if ($provider->isEnabled()) {
-        $data = $provider->subscribe(array(
+
+        $gotowebminarFields = array(
             'list'      => $webinar,
             'email'     => $email,
             'firstName' => $firstName,
             'lastName'  => $lastName
-        ));
+        );
+
+        $gotowebminarFields = apply_filters('op_gotowebminarCustomFieldMaping', $gotowebminarFields, $_POST);
+
+        $data = $provider->subscribe($gotowebminarFields);
     }
 }
 

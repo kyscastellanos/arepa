@@ -118,6 +118,13 @@ opjq(document).ready(function($){
 
             $t.flowplayer({
                 adaptiveRatio: true,
+
+                // Splash cannot be used with autoplay because
+                // the video won't work with this combination
+                // In all other cases this should be true,
+                // even if there's no poster image.
+                splash: opts.clip.autoPlay ? false : true,
+
                 swf: OptimizePress.flowplayerHTML5,
                 key: OptimizePress.flowplayerKey,
                 logo: OptimizePress.flowplayerLogo

@@ -3,7 +3,7 @@
 if(!function_exists('op_define_vars')){
     function op_define_vars(){
         //Init constants
-        define('OP_VERSION', '2.5.5.1');
+        define('OP_VERSION', '2.5.7');
 
         define('OP_TYPE','plugin');
         define('OP_SN','optimizepress'); //Short/safe name
@@ -95,6 +95,11 @@ if(!function_exists('op_define_vars')){
         //CSS Classes
         define('OP_CSS_CLASS_CLOSE_MODAL', 'close-optin-modal');
 
+        //OptimizeLeads
+        define('OP_LEADS_URL', 'https://www.optimizeleads.com/');
+        define('OP_LEADS_THEMES_URL', 'https://www.optimizeleads.com/build/themes/');
+
+        //Globals
         $GLOBALS['OP_LIVEEDITOR_FONT_STR'] = array();
         $GLOBALS['OP_LIVEEDITOR_DEPTH'] = 0;
         $GLOBALS['OP_PARSED_SHORTCODE'] = '';
@@ -231,7 +236,7 @@ if(!function_exists('op_define_vars')){
             wp_enqueue_script(OP_SN.'-tooltipster', OP_JS.'tooltipster.min.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
             wp_enqueue_script(OP_SN.'-selectnav', OP_JS.'selectnav'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
             wp_enqueue_script(OP_SN.'-dropkick', OP_JS.'dropkick'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
-            wp_enqueue_script(OP_SN.'-sharrre', OP_JS.'jquery/jquery.sharrre-1.3.4.min.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
+            wp_enqueue_script(OP_SN.'-sharrre', OP_JS.'jquery/jquery.sharrre-1.3.5'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
             wp_enqueue_script(OP_SN.'-reveal', OP_JS.'jquery/jquery.reveal.min.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
             wp_enqueue_script(OP_SN.'-countdown', OP_JS.'jquery/countdown'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
             wp_enqueue_script(OP_SN.'-global', OP_JS.'global'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
@@ -306,6 +311,7 @@ if(!function_exists('op_define_vars')){
         require_once OP_FUNC.'fonts.php';
         require_once OP_FUNC.'sl_api.php';
         require_once OP_FUNC.'optin_stats.php';
+	    require_once OP_FUNC.'social-count.php';
 
         // Loading DB upgrader
         require_once OP_ADMIN . 'upgrade.php';
@@ -316,9 +322,11 @@ if(!function_exists('op_define_vars')){
         _op_assets();
         add_theme_support( 'automatic-feed-links' );
         add_theme_support( 'post-thumbnails' );
-        if(is_admin()){
-            require_once OP_FUNC.'admin.php';
-            require_once OP_ADMIN.'init.php';
+
+        if (is_admin()) {
+            require_once OP_FUNC . 'admin.php';
+            require_once OP_ADMIN . 'init.php';
+            require_once OP_ADMIN . 'editor_shortcodes.php';
         } else {
             op_register_scripts();
             do_action('op_pre_template_include');
@@ -348,15 +356,14 @@ if(!function_exists('op_define_vars')){
 
             add_filter('template_include', 'op_template_include');
             do_action('op_setup');
-            //op_localize_script('front');
         }
     }
 
     add_action('init','op_include_files');
 
-    // TODO: Are these two actions really necessery?
-    add_action('wp_head','op_localize_script', 5, 'front');
-    add_action('admin_print_styles', 'op_localize_script', 5, 'front');
+    // One hook is loading on frontend and other in admin
+    add_action('wp_head','op_localize_script', 5);
+    add_action('admin_print_styles', 'op_localize_script', 5);
 
     function op_template_include($template,$use_template=true){
         if($use_template){
@@ -933,7 +940,7 @@ if(!function_exists('op_define_vars')){
         $apiResponse = op_sl_update('plugin');
 
         if (is_wp_error($apiResponse)) {
-            return $response;
+            return $transient;
         }
 
         if (version_compare($plugin_version, $apiResponse->new_version, '<')) {

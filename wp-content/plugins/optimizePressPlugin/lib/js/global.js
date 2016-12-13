@@ -77,6 +77,7 @@
                 var via = (typeof($(this).data('via'))=='undefined' ? '' : $(this).data('via'));
                 var title = (typeof($(this).data('title'))=='undefined' ? '' : $(this).data('title'));
                 var url = (typeof($(this).data('url'))=='undefined' ? '' : $(this).data('url'));
+                var likes = (typeof($(this).data('likes'))=='undefined' ? '' : $(this).data('likes'));
 
                 //Enable/disable counter
                 localOptions.enableCounter = $(this).parent().data('counter');
@@ -89,10 +90,12 @@
                         localOptions.buttons.twitter.via = via;
                         localOptions.buttons.twitter.title = title;
                         localOptions.buttons.twitter.url = url;
+                        localOptions.buttons.twitter.likes = likes;
                         break;
                     case 'facebook':
                         localOptions.share = { facebook: true };
                         localOptions.buttons.facebook.lang = lang;
+                        localOptions.buttons.facebook.likes = likes;
                         break;
                     case 'googlePlus':
                         localOptions.share = { googlePlus: true };
@@ -181,6 +184,7 @@
                     showEarly: false,
                     css: { opacity: 0 },
                     speedOut: 200,
+                    locked: false
                 }
             },
             beforeLoad: function () {
@@ -239,7 +243,7 @@
                 isSince = (typeof(obj.data('end'))!='undefined' ? false : true),
                 newDateObj = new Date(date[0], parseInt(date[1])-1, date[2], time[0], time[1], time[2]),
                 labels = [
-                    obj.data('years_text')   === undefined ? 'Years'   : obj.data('months_text'),
+                    obj.data('years_text')   === undefined ? 'Years'   : obj.data('years_text'),
                     obj.data('months_text')  === undefined ? 'Months'  : obj.data('months_text'),
                     obj.data('weeks_text')   === undefined ? 'Weeks'   : obj.data('weeks_text'),
                     obj.data('days_text')    === undefined ? 'Days'    : obj.data('days_text'),
@@ -248,7 +252,7 @@
                     obj.data('seconds_text') === undefined ? 'Seconds' : obj.data('seconds_text')
                 ],
                 labels1 = [
-                    obj.data('years_text_singular')   === undefined ? 'Year'   : obj.data('months_text_singular'),
+                    obj.data('years_text_singular')   === undefined ? 'Year'   : obj.data('years_text_singular'),
                     obj.data('months_text_singular')  === undefined ? 'Month'  : obj.data('months_text_singular'),
                     obj.data('weeks_text_singular')   === undefined ? 'Week'   : obj.data('weeks_text_singular'),
                     obj.data('days_text_singular')    === undefined ? 'Day'    : obj.data('days_text_singular'),

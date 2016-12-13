@@ -11,7 +11,7 @@ class OptimizePress_Fonts
              * We can load fonts via CSS for LE pages, but for elements added in normal pages we can't attach to wp_head as it is to early in code execution
              * and we aren't aware of all the fonts needed (element shortcodes are fired after wp_head)
              */
-            add_action('wp_head', array($this, 'print_css'), 20);
+            add_action(apply_filters('op_googleFontRenderingLocation','wp_head'), array($this, 'print_css'), 20);
 
             /*
              * If we load fonts without JS (even later on in the <body />) it appears without flickering (changing font after it loads)

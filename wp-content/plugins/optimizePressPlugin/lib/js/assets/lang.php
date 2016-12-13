@@ -39,6 +39,7 @@ $arr = array(
     'edit_parent_element' => __('Edit Parent Element', 'optimizepress'),
     'email_address' => __('Email Address', 'optimizepress'),
     'feature_title' => __('Feature Title', 'optimizepress'),
+    'feature_description' => __('Feature Description', 'optimizepress'),
     'font_settings' => __('Custom Font Settings', 'optimizepress'),
     'form_html' => __('Form HTML', 'optimizepress'),
     'full_width' => __('Full Width', 'optimizepress'),
@@ -390,6 +391,7 @@ $arr = array(
     'stumbleupon_settings' => __('StumbleUpon', 'optimizepress'),
     'stumbleupon_url' => __('Page URL (Optional)', 'optimizepress'),
     'linkedin_settings' => __('LinkedIn Settings', 'optimizepress'),
+    'social_sharing_background_color' => __('Social Sharing Background Color', 'optimizepress'),
 
     'navigation_menu' => __('Navigation Menu', 'optimizepress'),
     'navigation_help' => __('Customize your navigation menu using the options below. If you have not yet created a navigation menu, go to <a href="nav-menus.php" target="_blank">Appearance &gt; Menus</a> to create your first menu', 'optimizepress'),
@@ -578,6 +580,15 @@ $arr = array(
     'overlay_pop_trigger_dontshow' => __('<strong>Don\'t open the OverlayOptimizer for a certain number of days after first open (days)</strong><br />0 = Open the OverlayOptimizer every time (This will be reset if user clears cookies or changes browser)', 'optimizepress'),
     'overlay_pop_dont_show_on_mobile' => __('<strong>Hide on Mobile</strong><br />Don\'t open OverlayOptimizer on mobile devices (screens smaller than 767px wide).', 'optimizepress'),
     'overlay_pop_dont_show_on_tablet' => __('<strong>Hide on Tablet</strong><br />Don\'t open OverlayOptimizer on tablet devices (screens smaller than 959px wide).', 'optimizepress'),
+
+    // OptimizeLeads
+    'optimizeleads_description' => __('<strong>OptimizeLeads</strong> Boxes are retrieved directly from OptimizeLeads. If you want to change anything on one of the boxes, please login into OptimizeLeads, and change it there; the changes will be reflected here.'),
+    'optimizeleads_embed_code' => __("OptimizeLeads Embed Code"),
+    'optimizeleads_embed_code_loading' => __("Loading Embed Code..."),
+    'optimizeleads_embed_code_description' => __("Embed code will be automatically retrieved from OptimizeLeads and inserted into your page. You don't have to copy it or do anything with it manually."),
+    'optimizeleads_no_api_key' => __("You haven't inserted an API key for OptimizeLeads. Please open OptimizePress Dashboard, and under section OptimizeLeads enter your API key to use this element.<br /><br /> You can find or create an OptimizeLeads API Key on OptimizeLeads Integrations page, under <a href='https://www.optimizeleads.com/api-keys' target='blank'>API Keys</a> section."),
+    'optimizeleads_invalid_api_key' => __("Your OptimizeLeads API key appears to be invalid. Please open OptimizePress Dashboard, and under section OptimizeLeads enter your correct API key to use this element.<br /><br /> You can find or create an OptimizeLeads API Key on OptimizeLeads Integrations page, under <a href='https://www.optimizeleads.com/api-keys' target='blank'>API Keys</a> section."),
+    'optimizeleads_no_boxes' => __("You don't have any boxes ready for publishing in OptimizeLeads. Please log into your <a href='http://optimizeleads.com/' target='blank'>OptimizeLeads</a> account, create a box, connect it to an integration, and it will appear here."),
 );
 
 $arr = apply_filters('op_assets_lang_list', $arr);

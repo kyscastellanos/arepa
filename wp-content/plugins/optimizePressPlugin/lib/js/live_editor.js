@@ -2234,12 +2234,21 @@ var cur = [];
                 var value;
 
                 if (g.hasClass('element')) {
-                    elementContent = before + $(g[0].innerHTML)[0].outerHTML + after;
+
+                    // We create a temporary element, append the element content to it and grab the html
+                    elementContent = $('<div>').append($(g[0].innerHTML).clone()).html();
+                    elementContent = before + elementContent + after;
+
+                    // Before, we just did this, but it doesn't work if g[0].innerHTML consists
+                    // of more than one element (like in Calendar element)
+                    // elementContent = before + $(g[0].innerHTML)[0].outerHTML + after;
+
                     if (g.find('> .op-popup').length > 0) {
                         markup += '<div class="element">' + elementContent + '';
                     } else {
                         markup += '<div class="element">' + elementContent + '</div>';
                     }
+
                 } else {
                     if (g.hasClass('op-hidden') && !g.hasClass('op-waiting')) {
 

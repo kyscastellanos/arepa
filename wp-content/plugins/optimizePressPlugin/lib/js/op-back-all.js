@@ -342,6 +342,57 @@ opjq(document).ready(function($){
 
         return false;
     });
+
+    /**
+     * OptimizeLeads
+     */
+    (function () {
+        var $opleads = $('.op-opleads-dashboard-section');
+        var opLeadsBoxesLoaded = false;
+        var $boxSelect = $('#optimizeleads_sitewide_uid');
+        var $apiKey = $('#optimizeleads_api_key');
+
+        // Don't try to find boxes if there's no OPLeads api key or if OPLeads api key is invalid
+        if (!$apiKey.val() || $apiKey.hasClass('optimizeleads-api-key-error')) {
+            return false;
+        }
+
+        // Don't try to find boxes if there's no OPLeads section or if there's no boxes select
+        if ($opleads.length < 1 || $boxSelect.length < 1) {
+            return false;
+        }
+
+        $opleads.prev().find('.show-hide-panel a').on('click', function () {
+            if ($opleads.is(':hidden') && !opLeadsBoxesLoaded) {
+                /**
+                 * We retrieve all OptimizeLeads boxes that are active and not of type click
+                 */
+                $.ajax({
+                    type: 'POST',
+                    url: OptimizePress.ajaxurl,
+                    data: { 'action': OptimizePress.SN + '-get-optimizeleads-auto-boxes' },
+                    dataType: 'json',
+                    success: function(response) {
+                        var html = '';
+                        var checked = '';
+                        var i = 0;
+
+                        opLeadsBoxesLoaded = true;
+
+                        for (i = 0; i < response.length; i += 1) {
+                            checked = response[i]['uid'] === $boxSelect.attr('data-current-value') ? ' selected="selected" ' : '';
+                            html += '<option value="' + response[i]['uid'] + '"' + checked + '>' + response[i]['title'] + '</option>';
+                        }
+
+                        $boxSelect.append(html);
+                        $('#optimizeleads-sitewide-options').removeClass('hidden');
+                        $('#optimizeleads-sitewide-loader').addClass('hidden');
+                    }
+                });
+            }
+        });
+    }());
+
 });;
 /*!
  * iButton jQuery Plug-in
@@ -3971,12 +4022,21 @@ var cur = [];
                 var value;
 
                 if (g.hasClass('element')) {
-                    elementContent = before + $(g[0].innerHTML)[0].outerHTML + after;
+
+                    // We create a temporary element, append the element content to it and grab the html
+                    elementContent = $('<div>').append($(g[0].innerHTML).clone()).html();
+                    elementContent = before + elementContent + after;
+
+                    // Before, we just did this, but it doesn't work if g[0].innerHTML consists
+                    // of more than one element (like in Calendar element)
+                    // elementContent = before + $(g[0].innerHTML)[0].outerHTML + after;
+
                     if (g.find('> .op-popup').length > 0) {
                         markup += '<div class="element">' + elementContent + '';
                     } else {
                         markup += '<div class="element">' + elementContent + '</div>';
                     }
+
                 } else {
                     if (g.hasClass('op-hidden') && !g.hasClass('op-waiting')) {
 
@@ -5049,7 +5109,7 @@ var cur = [];
                                     && $activeElement.closest('.asset-list').next().find('.op-asset-list-item:visible').length > 0
                         ) {
 
-                            // If there are more items in list from OP Plus pack, select the first one.
+                            // If there are more items in list from OP PlusPack, select the first one.
                             $activeElement.removeClass('op-last-selected-asset-list-item selected')
                                 .closest('.asset-list').next().find('.op-asset-list-item:visible').eq(0)
                                     .find('a').addClass('op-last-selected-asset-list-item').focus();
@@ -5602,6 +5662,10 @@ var cur = [];
 
     }
 
+    // Expose show_slide to a global object, so we can use it directly in element config
+    window.OptimizePress.LiveEditor = window.OptimizePress.LiveEditor || {};
+    window.OptimizePress.LiveEditor.show_slide = show_slide;
+
     /**
      * Scrolls into view currently edited style of the element
      * (this is triggered when you click back on the element options)
@@ -6074,16 +6138,20 @@ var cur = [];
             return;
         }
 
-        var type = field.type || 'input', help = field.help || '', title = field.title || '', classextra = classextra || '',
-            add_class = (field.type ==  'button_preview' ? '' : field.addClass || ''),
-            required = field.required ? 'op-required-input' : '',
-            tmp_id = idprefix+id,
-            removeCf = field.removeCf || false,
-            str = $('<div class="field-row field-'+type+' field-id-'+tmp_id+' '+classextra+' '+add_class + ' ' + required + ' field-'+id+(removeCf?'':' cf')+'" />'),
-            $t = this,
-            prefix = field.prefix || '',
-            suffix = field.suffix || '',
-            multirow_container;
+        var type = field.type || 'input';
+        var help = field.help || '';
+        var title = field.title || '';
+        var classextra = classextra || '';
+        var add_class = (field.type ==  'button_preview' ? '' : field.addClass || '');
+        var readonly = field.readonly === true ? ' readonly ' : '';
+        var required = field.required ? 'op-required-input' : '';
+        var tmp_id = idprefix+id;
+        var removeCf = field.removeCf || false;
+        var str = $('<div class="field-row field-'+type+' field-id-'+tmp_id+' '+classextra+' '+add_class + ' ' + required + ' field-'+id+(removeCf?'':' cf')+'" />');
+        var $t = this;
+        var prefix = field.prefix || '';
+        var suffix = field.suffix || '';
+        var multirow_container;
 
         prefix = prefix == '' ? '' : translate(prefix)+' ';
         suffix = suffix == '' ? '' : ' '+translate(suffix);
@@ -6320,7 +6388,7 @@ var cur = [];
                     str.append(prefix+'<select name="'+tmp_id+'" id="'+tmp_id+'">'+input_values(tmp_id,field,type,group,tag)+'</select>'+suffix);
                     break;
                 case 'textarea':
-                    str.append(prefix+'<textarea cols="30" rows="10" name="'+tmp_id+'" id="'+tmp_id+'"></textarea>'+suffix);
+                    str.append(prefix+'<textarea cols="30" rows="10" name="'+tmp_id+'" id="'+tmp_id+'"' + readonly + '></textarea>'+suffix);
                     break;
                 case 'hidden':
                     str.append(prefix+'<input type="hidden" name="'+tmp_id+'" id="'+tmp_id+'" value="' + (typeof field.default_value != undefined ? field.default_value : '') + '" />'+suffix);
@@ -6421,6 +6489,7 @@ var cur = [];
                     if ($(this).css('pointer-events') != 'none') {
                         var cur_i = div.data('op_current_increment'),
                             multi = div.append('<div class="op-multirow cf" />').find('.op-multirow:last');
+                        cur_i = (cur_i != 0) ? cur_i : div.find('.op-multirow').length;
                         cur_i++;
                         div.data('op_current_increment',cur_i);
                         remove_row =  field.multirow.remove_row || 'before';
@@ -6457,7 +6526,12 @@ var cur = [];
                         if(remove_row == 'after'){
                             multi.append(remove_row_str);
                         }
-                        init_show_ons();
+
+                        // Argument true means that we're
+                        // initializing showns
+                        // for multirows
+                        init_show_ons(true);
+
                         multirow_length_class(multi);
                         if(typeof field.multirow.onAdd == 'function'){
 
@@ -7198,19 +7272,47 @@ var cur = [];
         return str;
     };
 
+    // Field attributes are written into the .data() of an element,
+    // so we're counting how many multirows there are, to ensure
+    // there's no overlap or overriding of properties
+    var multirow_nr = 0;
 
-    function init_show_ons(){
+    function init_show_ons(multirow) {
+
+        // Setting default argument value
+        multirow = typeof multirow  === 'undefined' ? false : multirow;
+
         for(var i in show_ons){
             var cont = container.find('.'+i),
                 changes = [];
             for(var field in show_ons[i]){
                 var fieldinfo = show_ons[i][field];
                 if(fieldinfo.type == 'image-selector' || fieldinfo.type == 'style-selector' || fieldinfo.type == 'button_preview'){
-                    $('#'+field+'_container').data({'show_on_values':fieldinfo.values});
-                    $('#'+field+'_container').on('click', '.op-asset-dropdown-list a', function(e){
-                        e.preventDefault();
-                        show_hide_fields.apply(cont,[$(this).find('img').attr('alt'),$(this).closest('.op-asset-dropdown').data('show_on_values')]);
-                    });
+
+                    // Multirows are hanndled differently. Data is
+                    // written into show_on_values_multirow_X
+                    if (!multirow) {
+                        $('#'+field+'_container').data({'show_on_values':fieldinfo.values});
+                        $('#'+field+'_container').on('click', '.op-asset-dropdown-list a', function(e){
+                            e.preventDefault();
+                            show_hide_fields.apply(cont,[$(this).find('img').attr('alt'),$(this).closest('.op-asset-dropdown').data('show_on_values')]);
+                        });
+                    } else {
+                        var tempObj = {};
+                        tempObj['show_on_values_multirow_' + multirow_nr] = fieldinfo.values;
+                        $('#'+field+'_container').data(tempObj);
+
+                        // We need a closure here to ensure that we
+                        // get correct multirow number when click
+                        // even is actually executed
+                        (function(nr) {
+                            $('#'+field+'_container').on('click', '.op-asset-dropdown-list a', function(e){
+                                e.preventDefault();
+                                show_hide_fields.apply(cont,[$(this).find('img').attr('alt'),$(this).closest('.op-asset-dropdown').data('show_on_values_multirow_' + nr)]);
+                            });
+                        })(multirow_nr);
+                        multirow_nr += 1;
+                    }
                 } else {
                     changes.push('#'+field);
                     cont.find('#'+field).data({
@@ -7224,8 +7326,8 @@ var cur = [];
 
         show_ons = {};
     };
-    function show_hide_fields(val,values){
 
+    function show_hide_fields(val,values){
         var $t = this,
             show = '',
             hidden = {},
@@ -7549,14 +7651,28 @@ var cur = [];
         content = content || '';
 
         if (use_wysiwyg) {
-            // $('#wp-'+id+'-wrap').removeClass('html-active').addClass('tmce-active');
             ed = tinyMCE.get(id);
             if (ed) {
-                ed.setContent(op_wpautop(content), { no_events: true });
+                // If editor is initialized, we set
+                // the content, but in case it is
+                // not yet initialized, we set
+                // event to monitor when it
+                // will be initiailzed and
+                // set the content then
+                if (ed.initialized) {
+                    ed.setContent(op_wpautop(content), { no_events: true });
+                } else {
+                    if (tinyMCE.majorVersion < 4) {
+                        ed.onInit.add(function(){
+                            ed.setContent(op_wpautop(content), { no_events: true });
+                        });
+                    } else {
+                        ed.on('init', function(e) {
+                            ed.setContent(op_wpautop(content), { no_events: true });
+                        });
+                    }
+                }
             }
-            // } else if ($('.op-live-editor').length === 0) {
-            //     switchEditors.go(id,'tmce');
-            // }
         }
 
         if (!use_wysiwyg || !ed) {

@@ -26,7 +26,7 @@ class OptimizePress_Screen_Stats
      */
     public function addMenuPage()
     {
-        $page = add_submenu_page(OP_SN, __('Stats', 'optimizepress'), __('Stats', 'optimizepress'), 'edit_theme_options', OP_SN . '-stats', array($this, 'displayPage'));
+        $page = add_submenu_page(OP_SN, __('Experiments', 'optimizepress'), __('Experiments', 'optimizepress'), 'edit_theme_options', OP_SN . '-stats', array($this, 'displayPage'));
 
         add_action('load-' . $page, array($this, 'initSections'));
         // add_action('load-' . $page, array($this, 'saveSections'));
@@ -117,7 +117,7 @@ class OptimizePress_Screen_Stats
     public function initSections()
     {
         $sections = apply_filters('op_screen_stats_sections', array(
-            'stats' => __('Stats', 'optimizepress'),
+            'stats' => __('Experiments', 'optimizepress'),
         ));
 
         foreach ($sections as $key => $title) {

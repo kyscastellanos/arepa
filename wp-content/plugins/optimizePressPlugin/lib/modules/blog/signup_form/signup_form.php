@@ -8,13 +8,10 @@ class OptimizePress_Blog_Signup_Form_Module extends OptimizePress_Modules_Base {
         parent::__construct($config);
         add_action((defined('OP_LIVEEDITOR')?'admin_print_footer_scripts':OP_SN.'-print-footer-scripts-admin'),array($this,'print_admin_footer_scripts'));
         op_mod('submit_button');
-        //add_action('wp_footer',array($this,'print_front_scripts'));
-        //add_filter(OP_SN.'-script-localize',array($this,'localize_script'));
     }
 
     function print_admin_footer_scripts(){
         echo '<script type="text/javascript" src="'.$this->url.'form'.OP_SCRIPT_DEBUG.'.js?ver='.OP_VERSION.'"></script>';
-        //wp_enqueue_script(OP_SN.'form', $this->url.'form.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
 
         $out = array('lang'=>array('order' => __('Order', 'optimizepress'), 'required' => __('Required', 'optimizepress'), 'add_new_field'=>__('Add New Field', 'optimizepress'),'text'=>__('Text', 'optimizepress'),'value'=>__('Value', 'optimizepress'),'title'=>__('Title', 'optimizepress'),'field_name'=>__('Field Name', 'optimizepress'),'remove'=>__('Remove', 'optimizepress')));
         if(count($this->output_styles) > 0){
@@ -29,7 +26,6 @@ var op_mod_signup_form = '.json_encode($out).';
     function print_front_scripts(){
         if(count($this->output_defaults) > 0){
             echo '<script type="text/javascript" src="'.$this->url.'form_output'.OP_SCRIPT_DEBUG.'.js?ver='.OP_VERSION.'"></script>';
-            //wp_enqueue_script(OP_SN.'form_output', $this->url.'form_output.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
         }
     }
 

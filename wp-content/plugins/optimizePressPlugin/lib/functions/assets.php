@@ -12,6 +12,11 @@ class OptimizePress_Assets_Core {
         if(op_get_option('installed') == 'Y'){
             require_once OP_ASSETS.'default.php';
 
+            // Load OPPP assets to tease customers and provide them upsell links
+            if ( ! defined('OPPP_BASE_URL')) {
+                require_once OP_ASSETS . 'oppp.php';
+            }
+
             // This isn't used but it is causing unnecessary DB request
             // $assets = $wpdb->get_col( "SELECT name FROM `{$wpdb->prefix}optimizepress_assets`" );
             // if($assets){
@@ -43,6 +48,14 @@ class OptimizePress_Assets_Core {
              * Content template
              */
             add_action('wp_ajax_' . OP_SN . '-content-layout-delete', array($this, 'deleteContentLayout'));
+
+            /**
+             * OptimizeLeads
+             */
+            add_action('wp_ajax_'.OP_SN.'-get-optimizeleads-boxes', array($this, 'optimizeleadsBoxes'));
+            add_action('wp_ajax_'.OP_SN.'-get-optimizeleads-box', array($this, 'optimizeleadsBox'));
+            add_action('wp_ajax_'.OP_SN.'-get-optimizeleads-auto-boxes', array($this, 'optimizeleadsAutoBoxes'));
+
         }
     }
 
@@ -382,6 +395,147 @@ class OptimizePress_Assets_Core {
         return $content;
     }
 
+    /**
+     * Prints list of optimizeleads boxes for
+     * the current optimizeleads API key,
+     * or notification that user should
+     * connect optimizeleads
+     *
+     * @author OptimizePress <info@optimizepress.com>
+     * @return void
+     */
+    function optimizeleadsBoxes()
+    {
+        $api_key = op_default_attr('optimizeleads_api_key');
+        $api_key_error = op_default_attr('optimizeleads_api_key_error');
+
+        if (!isset($api_key) || empty($api_key) || !empty($api_key_error)) {
+            echo '{ "error": "no_api_key" }';
+            exit();
+        }
+
+        global $wp_version;
+        $args = array(
+            'timeout'     => 5,
+            'redirection' => 5,
+            'httpversion' => '1.0',
+            'user-agent'  => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' ),
+            'blocking'    => true,
+            'headers'     => array('X-API-Token' => $api_key),
+            'cookies'     => array(),
+            'body'        => null,
+            'compress'    => false,
+            'decompress'  => true,
+            'sslverify'   => true,
+            'stream'      => false,
+            'filename'    => null
+        );
+
+        $response = wp_remote_get( OP_LEADS_URL . 'api/boxes', $args );
+        print_r($response['body']);
+
+        exit();
+    }
+
+    /**
+     * Prints optimizeleads boxe details for
+     * the current optimizeleads API key,
+     * and for the current box uid
+     * or notification that user
+     * should connect
+     * optimizeleads
+     *
+     * @author OptimizePress <info@optimizepress.com>
+     * @return void
+     */
+    function optimizeleadsBox()
+    {
+
+        if (empty($_POST['uid'])) {
+            echo '{ "error": "no_box_uid" }';
+            exit();
+        }
+
+        $api_key = op_default_attr('optimizeleads_api_key');
+        if (!isset($api_key) || empty($api_key)) {
+            echo '{ "error": "no_api_key" }';
+            exit();
+        }
+
+        $uid = $_POST['uid'];
+        global $wp_version;
+
+        $args = array(
+            'timeout'     => 5,
+            'redirection' => 5,
+            'httpversion' => '1.0',
+            'user-agent'  => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' ),
+            'blocking'    => true,
+            'headers'     => array('X-API-Token' => $api_key),
+            'cookies'     => array(),
+            'body'        => null,
+            'compress'    => false,
+            'decompress'  => true,
+            'sslverify'   => true,
+            'stream'      => false,
+            'filename'    => null
+        );
+
+        $response = wp_remote_get( OP_LEADS_URL . 'api/boxes/' . $uid, $args );
+        print_r($response['body']);
+
+        exit();
+    }
+
+    /**
+     * Prints a list of optimizeleads boxes for
+     * the current optimizeleads API key.
+     * It only returns active boxes
+     * that are not triggered
+     * manually (on click)
+     *
+     * @author OptimizePress <info@optimizepress.com>
+     * @return void
+     */
+    function optimizeleadsAutoBoxes()
+    {
+        $api_key = op_default_attr('optimizeleads_api_key');
+        if (!isset($api_key) || empty($api_key)) {
+            echo '{ "error": "no_api_key" }';
+            exit();
+        }
+
+        global $wp_version;
+        $args = array(
+            'timeout'     => 5,
+            'redirection' => 5,
+            'httpversion' => '1.0',
+            'user-agent'  => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' ),
+            'blocking'    => true,
+            'headers'     => array('X-API-Token' => $api_key),
+            'cookies'     => array(),
+            'body'        => null,
+            'compress'    => false,
+            'decompress'  => true,
+            'sslverify'   => true,
+            'stream'      => false,
+            'filename'    => null
+        );
+
+        $response = wp_remote_get( OP_LEADS_URL . 'api/boxes', $args );
+        $response = json_decode($response['body']);
+        $result = array();
+
+        foreach($response->boxes as $box) {
+            if (isset($box->publish_options->open_on) && $box->publish_options->open_on !== 'click') {
+                $result[] = $box;
+            }
+        }
+
+        print_r(json_encode($result));
+        exit();
+    }
+
     function fixptag($pee){
         $pee = preg_replace('!\]<br \/>\s*<h([1-6]*)!i',']<h$1',$pee);
         $pee = preg_replace('!<p>\s*\[\/!', "[/", $pee);
@@ -619,6 +773,11 @@ class OptimizePress_Assets_Core {
     function _generate_style_selector($path,$files,$fieldid,$folder){
         static $html = array();
         static $array_elements = array();
+
+        $opppStyles = apply_filters('op_assets_oppp_element_styles', array(), $fieldid);
+        $disableOpppStyles = ! defined('OPPP_BASE_URL');
+        $shownOpppUpsellBox = defined('OPPP_BASE_URL');
+
         if(!isset($html[$path])){
             $styles = array();
             $arr = array();
@@ -626,7 +785,30 @@ class OptimizePress_Assets_Core {
                 $file = explode('.',$file);
                 $file = explode('_', $file[0]);
                 $file = end($file);
-                $styles[$file] = '<li class="op-asset-dropdown-list-item"><a href="#"><img alt="'.esc_attr($file).'" src="'.esc_url($url).'" /></a></li>';
+
+                $isOpppStyle = in_array($file, $opppStyles);
+
+                // Temp fix until we turn on the upsell
+                /*if ($isOpppStyle && !defined('OPPP_BASE_URL')) {
+                    continue;
+                }*/
+
+                if ($isOpppStyle && $disableOpppStyles) {
+                    if ( ! $shownOpppUpsellBox) {
+                        $styles['oppp'] = '<li class="op-asset-dropdown-list-item op-asset-dropdown-list-item--loaded">' . OptimizePress_Oppp_Assets::getUpsellBox() . '</li>';
+                    }
+
+                    $styles[$file] = '<li class="op-asset-dropdown-list-item optimize-press-is-oppp-element"><div><img alt="'.esc_attr($file).'" src="'.esc_url($url).'" /></div></li>';
+                } else if ($isOpppStyle) {
+                    if ( ! $shownOpppUpsellBox) {
+                        $styles['oppp'] = '<li class="op-asset-dropdown-list-item op-asset-dropdown-list-item--loaded">' . OptimizePress_Oppp_Assets::getUpsellBox() . '</li>';
+                    }
+
+                    $styles[$file] = '<li class="op-asset-dropdown-list-item optimize-press-is-oppp-element"><a href="#"><img alt="'.esc_attr($file).'" src="'.esc_url($url).'" /></a></li>';
+                } else {
+                    $styles[$file] = '<li class="op-asset-dropdown-list-item"><a href="#"><img alt="'.esc_attr($file).'" src="'.esc_url($url).'" /></a></li>';
+                }
+
                 $arr[esc_attr($file)] = $file;
             }
             $styles = $this->_remove_ignore_vals($styles,$folder);

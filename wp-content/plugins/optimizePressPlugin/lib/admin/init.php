@@ -12,7 +12,6 @@ class OptimizePress_Admin_Init
                 require_once OP_ADMIN.'install.php';
             } else {
                 $this->installed = true;
-                add_action(OP_SN.'-print-footer-scripts',array($this,'print_footer_scripts'),5);
                 add_action('edit_form_after_title', array($this, 'remove_content_editor'));
                 add_filter('page_row_actions', array($this, 'addOpLinks'), 10, 2);
                 $this->initalize_theme();
@@ -162,10 +161,6 @@ class OptimizePress_Admin_Init
         // Styles
         wp_enqueue_style(OP_SN.'-admin-assets', OP_CSS.'assets'.OP_SCRIPT_DEBUG.'.css', array(OP_SN.'-admin-common'), OP_VERSION);
         wp_register_style(OP_SN.'-admin-common', OP_CSS.'common'.OP_SCRIPT_DEBUG.'.css', array('farbtastic','thickbox'), OP_VERSION);
-    }
-
-    function print_footer_scripts(){
-        op_localize_script('admin');
     }
 }
 new OptimizePress_Admin_Init();

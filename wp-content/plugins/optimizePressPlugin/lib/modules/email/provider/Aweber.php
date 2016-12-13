@@ -206,7 +206,7 @@ class OptimizePress_Modules_Email_Provider_Aweber implements OptimizePress_Modul
 
                 $this->logger->error('Error ' . $e->type . ': ' . $e->message);
 
-                if (trim($e->message) == 'email: Subscriber already subscribed.') {
+                if (trim($e->message) == 'email: Subscriber already subscribed.' || (trim($e->message) == 'email: Subscriber already subscribed and has not confirmed.')){
                     if (isset($_POST['already_subscribed_url']) && op_post('already_subscribed_url') !== '') {
                         $_POST['redirect_url'] = op_post('already_subscribed_url');
                     } else {

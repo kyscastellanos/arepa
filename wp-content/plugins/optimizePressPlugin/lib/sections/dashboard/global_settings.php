@@ -50,6 +50,11 @@ class OptimizePress_Sections_Global_Settings {
                     'action' => array($this,'api_key'),
                     'save_action' => array($this,'save_api_key')
                 ),
+                // 'optimizeleads' => array(
+                //     'title' => __('OptimizeLeads', 'optimizepress'),
+                //     'action' => array($this,'optimizeleads'),
+                //     'save_action' => array($this,'save_optimizeleads')
+                // ),
                 'advanced_filter' => array(
                     'title' => __('Advanced WP Filter Settings', 'optimizepress'),
                     'action' => array($this,'advanced_filter'),
@@ -124,6 +129,92 @@ class OptimizePress_Sections_Global_Settings {
             op_sl_save_key($key);
         }
     }
+
+    /* OptimizeLeads Section */
+    function optimizeleads(){
+        echo op_load_section('optimizeleads_api_key');
+    }
+
+    function save_optimizeleads($op){
+
+        global $wp_version;
+        $api_key = op_get_var($op, 'optimizeleads_api_key');
+        $args = array(
+            'timeout'     => 5,
+            'redirection' => 5,
+            'httpversion' => '1.0',
+            'user-agent'  => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' ),
+            'blocking'    => true,
+            'headers'     => array('X-API-Token' => $api_key),
+            'cookies'     => array(),
+            'body'        => null,
+            'compress'    => false,
+            'decompress'  => true,
+            'sslverify'   => true,
+            'stream'      => false,
+            'filename'    => null
+        );
+
+        // Update the OptimizeLeads API key.
+        // We want to update it in either case, even if user removes it
+        op_update_option('optimizeleads_api_key', $api_key);
+
+        // No need to go further if there's no API key
+        if (empty($api_key)) {
+            op_update_option('optimizeleads_api_key_error', false);
+            return;
+        }
+
+        // Get the OPLeads boxes
+        $response = wp_remote_get( OP_LEADS_URL . 'api/boxes', $args );
+        $response = json_decode($response['body']);
+
+        if (isset($response->error)) {
+            $message = __('There was an error with your OptimizeLeads API key. Please re-check it and try again.', 'optimizepress');
+            if ($response->code == 401) {
+                $message = __('Your OptimizeLeads API key is invalid. Please re-check it.', 'optimizepress');
+            }
+            op_group_error('global_settings');
+            op_section_error('global_settings_optimizeleads');
+            op_tpl_error('op_sections_optimizeleads', $message);
+            op_update_option('optimizeleads_api_key_error', $message);
+        } else {
+            op_update_option('optimizeleads_api_key_error', false);
+        }
+
+        // Sitewide related options
+        $optimizeLeadsSitewideUid = op_get_var($op, 'optimizeleads_sitewide_uid');
+
+        if (!empty($optimizeLeadsSitewideUid)) {
+
+            op_update_option('optimizeleads_sitewide_uid', $optimizeLeadsSitewideUid);
+
+            // Save the basic filter options
+            $filters = op_get_var($op, 'optimizeleads_sitewide_filter');
+            op_update_option('optimizeleads_sitewide_filter', $filters);
+
+            // Save the category options
+            $category_filters = op_get_var($op, 'optimizeleads_sitewide_filter_category');
+            op_update_option('optimizeleads_sitewide_filter_category', $category_filters);
+
+            // We retrieve the embed code only if necessary
+            if (!empty($api_key) && !empty($optimizeLeadsSitewideUid)) {
+                $response = wp_remote_get( OP_LEADS_URL . 'api/boxes/' . $optimizeLeadsSitewideUid, $args );
+                $response = json_decode($response['body']);
+
+                if (!empty($response)
+                    && isset($response->box)
+                    && isset($response->box->embed_code)
+                    && $optimizeLeadsSitewideUid !== 'none'
+                ) {
+                    op_update_option('optimizeleads_sitewide_embed', $response->box->embed_code);
+                } else {
+                    op_update_option('optimizeleads_sitewide_embed', '');
+                }
+            }
+        }
+    }
+
 
     /* Advanced filter settings */
     function advanced_filter()
@@ -341,9 +432,14 @@ class OptimizePress_Sections_Global_Settings {
 
         // OP Eligibility
         if (true !== op_sl_eligible()) {
-            $data['op_sl'] = array(
+            $data['eligiblity'] = array(
                 'status' => 'warning',
                 'message' => sprintf(__('You are not eligible for new updates. You can prolong your subscription <a href="%s" target="_blank">here</a>.', 'optimizepress'), 'http://optimizepress.com/updates-renewal/'),
+            );
+        } else {
+            $data['eligiblity'] = array(
+                'status' => 'ok',
+                'message' => sprintf(__('You are eligible for new updates. You can prolong your subscription <a href="%s" target="_blank">here</a>.', 'optimizepress'), 'http://optimizepress.com/updates-renewal/'),
             );
         }
 

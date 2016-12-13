@@ -316,6 +316,19 @@ class OptimizePress_PageBuilder {
                     op_update_page_option('theme','dir',$_POST['theme_id']);
                 }
 
+                // Set this page's typography settings to be that of the defaults
+                // but only if we're not using a predefined template
+                if ($preset_option === 'content_layout' && $op['content_layout'] === 0) {
+                    $default_typography = op_default_option('default_typography');
+                    if (!empty($default_typography) && isset($default_typography['font_elements'])) {
+                        $op_fonts = new OptimizePress_Fonts;
+                        foreach($default_typography['font_elements'] as $typography){
+                            $op_fonts->add_font($typography['font']);
+                        }
+                        op_update_page_option('typography', $default_typography);
+                    }
+                }
+
                 echo OP_PAGEBUILDER_ID;
                 exit;
 

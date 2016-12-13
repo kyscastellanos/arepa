@@ -1,0 +1,6 @@
+div.fancybox-overlay {
+    z-index: 100200 !important;
+}
+#op_loading {
+    z-index: 100210 !important;
+}

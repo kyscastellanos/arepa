@@ -38,9 +38,13 @@ var op_asset_settings = (function($){
                                 type: 'select',
                                 values: WithoutFreeOPMLevels
                             },
+                            packages_label: {
+                                html: '<label>Membership packages</label>',
+                                type: 'custom_html'
+                            },
                             packages: {
-                                title: 'select_packages',
-                                type: 'select',
+                                title: '',
+                                type: 'checkbox',
                                 values: OPMPackages
                             },
                             icon: {
@@ -92,12 +96,21 @@ var op_asset_settings = (function($){
         },
         insert_steps: {2:true},
         customInsert: function(attrs){
-            //console.log(attrs);
             var str = '',
             //style = (attrs.style!='image' ? 'icon' : attrs.style) || 'icon',
                 style = '',
                 field = style == 'image' ? 'image' : 'icon',
                 attrs_str = '';
+
+            $('.op-multirow').each(function (i, multirow) {
+                var selectedPackages = [];
+                $(multirow).find('.field-packages input[type="checkbox"]').each(function (i, item) {
+                    if ($(item).is(':checked')){
+                        selectedPackages.push($(item).val());
+                    }
+                });
+                attrs.elements[i].packages = selectedPackages.join(',');
+            });
 
             for(var i in attrs.elements){
                 if (!attrs.elements.hasOwnProperty(i)) {
@@ -147,10 +160,15 @@ var op_asset_settings = (function($){
                 $('#' + selectLevel.attr('id')).val(attrs.level || '');
                 OP_AB.set_selector_value(cur.find('.op-asset-dropdown').attr('id'),(attrs.icon || ''));
                 OP_AB.set_uploader_value(uploader.attr('id'), attrs.file);
-                cur.find('input:eq(1)').val(op_decodeURIComponent(attrs.title));
-                cur.find('textarea').val(op_decodeURIComponent(attrs.content));
-                cur.find('input[type="checkbox"]:eq(0)').attr('checked',((attrs.new_window || 'N') == 'Y'));
-                cur.find('input[type="checkbox"]:eq(1)').attr('checked',((attrs.hide_alert || 'N') == 'Y'));
+                cur.find('.field-title input').val(op_decodeURIComponent(attrs.title));
+                cur.find('.field-content textarea').val(op_decodeURIComponent(attrs.content));
+                cur.find('.field-new_window input[type="checkbox"]').attr('checked',((attrs.new_window || 'N') == 'Y'));
+                cur.find('.field-hide_alert input[type="checkbox"]').attr('checked',((attrs.hide_alert || 'N') == 'Y'));
+                cur.find('.field-packages input[type="checkbox"]').each(function (i, item) {
+                    if ($.inArray($(item).val(), attrs.package.split(',')) > -1) {
+                        $(item).attr('checked', true);
+                    }
+                });
             });
         }
     };

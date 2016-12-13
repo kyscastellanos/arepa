@@ -272,7 +272,6 @@
     line-height: 1.6em;
     min-height: 26px;
 }
-*/
 
 /**
  * Calendar & Date Admin Styles
@@ -1127,8 +1126,9 @@ div.calendar-date-style-3 div.calendar-date-box p.day {
 }
 
 .flowplayer.is-poster,
+.flowplayer.is-splash,
 .flowplayer video {
-    background: #000;
+    background-color: #000;
 }
 
 .flowplayer.is-poster {
@@ -6754,11 +6754,12 @@ blockquote.testimonial-style-7 .op-testimonial-company {
     color: inherit;
 }
 
-.optin-box-15 input, .optin-box-15 input:focus {
+.optin-box-15 input,
+.optin-box-15 input:focus {
     color: #bbb;
     outline: none;
-    margin: 0 -4px 0 0;
-    padding: 0 5px;
+    margin: 0 -4px 10px 0;
+    padding: 0 15px;
     width: 70%;
     display: inline-block;
     height: 52px !important;
@@ -6767,6 +6768,10 @@ blockquote.testimonial-style-7 .op-testimonial-company {
     border-radius: 6px 0px 0px 6px;
     box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
     box-sizing: border-box;
+}
+
+.optin-box-15 input + div {
+    display: inline;
 }
 
 .optin-box-15 button.default-button {
@@ -6790,7 +6795,9 @@ blockquote.testimonial-style-7 .op-testimonial-company {
 }
 
 .optin-box-15 .css-button {
-    margin-top: 10px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .optin-box-15 button.default-link {
@@ -10014,7 +10021,7 @@ a.button-style-css-small span {
     margin-bottom:20px;
 }
 
-.image-text-style-1 span,
+.image-text-style-1 > span,
 .image-text-style-1 img {
     display: inline-block;
     vertical-align: middle;
@@ -11554,9 +11561,8 @@ a.button-style-css-small span {
 
 .navigation-sidebar-6 ul {
     margin: 0;
-    padding: 0;
+    padding: 20px 15px 20px 50px;
 }
-
 .navigation-sidebar-6 li {
     display: block;
     margin: 5px 0;
@@ -11580,6 +11586,14 @@ a.button-style-css-small span {
 
 .navigation-sidebar-6 li:last-child {
     margin: 0;
+}
+
+.navigation-sidebar.navigation-sidebar-6 {
+    background: #404040;
+    background: -webkit-linear-gradient(#404040, #000);
+    background: -o-linear-gradient(#404040, #000);
+    background: -moz-linear-gradient(#404040, #000);
+    background: linear-gradient(#404040, #000);
 }
 
 .navigation-sidebar-7 ul {
@@ -12487,6 +12501,9 @@ pre {
 /**
  * Pricing Table Style 1 CSS
  */
+
+.pricing-table-style1 { margin-bottom: 30px; }
+
 .pricing-table-style1 .pt-border {
     display: inline-block;
     padding: 0px;
@@ -12582,6 +12599,13 @@ pre {
 
 .op-pricing-table ul.features > p {
     display: none;
+}
+
+@media only screen and (max-width: 959px) {
+    .pricing-table-style1 .pt-border{
+        /*margin-right: 5px;*/
+        /*margin-left: 5px;*/
+    }
 }
 
 
@@ -12710,7 +12734,7 @@ pre {
 /**
  * Pricing Table Style 3 CSS
  */
-.pricing-table-style3 { margin-bottom: 20px; }
+.pricing-table-style3 { margin-bottom: 30px; }
 
 .pricing-table-style3 .pricing-table-4col .pt-border { width: 24.7%; }
 .pricing-table-style3 .pricing-table-3col .pt-border { width: 33%; }
@@ -15049,6 +15073,10 @@ select[data-dkcacheid] {
         display: block;
         border-radius: 6px;
     }
+
+    .pricing-table-style1 .pricing-table-4col .pt-border { margin: 5px; }
+    .pricing-table-style1 .pricing-table-3col .pt-border { margin: 10px; }
+    .pricing-table-style1 .pricing-table-2col .pt-border { margin: 10px; }
 }
 
 @media only screen and (max-width: 767px) {
@@ -15174,17 +15202,17 @@ select[data-dkcacheid] {
         .pt-border { width: 49%; }
         .pt-border.popular { width: 49%; margin-left: -3px; }
 
-        .pricing-table-style1 .pricing-table-4col .pt-border { width: 46%; }
-        .pricing-table-style1 .pricing-table-3col .pt-border { width: 46%; }
-        .pricing-table-style1 .pricing-table-2col .pt-border { width: 46%; }
+        .pricing-table-style1 .pricing-table-4col .pt-border { width: 99%; margin: 0 0 10px 0; }
+        .pricing-table-style1 .pricing-table-3col .pt-border { width: 99%; margin: 0 0 10px 0; }
+        .pricing-table-style1 .pricing-table-2col .pt-border { width: 99%; margin: 0 0 10px 0; }
 
-        .pricing-table-style2 .pricing-table-4col .pt-border { width: 49%; }
-        .pricing-table-style2 .pricing-table-3col .pt-border { width: 49%; }
-        .pricing-table-style2 .pricing-table-2col .pt-border { width: 49%; }
+        .pricing-table-style2 .pricing-table-4col .pt-border { width: 99%; }
+        .pricing-table-style2 .pricing-table-3col .pt-border { width: 99%; }
+        .pricing-table-style2 .pricing-table-2col .pt-border { width: 99%; }
 
-        .pricing-table-style3 .pricing-table-4col .pt-border { width: 49%; }
-        .pricing-table-style3 .pricing-table-3col .pt-border { width: 49%; }
-        .pricing-table-style3 .pricing-table-2col .pt-border { width: 49%; }
+        .pricing-table-style3 .pricing-table-4col .pt-border { width: 99%; }
+        .pricing-table-style3 .pricing-table-3col .pt-border { width: 99%; }
+        .pricing-table-style3 .pricing-table-2col .pt-border { width: 99%; }
 
         .op-text-block{
             margin-left: 0 !important;

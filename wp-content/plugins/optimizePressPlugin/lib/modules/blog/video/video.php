@@ -6,10 +6,6 @@ class OptimizePress_Blog_Video_Module extends OptimizePress_Modules_Base {
 
     function __construct($config=array()){
         parent::__construct($config);
-        // if (!defined('OP_LIVEEDITOR')) {
-        //  op_localize_script('front');
-        // }
-        //add_action('print_scripts', array($this,'print_front_scripts'));
     }
 
     function display_settings($section_name,$config=array(),$return=false){

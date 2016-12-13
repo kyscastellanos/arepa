@@ -260,7 +260,7 @@ class OptimizePress_Blog_Comments_Module extends OptimizePress_Modules_Base {
                     FB.init({
                         <?php echo $fbAppId; ?>
                         xfbml      : true,
-                        version    : 'v2.0'
+                        version    : 'v2.7'
                     });
                     $(window).trigger("OptimizePress.fbAsyncInit");
                 };
@@ -269,7 +269,7 @@ class OptimizePress_Blog_Comments_Module extends OptimizePress_Modules_Base {
                     var js, fjs = d.getElementsByTagName(s)[0];
                     if (d.getElementById(id)) {return;}
                     js = d.createElement(s); js.id = id;
-                    js.src = "//connect.facebook.net/<?php echo $fb_lang; ?>/sdk.js";
+                    js.src = "//connect.facebook.net/<?php echo $fb_lang; ?>/all.js";
                     fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));
             }

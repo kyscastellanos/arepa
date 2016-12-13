@@ -1,4 +1,8 @@
 var op_asset_settings = (function($){
+
+    var style_has_pricing_description = ['4', '5', '6', '7', '8'];
+    var style_has_feature_description = ['4', '5', '6', '7', '8'];
+
     return {
         help_vids: {
             step_1: {
@@ -21,14 +25,15 @@ var op_asset_settings = (function($){
                 }
             },
             step_2: {
-                tabs: {
-                    title: 'columns_count',
-                    type: 'select',
-                    valueRange: {start:2,finish:4,text_suffix:'columns'},
-                    default_value: '',
+                children: {
+                    type: 'multirow',
                     multirow: {
                         link_prefix: 'column',
                         attributes: {
+                            type: {
+                                type: 'hidden',
+                                default_value: 'column'
+                            },
                             title: {
                                 title: 'title',
                                 type: 'input',
@@ -38,7 +43,7 @@ var op_asset_settings = (function($){
                                         var multi = $(this).closest('.op-multirow'),
                                             cont = multi.parent(),
                                             idx = cont.find('.op-multirow').index(multi);
-                                        cont.find('.op-multirow-tabs li a:eq('+idx+')').text($(this).val());
+                                        cont.find('.op-multirow-children li a:eq('+idx+')').text($(this).val());
                                     },
                                     keyup: function(){
                                         $(this).trigger('change');
@@ -93,6 +98,10 @@ var op_asset_settings = (function($){
                                 multirow: {
                                     remove_row: 'after',
                                     attributes: {
+                                        type: {
+                                            type: 'hidden',
+                                            default_value: 'feature'
+                                        },
                                         feature_title: {
                                             title: 'feature_title',
                                             type: 'input'
@@ -101,128 +110,163 @@ var op_asset_settings = (function($){
                                 }
                             },
                         },
-                        onAdd: function(){
-                            //Add event to click handler for button that will remove the op-multirow class
-                            //This is necessary as the class breaks the column selector
+                        onAdd: function(e){
+                            // Add event to click handler for button that will remove the op-multirow class
+                            // This is necessary as the class breaks the column selector
                             $(this).find('.field-items .new-row').click(function(){
                                 $(this).parent().prev().find('div').each(function(){
                                     if ($(this).hasClass('op-multirow')) $(this).removeClass('op-multirow').addClass('op-feature-title-row');
                                 });
                             });
 
-                            //Trigger the change event to update the column name in the column selector
+                            // Trigger the change event to update the column name in the column selector
                             $(this).find('.op-multirow:last :input[type="text"]').trigger('change');
 
-                            //Hide the most popular text field and set checkbox to unchecked by default
+                            // Hide the most popular text field and set checkbox to unchecked by default
                             $(this).find('.field-most_popular_text').hide().prev().find('.checkbox-container input').prop('checked', false);
+
+                            // We need to manually trigger click on the selected style to show/hide fields for the current multirow
+                            $('#op_assets_core_pricing_table_style_container').find('.op-asset-dropdown-list a.selected').trigger('click');
                         }
                     }
                 }
             }
         },
-        insert_steps: {2:true},
-        customInsert: function(attrs){
-            var str = '', total = attrs.tabs.total, style = (attrs.style || 1);
+        /*
+        onGenerateComplete: function() {
+            // bind on dialog click event:
+            //      check if parent is pricing table
+            //      check if trget is addnewrow or target is remove row
+            //          do stuff
 
-            for(var i=0;i<total;i++){
-                var title = '', price = '', pricing_unit = '', pricing_variable = '', most_popular = 'N', most_popular_text = '',
-                    order_button_text = '', order_button_url = '', package_description = '', items = '';
+            // do not allow more than {mrowcount} columns
+            var container = $('#op_asset_browser_slide3 .op-settings-core-pricing_table.settings-container')
+            var addnewrow = $(container).find('.field-id-op_assets_core_pricing_table_children > .new-row');
+            var mrowcount = 5;
 
-                if(typeof attrs.tabs.rows[i] != 'undefined'){
-                    title = encodeURIComponent(attrs.tabs.rows[i].title || '');
-                    price = encodeURIComponent(attrs.tabs.rows[i].price || '');
-                    pricing_unit = encodeURIComponent(attrs.tabs.rows[i].pricing_unit || '');
-                    pricing_variable = encodeURIComponent(attrs.tabs.rows[i].pricing_variable || '');
-                    most_popular = attrs.tabs.rows[i].most_popular;
-                    most_popular_text = encodeURIComponent(attrs.tabs.rows[i].most_popular_text);
-                    order_button_text = encodeURIComponent(attrs.tabs.rows[i].order_button_text || '');
-                    order_button_url = encodeURIComponent(attrs.tabs.rows[i].order_button_url || '');
-                    package_description = encodeURIComponent(attrs.tabs.rows[i].package_description || '');
+            $(container)
+                .unbind('click.opnewrow')
+                .on('click.opnewrow', function(e) {
+                    var elclick = false
+                        || $(e.target).is(addnewrow)
+                        || $(e.target).is('.remove-row') && $(e.target).parent().is('.op-multirow')
+                        || $(e.target).is('img') && $(e.target).parent().is('.remove-row') && $(e.target).parent().parent().is('.op-multirow');
 
-                    $.each(attrs.tabs.rows[i].items, function(index, val){
-                        items += '<li>' + encodeURIComponent(val.feature_title) +'</li>';
-                    });
-                }
-                str += '[tab style="' + style + '" total="' + total + '" title="'+title.replace( /"/ig,"'")+'" price="' + price + '" pricing_unit="' + pricing_unit + '" pricing_variable="' + pricing_variable + '" most_popular="' + most_popular + '" most_popular_text="' + most_popular_text + '" order_button_text="' + order_button_text + '" order_button_url="' + order_button_url + '" package_description="' + package_description + '" items="' + items + '"][/tab]';
-            };
-            str = '[pricing_table style="' + style + '"]'+str+'[/pricing_table]';
-            OP_AB.insert_content(str);
-            $.fancybox.close();
-        },
-        customSettings: function(attrs,steps){
-            var style = attrs.attrs.style, tab = attrs.tab || [], container = steps[1].find('.field-id-op_assets_core_pricing_table_tabs-multirow-container');
-
-            //Set the style
-            OP_AB.set_selector_value('op_assets_core_pricing_table_style_container',(style || ''));
-
-            //Set the proper number of columns
-            $('#op_assets_core_pricing_table_tabs option[value=' + tab.length + ']').attr('selected', 'selected').parent('select').trigger('change');
-
-            container = container.find('> div');
-
-            //Iterate between the columns and set the proper settings
-            $.each(tab,function(i,v){
-                var tmp = container.filter(':eq('+i+')');
-                var id = tmp.find('input[name$="_title"]')
-                                .val(op_decodeURIComponent(v.attrs.title))
-                                .trigger('change')
-                            .end().find('textarea')
-                                .val(OP_AB.unautop(op_decodeURIComponent(v.attrs.content)))
-                                .trigger('change')
-                                .attr('id');
-                var v = v.attrs;
-
-                //Get the elements for the default settings
-                var $title = tmp.find('.field-title input');
-                var $price = tmp.find('.field-price input');
-                var $pricing_unit = tmp.find('.field-pricing_unit input');
-                var $pricing_variable = tmp.find('.field-pricing_variable input');
-                var $order_button_text = tmp.find('.field-order_button_text input');
-                var $order_button_url = tmp.find('.field-order_button_text').next().find('input');
-                var $package_description = tmp.find('.field-package_description');
-                var $most_popular = tmp.find('.field-most_popular .checkbox-container input');
-                var $most_popular_text = tmp.find('.field-most_popular_text input');
-                var $items = tmp.find('.field-items').prev();
-
-                //Set the defaults
-                $price.val(op_decodeURIComponent(v.price));
-                $pricing_unit.val($('<div/>').html(op_decodeURIComponent(v.pricing_unit)).text());
-                $pricing_variable.val(op_decodeURIComponent(v.pricing_variable));
-                $order_button_text.val(op_decodeURIComponent(v.order_button_text));
-                $order_button_url.val(op_decodeURIComponent(v.order_button_url));
-
-                //Set most popular defaults
-                $most_popular_text.val(op_decodeURIComponent(v.most_popular_text));
-                var isMostPopularChecked = (v.most_popular=='Y' ? true : false);
-                if (isMostPopularChecked) $most_popular_text.parent().show();
-                $most_popular.prop('checked', isMostPopularChecked);
-
-                //Set WYSIWYG content
-                var desc = ($package_description.find('.wp-editor-area').attr('id') || '');
-                if (typeof desc !== 'undefined' && desc !== '') {
-                    desc = desc.replace('wp-', '');
-                    desc = desc.replace('-wrap', '');
-                    switchEditors.go(desc,'tmce');
-                    var ed = tinyMCE.get(desc);
-                    if (ed) ed.setContent(op_wpautop(op_decodeURIComponent(v.package_description)),{ no_events: true });
-                }
-
-                //Iterate through all the items in the features list and add defaults
-                ctr = 1;
-                var items = $('<ul>' + v.items + '</ul>').find('li').each(function(){
-                    var id = ($items.attr('class') || '');
-                    if (typeof id !== 'undefined' && id !== '') {
-                        id = id.replace(' cf', '');
-                        id = id.replace(/multirow-container/ig, '');
-                        id = id.replace('items-', 'items');
-                        id = id.replace(/ /g, '');
-                        var text = op_decodeURIComponent($(this).text());
-                        var html = '<div class="op-feature-title-row cf pricing-table-row"><div class="field-row field-input ' + id + '_' + ctr + '_feature_title field-feature_title cf"><label for="' + id + '_' + ctr + '_feature_title">Feature Title</label><input type="text" id="' + id + '_' + ctr + '_feature_title" name="' + id + '_' + ctr + '_feature_title" value="' + text + '"></div><a class="remove-row" href="#"><img alt="Remove Row" src="' + OptimizePress.imgurl + 'remove-row.png"></a></div>';
-                        $items.append(html);
-                        ctr++;
+                    if (elclick) {
+                        addnewrow.removeClass('disabled').addClass($(container).find('.field-id-op_assets_core_pricing_table_children-multirow-container > .op-multirow').length >= mrowcount ? 'disabled' : 'temp').removeClass('temp');
+                        if ($(addnewrow).hasClass('disabled')) $(addnewrow).blur();
                     }
                 });
-            });
+        },
+        */
+        insert_steps: {2:true},
+        customInsert: function(attrs){
+            var result = '',
+                total  = attrs.children.length,
+                style  = (attrs.style || 1);
+
+            // add feature to column (child to child)
+            var children = [];
+            for (var i = 0; i < attrs.children.length; i++) {
+                if (attrs.children[i] === undefined) {
+                    continue;
+                }
+                else if (attrs.children[i].type == 'column') {
+                    children.push(attrs.children[i]);
+                    children[children.length - 1].items = '';
+                }
+                else if (attrs.children[i].type == 'feature') {
+                    children[children.length - 1].items += '<li>' + encodeURIComponent(attrs.children[i].title) + '</li>';
+                }
+            }
+
+            // loop children
+            for (var i = 0; i < children.length; i++) {
+                if (children[i] === undefined) {
+                    continue;
+                }
+
+                // child shortcode
+                result += ''
+                    + '[op_pricing_table_child'
+                    + ' style="' + style + '"'
+                    + ' total="' + total + '"'
+                    + ' title="' + encodeURIComponent(children[i].title || '').replace( /"/ig,"'") + '"'
+                    + ' price="' + encodeURIComponent(children[i].price || '') + '"'
+                    + ' pricing_unit="' +  encodeURIComponent(children[i].pricing_unit || '') + '"'
+                    + ' pricing_variable="' + encodeURIComponent(children[i].pricing_variable || '') + '"'
+                    + ' most_popular="' + encodeURIComponent(children[i].most_popular || '') + '"'
+                    + ' most_popular_text="' + encodeURIComponent(children[i].most_popular_text) + '"'
+                    + ' order_button_text="' + encodeURIComponent(children[i].order_button_text || '') + '"'
+                    + ' order_button_url="' + encodeURIComponent(children[i].order_button_url || '') + '"'
+                    + ' package_description="' + encodeURIComponent(children[i].package_description || '') + '"'
+                    + ' items="' + (children[i].items || '') + '"'
+                    + ']'
+                    + '[/op_pricing_table_child]';
+            };
+
+            // wrap shortcode
+            result = '[pricing_table style="' + style + '"]' + result + '[/pricing_table]';
+
+            // dialog
+            OP_AB.insert_content(result);
+            $.fancybox.close();
+
+        },
+        customSettings: function(attrs,steps){
+            var style     = attrs.attrs.style,
+                children  = attrs.op_pricing_table_child || attrs.tab || [],
+                container = steps[1].find('.field-id-op_assets_core_pricing_table_children-multirow-container');
+
+            // set the style
+            OP_AB.set_selector_value('op_assets_core_pricing_table_style_container', style || '');
+
+            // iterate between the columns and set the proper settings
+            for (var i = 0; i < children.length; i++) {
+                // add new column
+                steps[1].find('.field-id-op_assets_core_pricing_table_children a.new-row').trigger('click');
+
+                var value  = children[i].attrs;
+                var parent = container.find('.op-multirow:last')
+                var input  = parent.find('input');
+
+                // set input values
+                input.filter('[id$="_title"]').val(op_decodeURIComponent(value.title || ''));
+                input.filter('[id$="_price"]').val(op_decodeURIComponent(value.price || ''));
+                input.filter('[id$="_pricing_unit"]').val(op_decodeURIComponent(value.pricing_unit || ''));
+                input.filter('[id$="_pricing_variable"]').val(op_decodeURIComponent(value.pricing_variable || ''));
+                input.filter('[id$="_order_button_text"]').val(op_decodeURIComponent(value.order_button_text || ''));
+                input.filter('[id$="_order_button_url"]').val(op_decodeURIComponent(value.order_button_url || ''));
+
+                // most popular
+                if (value.most_popular == 'Y') {
+                    input.filter('[id$="_most_popular"]').trigger('click');
+                    input.filter('[id$="_most_popular_text"]').val(op_decodeURIComponent(value.most_popular_text || ''));
+                }
+
+                // set wysiwyg content
+                (function(id, content) {
+                    if ( ! id) {
+                        return;
+                    }
+                    OP_AB.set_wysiwyg_content(id, op_wpautop(op_decodeURIComponent(content || '')));
+                    // setTimeout(function() {
+                    //     switchEditors.go(id, 'tmce');
+                    //     var ed = tinyMCE.get(id);
+
+                    //     if (ed) {
+                    //         // this throws error on dialog close -> please fix it!
+                    //         ed.setContent(op_wpautop(op_decodeURIComponent(content || '')),{ no_events: true });
+                    //     }
+                    // });
+                }(parent.find('[id$="_package_description"]').attr('id'), value.package_description));
+
+                // iterate through all the items in the features list and add defaults
+                $('<ul>' + (op_decodeURIComponent(value.items) || '') + '</ul>').find('li').each(function() {
+                    parent.find('a.new-row').trigger('click');
+                    parent.find('input[id$="_feature_title"]:last').val($(this).text());
+                });
+            }
         }
     };
 })(opjq);

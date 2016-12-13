@@ -226,9 +226,14 @@ function op_launch_nav(){
     endif;
 }
 
+/**
+ * Adds title tag to pages
+ *
+ * @since 2.5.7  Added OP_TYPE check because plugin version of OptimizePress renders double title tag
+ */
 function op_set_seo_title()
 {
-    if (OP_SEO_ENABLED != 'Y') {
+    if (OP_SEO_ENABLED != 'Y' && OP_TYPE !== 'plugin') {
         if (!defined('GENESIS_LIB_DIR') && !defined('CATALYST_LIB')) { // non GENESIS/CATALYST theme
             echo '<title>';
             echo wp_title(' ', false, 'right' );

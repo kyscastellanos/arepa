@@ -837,14 +837,29 @@ class OptimizePress_Page_Options {
 
     function remove_disabled_filters()
     {
-        global $wp_filter;
+        global $wp_filter, $wp_version;
 
         if (null === $this->_temp_filters) {
-            $temp_filters = array();
+
+            // WP 4.7 introduces WP_Hook class which handles hooks on low level a bit differently
+            if (version_compare($wp_version, '4.6.100', '<')) {
+                $temp_filters = array();
+            } else {
+                $temp_filters = new WP_Hook();
+            }
+
             $disabled_filters = $this->get_disabled_filters();
 
             if (!empty($disabled_filters)) {
-                foreach ($wp_filter['the_content'] as $priority => $filters) {
+
+                // WP 4.7 introduces WP_Hook class which handles hooks on low level a bit differently
+                if (version_compare($wp_version, '4.6.100', '<')) {
+                    $the_content_filters = $wp_filter['the_content'];
+                } else {
+                    $the_content_filters = $wp_filter['the_content']->callbacks;
+                }
+
+                foreach ($the_content_filters as $priority => $filters) {
                     foreach ($filters as $id => $filter) {
                         if (is_string($filter['function'])) {
                             $name = $filter['function'];
@@ -853,8 +868,14 @@ class OptimizePress_Page_Options {
                         } else {
                             continue;
                         }
-                        if (!in_array($name, $disabled_filters)) {
-                            $temp_filters[$priority][$id] = $filter;
+
+                        if ( ! in_array($name, $disabled_filters)) {
+                            // WP 4.7 introduces WP_Hook class which handles hooks on low level a bit differently
+                            if (version_compare($wp_version, '4.6.100', '<')) {
+                                $temp_filters[$priority][$id] = $filter;
+                            } else {
+                                $temp_filters->callbacks[$priority][$id] = $filter;
+                            }
                         }
                     }
                 }
@@ -863,11 +884,11 @@ class OptimizePress_Page_Options {
             } else {
                 $this->_temp_filters = $wp_filter['the_content'];
             }
-        }
 
-        $temp                       = $wp_filter['the_content'];
-        $wp_filter['the_content']   = $this->_temp_filters;
-        $this->_temp_filters        = $temp;
+            $temp                       = $wp_filter['the_content'];
+            $wp_filter['the_content']   = $this->_temp_filters;
+            $this->_temp_filters        = $temp;
+        }
     }
 
     function get_disabled_filters()
@@ -886,6 +907,7 @@ class OptimizePress_Page_Options {
 
             $this->_disabled_filters = $disabled;
         }
+
         return $this->_disabled_filters;
     }
 
@@ -893,9 +915,11 @@ class OptimizePress_Page_Options {
     {
         global $wp_filter;
 
-        $temp                       = $wp_filter['the_content'];
-        $wp_filter['the_content']   = $this->_temp_filters;
-        $this->_temp_filters        = $temp;
+        if (null !== $this->_temp_filters) {
+            $temp                       = $wp_filter['the_content'];
+            $wp_filter['the_content']   = $this->_temp_filters;
+            $this->_temp_filters        = $temp;
+        }
     }
 
     function update_layout($layout,$type='body'){

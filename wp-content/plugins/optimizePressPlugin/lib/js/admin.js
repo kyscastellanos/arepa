@@ -342,4 +342,55 @@ opjq(document).ready(function($){
 
         return false;
     });
+
+    /**
+     * OptimizeLeads
+     */
+    (function () {
+        var $opleads = $('.op-opleads-dashboard-section');
+        var opLeadsBoxesLoaded = false;
+        var $boxSelect = $('#optimizeleads_sitewide_uid');
+        var $apiKey = $('#optimizeleads_api_key');
+
+        // Don't try to find boxes if there's no OPLeads api key or if OPLeads api key is invalid
+        if (!$apiKey.val() || $apiKey.hasClass('optimizeleads-api-key-error')) {
+            return false;
+        }
+
+        // Don't try to find boxes if there's no OPLeads section or if there's no boxes select
+        if ($opleads.length < 1 || $boxSelect.length < 1) {
+            return false;
+        }
+
+        $opleads.prev().find('.show-hide-panel a').on('click', function () {
+            if ($opleads.is(':hidden') && !opLeadsBoxesLoaded) {
+                /**
+                 * We retrieve all OptimizeLeads boxes that are active and not of type click
+                 */
+                $.ajax({
+                    type: 'POST',
+                    url: OptimizePress.ajaxurl,
+                    data: { 'action': OptimizePress.SN + '-get-optimizeleads-auto-boxes' },
+                    dataType: 'json',
+                    success: function(response) {
+                        var html = '';
+                        var checked = '';
+                        var i = 0;
+
+                        opLeadsBoxesLoaded = true;
+
+                        for (i = 0; i < response.length; i += 1) {
+                            checked = response[i]['uid'] === $boxSelect.attr('data-current-value') ? ' selected="selected" ' : '';
+                            html += '<option value="' + response[i]['uid'] + '"' + checked + '>' + response[i]['title'] + '</option>';
+                        }
+
+                        $boxSelect.append(html);
+                        $('#optimizeleads-sitewide-options').removeClass('hidden');
+                        $('#optimizeleads-sitewide-loader').addClass('hidden');
+                    }
+                });
+            }
+        });
+    }());
+
 });

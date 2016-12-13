@@ -1,4 +1,4 @@
-<?php echo $this->load_tpl('header', array('title' => __('Stats', 'optimizepress'))); ?>
+<?php echo $this->load_tpl('header', array('title' => __('Experiments', 'optimizepress'))); ?>
 <form action="<?php menu_page_url(OP_SN . '-stats'); ?>" method="post" enctype="multipart/form-data" class="op-bsw-settings op-stats-screen">
     <div class="op-bsw-main-content cf">
 

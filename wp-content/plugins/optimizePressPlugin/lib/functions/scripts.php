@@ -86,6 +86,75 @@ function add_other_tracking_code()
     }
 }
 
+/*
+ * Attaching on 'wp_footer' to render other sitewide tracking code
+ */
+// add_action('wp_footer', 'add_optimizeleads_code', 11);
+
+/**
+ * Add sitewide JS tracking code from Dashboard - Analytics and tracking - Analytics & Tracking - Sitewide tracking code
+ *
+ * @author OptimizePress <info@optimizepress.com>
+ * @since 2.1.1
+ * @return void
+ */
+function add_optimizeleads_code()
+{
+    global $post;
+
+    $box_embed_code = op_default_option('optimizeleads_sitewide_embed');
+    $uid = op_default_option('optimizeleads_sitewide_uid');
+    $api_key = op_default_attr('optimizeleads_api_key');
+
+    // We don't want to show box if there's no API key, or if none is selected
+    if (empty($api_key) || $uid === 'none') {
+        return;
+    }
+
+    // We don't want to execute this in LE, nor if there's no actual code to embed
+    if (!defined('OP_LIVEEDITOR') && !empty($box_embed_code)) {
+
+        $filters = op_default_option('optimizeleads_sitewide_filter');
+
+        if (is_array($filters)) {
+
+            foreach ($filters as $key => $filter) {
+                if ($filter === 'all_pages' && $post->post_type === 'page') {
+                    echo $box_embed_code;
+                    return;
+                }
+
+                if ($filter === 'blog_posts' && $post->post_type === 'post') {
+                    echo $box_embed_code;
+                    return;
+                }
+
+                 if ($filter === 'live_editor_pages' && is_le_page($post->ID)) {
+                    echo $box_embed_code;
+                    return;
+                }
+
+                if ($filter === 'home' && is_home()) {
+                    echo $box_embed_code;
+                    return;
+                }
+            }
+
+        }
+
+        // Check if box should be displayed on this post category
+        $categories = op_default_option('optimizeleads_sitewide_filter_category');
+        if (is_array($categories)) {
+            $categories = array_values($categories);
+            if (has_category($categories, $post)) {
+                echo $box_embed_code;
+                return;
+            }
+        }
+
+    }
+}
+
 /**
  * Render code after body tag is opened
  *
@@ -114,40 +183,6 @@ function op_in_body()
 function op_footer(){
     do_action('op_footer');
 
-    // if (OP_SCRIPT_DEBUG === '') {
-
-    //     //Init the frontend array, which will then be converted to JSON
-    //     if (!is_admin()) {
-    //         //op_localize_script('front');
-    //         wp_enqueue_script('op-menus', OP_JS.'menus'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
-    //     }
-
-    //     //echo '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>';
-
-    //     //Print out script include
-    //     // foreach($js_scripts as $script){
-    //     //  echo '<script type="text/javascript" src="'.OP_JS.$script.'"></script>';
-    //     // }
-    //     wp_enqueue_script(OP_SN.'-tooltipster', OP_JS.'tooltipster.min.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
-    //     wp_enqueue_script(OP_SN.'-selectnav', OP_JS.'selectnav'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
-    //     wp_enqueue_script(OP_SN.'-dropkick', OP_JS.'dropkick'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
-    //     wp_enqueue_script(OP_SN.'-jqueryui-1.10.3', OP_JS.'jquery/jquery-ui-1.10.3.custom.min.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
-    //     wp_enqueue_script(OP_SN.'-sharrre', OP_JS.'jquery/jquery.sharrre-1.3.4.min.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
-    //     wp_enqueue_script(OP_SN.'-reveal', OP_JS.'jquery/jquery.reveal.min.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
-    //     wp_enqueue_script(OP_SN.'-countdown', OP_JS.'jquery/countdown'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
-    //     wp_enqueue_script(OP_SN.'-global', OP_JS.'global'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
-
-    // } else {
-
-    //     //Init the frontend array, which will then be converted to JSON
-    //     if (!is_admin()) {
-    //         //op_localize_script('front');
-    //         wp_enqueue_script('op-menus', OP_JS.'menus'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-op-jquery-base-all'), OP_VERSION);
-    //     }
-    //     wp_enqueue_script(OP_SN.'-op-front-all', OP_JS.'op-front-all.min.js', array(OP_SN.'-op-jquery-base-all'), OP_VERSION);
-
-    // }
-
     op_enqueue_frontend_scripts();
 
     if (!is_admin()) {
@@ -174,10 +209,10 @@ function op_footer(){
     ' : '');
 }
 
-function op_default_localize(){
-
+function op_default_localize()
+{
     //Defaults for localized PHP to JS variables
-    return $default = array(
+    return array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
         'SN' => OP_SN,
         'version' => OP_VERSION,
@@ -185,7 +220,7 @@ function op_default_localize(){
 
         // This is only for debugging. Otherwise is localstorage turned on by default in production and off in development.
         // add define('OP_LOCALSTORAGE', true/false); to wp-config.php if you want to override default localstorage bahaviour.
-        'localStorageEnabled' => defined('OP_LOCALSTORAGE') && OP_LOCALSTORAGE ? OP_LOCALSTORAGE : '',
+        'localStorageEnabled' => defined('OP_LOCALSTORAGE') ? OP_LOCALSTORAGE : '',
 
         'wp_admin_page' => is_admin() ? '1' : '',
         'op_live_editor' => (is_le_page() || defined('OP_LIVEEDITOR')) ? '1' : '',
@@ -225,34 +260,23 @@ function op_default_localize(){
         // Messages
         'pb_unload_alert' => __('This page is asking you to confirm that you want to leave - data you have entered may not be saved.', 'optimizepress'),
         'pb_save_alert' => __('Please make sure you are happy with all of your options as some options will not be able to be changed for this page later.', 'optimizepress'),
+        'search_default' => __('Search...', 'optimizepress'),
 
         // OptimizeMember
         'optimizemember' => array(
             'enabled' => defined("WS_PLUGIN__OPTIMIZEMEMBER_VERSION"),
             'version' => defined("WS_PLUGIN__OPTIMIZEMEMBER_VERSION") ? WS_PLUGIN__OPTIMIZEMEMBER_VERSION : '0',
         ),
+
+        // OptimizeLeads
+        'OP_LEADS_URL' => OP_LEADS_URL,
+        'OP_LEADS_THEMES_URL' => OP_LEADS_THEMES_URL,
     );
 }
 
-function op_localize_script($types=''){
-
-    //Get the localized variables
-    $localize = apply_filters(OP_SN.'-script-localize',op_default_localize());
-
-    //Get localized variables if a type is set
-    if(!empty($types)){
-        //Init types
-        $types = (is_array($types) ? $types : $types = array($types));
-
-        //Loop through types and get variables
-        foreach($types as $type){
-            $localize = apply_filters(OP_SN.'-script-localize-'.$type,$localize);
-        }
-    }
-
-    // Finally, assuming we have data to localize, we print out the data in a JSON object
-    // echo ((count($localize) > 0) ? '<script type="text/javascript">OP = (typeof(OP)=="undefined" ? '.json_encode($localize).' : OP);</script>' : '');
-    wp_localize_script( OP_SCRIPT_BASE, 'OptimizePress', apply_filters(OP_SN.'-script-localize',$localize) );
+function op_localize_script()
+{
+    wp_localize_script(OP_SCRIPT_BASE, 'OptimizePress', apply_filters(OP_SN.'-script-localize', op_default_localize()));
 }
 
 function op_print_scripts($types=''){
@@ -583,40 +607,6 @@ add_action('wp_head', 'op_add_theme_css', 7);
 
 
 function op_opengraph_meta(){
-    /*$metas = array(
-        //'og:url' => get_bloginfo('wpurl'),
-        'og:type' => 'article',
-    );
-    $site_title = '';
-    if(!$site_title = op_get_option('seo','title')){
-        $site_title = get_bloginfo('name');
-        $site_description = get_bloginfo( 'description', 'display' );
-        if ( $site_description && ( is_home() || is_front_page() ) )
-            $site_title .= ' &mdash; '.$site_description;
-    }
-    $metas['og:site_name'] = $site_title;
-    if(is_single()){
-        global $post;
-        while(have_posts()){
-            the_post();
-
-            $metas['og:url'] = get_permalink($post->ID);
-
-            $seo = get_post_meta($post->ID,'op_seo',true);
-            $seo = is_array($seo) ? $seo : array();
-            $title = op_get_var($seo,'title');
-            $description = op_get_var($seo,'description');
-
-
-            $metas['og:title'] = empty($title) ? $post->post_title : $title;
-            $metas['og:description'] = empty($description) ? wp_trim_excerpt($post->post_excerpt) : $description;
-            if(has_post_thumbnail($post->ID)){
-                $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'list-image');
-                $metas['og:image'] = $thumbnail[0];
-            }
-        }
-        rewind_posts();
-    }*/
     $metas = array();
     $appId = op_get_option('comments','facebook','id');
     if(!empty($appId)){
@@ -665,51 +655,7 @@ function op_register_scripts()
 
     op_enqueue_fancybox_images();
 
-    // if (OP_SCRIPT_DEBUG === '') {
-
-        // If jQuery version is higher than 1.9 we require jQuery migrate plugin
-        // (which is by default registered in WP versions that come with jQuery 1.9 or higher)
-        // if (wp_script_is('jquery-migrate', 'registered')) {
-        //     wp_enqueue_script(OP_SN.'-noconflict-js', OP_JS.'jquery/jquery.noconflict'.OP_SCRIPT_DEBUG.'.js', array('jquery', 'jquery-migrate'), OP_VERSION);
-        // } else {
-        //     wp_enqueue_script(OP_SN.'-noconflict-js', OP_JS.'jquery/jquery.noconflict'.OP_SCRIPT_DEBUG.'.js', array('jquery'), OP_VERSION);
-        // }
-
-        // wp_enqueue_script(OP_SN.'-loadScript', OP_JS.'jquery/jquery.loadScript'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
-        // wp_enqueue_script(OP_SN.'-placeholder', OP_JS.'jquery/jquery.placeholder.min.js', array(OP_SN.'-noconflict-js'), OP_VERSION, true);
-        // wp_enqueue_script(OP_SN.'-fancybox', OP_JS.'fancybox/jquery.fancybox'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION, true);
-        // wp_register_script( OP_SN.'-fancybox-op', OP_JS.'fancybox/helpers/jquery.fancybox-op'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js', OP_SN.'-fancybox'), OP_VERSION);
-
-        // Fancybox for images
-        // $fancybox_images = op_default_option('fancybox_images');
-        // if (is_array($fancybox_images) && $fancybox_images['enabled'] === 'Y') {
-        //     wp_enqueue_script(OP_SN.'-fancybox-images', OP_JS.'fancybox_images'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js', OP_SN.'-fancybox'), OP_VERSION, true);
-        // }
-
-    // } else {
-
-        //If jQuery version is higher than 1.9 we require jQuery migrate plugin (which is by default registered in WP versions that come with jQuery 1.9 or higher)
-        // if (wp_script_is('jquery-migrate', 'registered')) {
-        //     wp_enqueue_script(OP_SN.'-op-jquery-base-all', OP_JS.'op-jquery-base-all.min.js', array('jquery', 'jquery-migrate'), OP_VERSION);
-        // } else {
-        //     wp_enqueue_script(OP_SN.'-op-jquery-base-all', OP_JS.'op-jquery-base-all.min.js', array('jquery'), OP_VERSION);
-        // }
-
-        // AKISMET 3.0 and higher fix... we are deregistering their comment_form
-        // script in framework, and returning it here under a different handle
-        // if (defined('AKISMET_VERSION') && version_compare(AKISMET_VERSION, '3.0.0') >= 0) {
-        //     wp_register_script('akismet-form-2', AKISMET__PLUGIN_URL . '_inc/form.js', array(OP_SN.'-op-jquery-base-all'), AKISMET_VERSION);
-        //     wp_enqueue_script('akismet-form-2');
-        // }
-
-        // Fancybox for images
-        // $fancybox_images = op_default_option('fancybox_images');
-        // if (is_array($fancybox_images) && $fancybox_images['enabled'] === 'Y') {
-        //     wp_enqueue_script(OP_SN.'-fancybox-images', OP_JS.'fancybox_images'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-op-jquery-base-all'), OP_VERSION, true);
-        // }
-
-    // }
-    add_action('admin_print_scripts','op_localize_script', 5, 'front');
+    add_action('admin_print_scripts','op_localize_script', 5);
 }
 add_action('init','op_register_scripts');
 
@@ -805,7 +751,7 @@ function op_sharrre_scripts()
 {
     if (OP_SCRIPT_DEBUG === '') {
         wp_enqueue_script(OP_SN.'-selectnav', OP_JS.'selectnav'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
-        wp_enqueue_script(OP_SN.'-sharrre', OP_JS.'jquery/jquery.sharrre-1.3.4.min.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
+        wp_enqueue_script(OP_SN.'-sharrre', OP_JS.'jquery/jquery.sharrre-1.3.5'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
         wp_enqueue_script(OP_SN.'-tooltipster', OP_JS.'tooltipster.min.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
         wp_enqueue_script(OP_SN.'-countdown', OP_JS.'jquery/countdown'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
         wp_enqueue_script(OP_SN.'-global', OP_JS.'global'.OP_SCRIPT_DEBUG.'.js', array(OP_SN.'-noconflict-js'), OP_VERSION);
